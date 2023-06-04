@@ -1,0 +1,24 @@
+<figure class="highcharts-figure">
+    <div id="CHART_1"></div>
+    <p class="highcharts-description">
+    </p>
+</figure>
+<!-- <div hidden id="get_chart_1_1"><%=data_ky_bao_cao%></div>
+<div hidden id="get_chart_1_2"><%=data_ky_so_sanh%></div>
+<div hidden id="get_chart_1_3"><%=ky_bao_cao%></div>
+<div hidden id="get_chart_1_4"><%=ky_so_sanh%></div> -->
+
+<script>
+    <% if(data_ky_bao_cao.length) { %>
+    var data_ky_bao_cao = <%=data_ky_bao_cao%>; 
+    <% } else { %>
+    var data_ky_bao_cao = []; 
+    <% } %>
+    <% if(data_ky_so_sanh.length) { %>
+    var data_ky_so_sanh = <%=data_ky_so_sanh%>; 
+    <% } else { %>
+    var data_ky_so_sanh = []; 
+    <% } %>
+    var ky_so_sanh = "<%= ky_so_sanh %>";
+    var ky_bao_cao = "<%= ky_bao_cao %>";
+</script> 

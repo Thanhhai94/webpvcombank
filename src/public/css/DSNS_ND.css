@@ -1,0 +1,17 @@
+.staff_on_list {
+    margin-bottom: 6px;
+    min-height: 42px;
+    background-color: white;
+    border: none;
+    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+}
+
+.staff_on_list p{
+    margin-bottom: 0px;
+    color: #3b3b3b;
+    font-weight: 500;
+    font-size: 14px;
+}
+.staff_on_list .col-3, .staff_on_list .col-2, .staff_on_list .col-1{
+    margin: auto;
+}

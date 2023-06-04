@@ -1,0 +1,18 @@
+.daily_dashboard_HDV_title {
+    border-bottom: 2px solid var(--color-bl);
+    margin-bottom: 10px;
+}
+
+.daily_dashboard_HDV_title .col-7 {
+    text-align: center;
+}
+.daily_dashboard_HDV_title .col-2 p {
+    float: right;
+    font-weight: bold;
+    color: var(--color-bl);
+
+}
+
+.daily_dashboard_HDV_title .col-1 input {
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+.formLogin {
+  margin: auto;
+  margin-top: 150px;
+  align-items: center;
+  width: 400px;
+  background-color: white;
+  align-items: center;
+  border: none;
+  border-radius: 20px;
+  padding: 40px;
+  color: #095182;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.form h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  height: 3rem;
+}
+
+.form-control-pv {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.form-control-pv input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-bottom: 1px solid #ced4da;
+  width: 100%;
+}
+
+.form-control-pv input:focus {
+  border-bottom: 2px solid #ffc708;
+}
+.form-button {
+  /* align-items: center; */
+  margin-top: 30px;
+  text-align: center;
+}
+
+.form-button button {
+  width: 40%;
+}
+.form-button button:hover {
+  background-color: #bb8e09;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}
+
+.success{
+  color: green;
+}

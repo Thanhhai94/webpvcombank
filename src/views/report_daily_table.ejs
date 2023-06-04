@@ -1,0 +1,43 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/homepage.css">
+<link rel="stylesheet" href="/css/Chart_Daily/title_report_Daily.css">
+<link rel="stylesheet" href="/css/Chart_Daily/daily_table_1_1.css">
+<link rel="stylesheet" href="/css/Chart_Daily/daily_table_1_2.css">
+<link rel="stylesheet" href="/css/Chart_Daily/daily_table_2.css">
+<link rel="stylesheet" href="/css/Chart_Daily/daily_table_2_1.css">
+<link rel="stylesheet" href="/css/Chart_Daily/menu_left_Daily.css">
+
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container-fluid homepage" >
+        <div class="row">
+            <div class="col-lg-2" style="padding: 0; height: 100vh; ">
+                <%- include('includes/menu_left_daily') %>
+            </div>
+            <div class="col-lg-10" style="font-size: 12px; padding-left: 0; padding-right: 10px;">
+                <%- include('includes/title_report_Daily.ejs') %>
+                <%- include('includes/daily_table_1.ejs') %>
+                <%- include('includes/daily_table_2.ejs') %>
+                <%- include('includes/daily_table_3.ejs') %>
+                <%- include('includes/daily_table_4.ejs') %>
+            </div>
+        </div>
+    </div>
+<%- include('includes/end.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

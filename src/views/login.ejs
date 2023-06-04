@@ -1,0 +1,22 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container-fluid login-page">
+        <div class="formLogin">
+            <form action="/login" method="POST" class="form">
+                <h1>Đăng nhập nội bộ</h1>
+                <div class="form-control-pv">
+                    <input id="username" name="username" type="text"  placeholder="Tên đăng nhập">
+                </div>
+                <div class="form-control-pv">
+                    <input id="password" name="password" type="password" placeholder="Mật khẩu">
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-secondary">ĐĂNG NHẬP</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<%- include('includes/end.ejs') %>

@@ -1,0 +1,37 @@
+    <div class="col-lg-12">
+    <form action="/monthly/tindung" method="POST" class="select_time">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-lg-2 select_title">
+                        <p>Kỳ báo cáo:</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <input placeholder="Lựa chọn ngày" name="ky_bao_cao" value="<%=ky_bao_cao %>" type="text" onfocus="(this.type='date')"/>
+                    </div>
+                    <div class="col-lg-2 select_title">
+                        <p>Kỳ so sánh:</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <input placeholder="Lựa chọn ngày" name="ky_so_sanh" value="<%=ky_so_sanh %>" type="text" onfocus="(this.type='date')"/>
+                    </div>
+                    <div class="col-lg-2">
+                        <select class="" name="KHOI_QL" id="">
+                            <option value="KHCN">KHCN</option>
+                            <option value="KHDN">KHDN</option>
+                            <option value="KHDNL">KHDNL</option>
+                            <option selected value="TOAN_HANG">TOÀN HÀNG</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="submit">So sánh</button>
+                    </div>
+                        
+                            
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </form>
+</div>

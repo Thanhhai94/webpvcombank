@@ -1,0 +1,57 @@
+.statistics .frame {
+    margin-bottom: 12px;
+    background-color: var(--color-body);
+    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+    min-height: 80px;
+    border-radius: 10px;
+}
+
+.statistics .col-12 p {
+    padding: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.statistics .frame .col-12 {
+    height: 40px
+}
+
+.statistics .TS {
+    border-left: 6px solid rgb(141, 102, 102);
+}
+
+.TS_text {
+    color: rgb(141, 102, 102);
+}
+
+.statistics .HT {
+    border-left: 6px solid rgb(102, 141, 120);
+}
+
+.HT_text {
+    color: rgb(102, 141, 120);
+}
+
+.statistics .TH {
+    border-left: 6px solid rgb(177, 196, 93);
+}
+
+.TH_text {
+    color: rgb(177, 196, 93);
+}
+
+.statistics .CHT {
+    border-left: 6px solid rgb(190, 45, 45);
+}
+
+.CHT_text {
+    color: rgb(190, 45, 45);
+}
+
+
+.statistics .frame .KQ {
+    margin: 0;
+    font-size: 22px;
+}

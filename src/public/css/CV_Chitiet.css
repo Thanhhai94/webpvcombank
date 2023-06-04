@@ -1,0 +1,91 @@
+textarea.form-control {
+    height: 150px;
+    padding-left: 20px;
+}
+
+.col-lg-8 p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.Form-GiaoCV .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.col-lg-4 {
+    padding: 0;
+}
+
+.button-Cancel {
+    background-color: gray;
+    width: 80px;
+    border-radius: 5px;
+}
+.button-Cancel a {
+    color: white;
+    height: 100%;
+}
+
+div .button_cancel {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: gray;
+    margin-left: 5px;
+    border: 1px solid;
+    color: white;
+    /* color: white; */
+    height: 36px;
+    border-radius: 5px;
+    
+}
+.a_cancel {
+    color: white;
+    line-height: 36px;
+}
+
+.a_cancel:hover {
+    color: white;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+.button_update {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    background-color: var(--color-infor-job-detail);
+    color: white;
+    
+}
+.button_update:hover {
+    font-weight: bold;
+}
+
+.row_select .row {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+.row_select input {
+    border: none;
+    text-align: center;
+}
+
+.row_select .input_time {
+    background-color: var(--color-infor-job-detail);
+    width: 80%;
+    border-radius: 5px;
+    color: white;
+}
+
+.row_select .select_statusJob {
+    width: 80%;
+    background-color: var(--color-infor-job-detail);
+    border-radius: 5px;
+    color: white;
+}

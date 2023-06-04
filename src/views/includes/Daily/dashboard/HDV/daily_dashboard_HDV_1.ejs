@@ -1,0 +1,73 @@
+<div class="row">
+    <div style="width: 20%; padding: 0 10px 0 10px;">
+            <%- include('daily_dashboard_HDV_1_1.ejs',{
+                    title: titles[0], 
+                    current: (QUY_MO_CKH[0].Amt=='') ? '' : Math.round(QUY_MO_CKH[0].Amt ).toLocaleString("en-US"), 
+                        Dtd: (QUY_MO_CKH[0].Dtd=='') ? '' : Math.round(QUY_MO_CKH[0].Dtd ).toLocaleString("en-US"),
+                        Dtd_value: QUY_MO_CKH[0].Dtd,
+                        Mtd: (QUY_MO_CKH[0].Mtd=='') ? '' : Math.round(QUY_MO_CKH[0].Mtd ).toLocaleString("en-US"),
+                        Mtd_value: QUY_MO_CKH[0].Mtd,
+                        Ytd: (QUY_MO_CKH[0].Ytd=='') ? '' : Math.round(QUY_MO_CKH[0].Ytd ).toLocaleString("en-US"),
+                        Ytd_value: QUY_MO_CKH[0].Ytd,
+                    Kht: '',
+                    Kht_value:''
+            }) %>
+    </div>
+    <div style="width: 20%; padding: 0 10px 0 10px;">
+        <%- include('daily_dashboard_HDV_1_1.ejs',{
+            title: titles[1], 
+            current: (QUY_MO_KKH[0].Amt=='') ? '' : Math.round(QUY_MO_KKH[0].Amt ).toLocaleString("en-US"), 
+                Dtd: (QUY_MO_KKH[0].Dtd=='') ? '' : Math.round(QUY_MO_KKH[0].Dtd ).toLocaleString("en-US"),
+                Dtd_value: QUY_MO_KKH[0].Dtd,
+                Mtd: (QUY_MO_KKH[0].Mtd=='') ? '' : Math.round(QUY_MO_KKH[0].Mtd ).toLocaleString("en-US"),
+                Mtd_value: QUY_MO_KKH[0].Mtd,
+                Ytd: (QUY_MO_KKH[0].Ytd=='') ? '' : Math.round(QUY_MO_KKH[0].Ytd ).toLocaleString("en-US"),
+                Ytd_value: QUY_MO_KKH[0].Ytd,
+            Kht: '',
+            Kht_value:''
+        }) %>
+</div>
+<div style="width: 20%; padding: 0 10px 0 10px;">
+    <%- include('daily_dashboard_HDV_1_1.ejs',{
+            title: titles[2], 
+            current: (TY_TRONG_CASA[0].Amt == '') ? '' : `${(TY_TRONG_CASA[0].Amt*100).toFixed(2)} %`, 
+            Dtd: (TY_TRONG_CASA[0].Dtd == '') ? '' : `${(TY_TRONG_CASA[0].Dtd*100).toFixed(2)} %`,
+            Dtd_value: TY_TRONG_CASA[0].Dtd,
+            Mtd: (TY_TRONG_CASA[0].Mtd == '') ? '' : `${(TY_TRONG_CASA[0].Mtd*100).toFixed(2)} %`,
+            Mtd_value: TY_TRONG_CASA[0].Mtd,
+            Ytd: (TY_TRONG_CASA[0].Ytd == '') ? '' : `${(TY_TRONG_CASA[0].Ytd*100).toFixed(2)} %`,
+            Ytd_value: TY_TRONG_CASA[0].Ytd,
+            Kht: '',
+            Kht_value:''
+    }) %>
+</div>
+<div style="width: 20%; padding: 0 10px 0 10px;">
+    <%- include('daily_dashboard_HDV_1_1.ejs',{
+            title: titles[3], 
+            current: (LAI_SUAT_CKH[0].Amt == '') ? '' : `${(LAI_SUAT_CKH[0].Amt*100).toFixed(2)} %`, 
+            Dtd: (LAI_SUAT_CKH[0].Dtd == '') ? '' : `${(LAI_SUAT_CKH[0].Dtd*100).toFixed(2)} %`,
+            Dtd_value: LAI_SUAT_CKH[0].Dtd,
+            Mtd: (LAI_SUAT_CKH[0].Mtd == '') ? '' : `${(LAI_SUAT_CKH[0].Mtd*100).toFixed(2)} %`,
+            Mtd_value: LAI_SUAT_CKH[0].Mtd,
+            Ytd: (LAI_SUAT_CKH[0].Ytd == '') ? '' : `${(LAI_SUAT_CKH[0].Ytd*100).toFixed(2)} %`,
+            Ytd_value: LAI_SUAT_CKH[0].Ytd,
+            Kht: '',
+            Kht_value:''
+    }) %>
+</div>
+<div style="width: 20%; padding: 0 10px 0 10px;">
+    <%- include('daily_dashboard_HDV_1_1.ejs',{
+            title: titles[4], 
+            current: "", 
+            Dtd: "",
+            Dtd_value: "",
+            Mtd: "",
+            Mtd_value: "",
+            Ytd: "",
+            Ytd_value: "",
+            Kht: "",
+            Kht_value:""
+    }) %>
+</div>
+     
+</div>

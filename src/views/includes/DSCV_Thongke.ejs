@@ -1,0 +1,90 @@
+<div class="row statistics">
+    <div class="col-3">
+        <div class="frame TS">
+            <div class="row">
+                <div class="col-12 TS_text">
+                    <p>TỔNG SỐ CÔNG VIỆC</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="KQ">
+                        <%= listjob.length %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="frame HT">
+        <div class="row">
+            <div class="col-12 HT_text">
+                <p >HOÀN THÀNH</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <p class="KQ">
+
+                    <%= listjob.reduce(function(total,job){
+                        if(job.statusJob == 2) {
+                            return total + 1
+                        }
+                        else {
+                            return total
+                        }
+                    },0) %>
+                </p>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="frame TH">
+        <div class="row">
+            <div class="col-12 TH_text">
+                <p>ĐANG THỰC HIỆN</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <p class="KQ">
+
+                    <%= listjob.reduce(function(total,job){
+                        if(job.statusJob == 1) {
+                            return total + 1
+                        }
+                        else {
+                            return total
+                        }
+                    },0) %>
+                </p>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="frame CHT">
+        <div class="row">
+            <div class="col-12 CHT_text">
+                <p>CHƯA THỰC HIỆN</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="KQ">
+
+                    <%= listjob.reduce(function(total,job){
+                        if(job.statusJob == 0) {
+                            return total + 1
+                        }
+                        else {
+                            return total
+                        }
+                    },0) %>
+                </p>
+        </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+.title_report_Daily {
+    border-bottom: 2px solid var(--color-bl);
+    margin-bottom: 10px;
+}
+
+.title_report_Daily .col-7 {
+    text-align: center;
+}
+.title_report_Daily .col-2 p {
+    float: right;
+    font-weight: bold;
+    color: var(--color-bl);
+
+}
+
+.title_report_Daily .col-1 input {
+    text-align: center;
+}

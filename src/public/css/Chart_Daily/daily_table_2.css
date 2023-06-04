@@ -1,0 +1,21 @@
+.title_daily_table_2 {
+    margin-top: 24px;
+}
+
+.title_daily_table_2 .col-6 p{
+    margin-top: 24px;
+    background-color: rgb(212, 172, 54);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.title_daily_table_2 .col-12 p {
+    background-color: var(--color-bl);
+    color: white;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+

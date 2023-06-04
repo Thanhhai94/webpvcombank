@@ -1,0 +1,45 @@
+<div class="daily_table_1_1">
+<div class="row">
+    <div class="col-12 row_1">
+        <p><%= title %></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 row_2">
+        <p><%= current %></p>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-12">
+        <div style="background-color: rgb(129, 205, 243); padding: 0 10px ; border-bottom: 1px solid rgb(222, 222, 222);">
+            <div class="row row_3">
+                <div class="col-lg-3"><p>DTD</p></div>
+                <div style="line-height: 36px;" class="col-lg-1"><i class="<%= (Dtd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                <div style="line-height: 36px;" class="col-lg-6"><p><%= Dtd %></p></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div style="background-color: rgb(129, 205, 243); padding: 0 10px ; border-bottom: 1px solid rgb(222, 222, 222);">
+            <div class="row row_3">
+                <div class="col-lg-3"><p>MTD</p></div>
+                <div style="line-height: 36px;" class="col-lg-1"><i class="<%= (Mtd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                <div style="line-height: 36px;" class="col-lg-6"><p><%= Mtd %></p></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div style="background-color: rgb(129, 205, 243); padding: 0 10px ;">
+            <div class="row row_3">
+                <div class="col-lg-3"><p>YTD</p></div>
+                <div style="line-height: 36px;" class="col-lg-1"><i class="<%= (Ytd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                <div style="line-height: 36px;" class="col-lg-6"><p><%= Ytd %></p></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

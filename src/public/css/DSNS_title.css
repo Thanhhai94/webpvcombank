@@ -1,0 +1,15 @@
+.list_staff_title {
+    margin-bottom: 8px;
+}
+
+.list_staff_title .col-3, .list_staff_title .col-2, .list_staff_title .col-1{
+    margin-bottom: 0px;
+    
+}
+
+.list_staff_title p{
+    color: var(--color-bl);
+    margin-bottom: 0px;
+    font-weight: 600;
+    align-items: center;
+}

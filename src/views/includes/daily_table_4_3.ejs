@@ -1,0 +1,70 @@
+<table class="title_daily_table_2_1" style="margin-top: 24px;">
+    <tr style="background-color: #0772ba; color: #fff;font-weight: bold;">
+        <td colspan="5">Tỷ lệ % Casa</td>
+    </tr>
+
+    <tr>
+        <td style="background-color: rgb(241, 222, 159);font-weight: bold;" >Khối</td>
+        <td ><%= date %></td>
+        <td >DTD</td>
+        <td >MTD</td>
+        <td >YTD</td>
+    </tr>
+    <tr style="background-color: rgb(25, 104, 25);color: #fff;font-weight: bold;">
+        <td>Toàn hàng</td>
+        <td class="<%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Amt >0) ? 'white' : 'red' %>"><%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Amt == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Dtd >0) ? 'white' : 'red' %>"><%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Mtd >0) ? 'white' : 'red' %>"><%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Ytd >0) ? 'white' : 'red' %>"><%= (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+    <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
+        <td>KHCN</td>
+        <td class="<%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Amt == '') ? '' : `${(TY_TRONG_CASA_KHCN_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_KHCN_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_KHCN_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHCN_TONGKHOI[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_KHCN_TONGKHOI[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+    <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
+        <td>KHDN</td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Amt == '') ? '' : `${(TY_TRONG_CASA_KHDN_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_KHDN_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_KHDN_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_TONGKHOI[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_KHDN_TONGKHOI[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+    <tr style="font-style: italic;">
+        <td>Upper</td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Core[0].Amt >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Core[0].Amt == '') ? '' : `${(TY_TRONG_CASA_KHDN_Core[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Core[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_KHDN_Core[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Core[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_KHDN_Core[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Core[0].Ytd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Core[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_KHDN_Core[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+    <tr style="font-style: italic;">
+        <td>Upper</td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Upper[0].Amt == '') ? '' : `${(TY_TRONG_CASA_KHDN_Upper[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Upper[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_KHDN_Upper[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Upper[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_KHDN_Upper[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDN_Upper[0].Ytd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDN_Upper[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_KHDN_Upper[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+    <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
+        <td>KHDNL</td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Amt == '') ? '' : `${(TY_TRONG_CASA_KHDNL_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_TONGKHOI[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_TONGKHOI[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+    <tr style="font-style: italic;">
+        <td>PVN</td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_PVN[0].Amt == '') ? '' : `${(TY_TRONG_CASA_KHDNL_PVN[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_PVN[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_PVN[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_PVN[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_PVN[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_PVN[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_PVN[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+    <tr style="font-style: italic;">
+        <td>Non-PVN</td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Amt == '') ? '' : `${(TY_TRONG_CASA_KHDNL_Non_PVN[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_Non_PVN[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_Non_PVN[0].Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= (TY_TRONG_CASA_KHDNL_Non_PVN[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_KHDNL_Non_PVN[0].Ytd*100).toFixed(2)} %` %></td>
+    </tr>
+
+</table>

@@ -1,0 +1,20 @@
+<div class="row table_row" >
+    <div class="col-lg-1 col-sm-1 ">
+        <p><%= job.dateJob %></p>
+    </div>
+    <div class="col-lg-4 col-sm-4 ">
+        <p><%= job.titleJob %></p>
+    </div>
+    <div class="col-lg-2 col-sm-2 ">
+        <p><%= (job.statusJob==0)?'Chưa thực hiện' : (job.statusJob==1)? 'Đang thực hiện':'Hoàn thành' %></p>
+    </div>
+    <div class="col-lg-2 col-sm-2 ">
+        <p class="deadlineJob"><%= job.deadlineJob %></p>
+    </div>
+    <div class="col-lg-2 col-sm-2 ">
+        <p class="timelineJob"><%= job.timelineJob %></p>
+    </div>
+    <div class="col-lg-1 col-sm-1">
+        <a href="/DScongviec/<%= job.id %>">Chi tiết</a>
+    </div>
+</div>

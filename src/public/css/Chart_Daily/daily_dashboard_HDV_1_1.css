@@ -1,0 +1,57 @@
+.daily_dashboard_HDV_1_1 {
+    color: var(--color-bl);
+    font-weight: bold;
+}
+
+.daily_dashboard_HDV_1_1 p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.daily_dashboard_HDV_1_1 .row_1{
+    height: 46px;
+    line-height: 46px;
+    margin-bottom: 5px;
+    
+}
+.daily_dashboard_HDV_1_1 .row_2{
+    height: 46px;
+    line-height: 46px;
+}
+
+.daily_dashboard_HDV_1_1 .row_1 p{
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.daily_dashboard_HDV_1_1 .row_2 p {
+    background-color: var(--color-bl);
+    color: white;
+}
+
+/* .daily_dashboard_HDV_1_1 .row_3 .col-4{
+    padding: 0;
+} */
+
+.daily_dashboard_HDV_1_1 .row_3 p{
+    height: 36px;
+}
+
+.daily_dashboard_HDV_1_1 .row_3 .col-lg-5{
+   padding: 0;
+   line-height: 36px;
+}
+.daily_dashboard_HDV_1_1 .row_3 .col-lg-5 p{
+    color: black;
+ }
+
+ .green {
+    color: green;
+ }
+ .red {
+    color: red;
+ }
+
+
+
+

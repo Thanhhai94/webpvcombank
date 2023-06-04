@@ -1,0 +1,29 @@
+.table_row {
+    /* border: 1px solid black; */
+    background-color: white;
+    min-height:36px;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    border: none;
+    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+    border-left: 3px solid var(--color-bl);
+}
+.table_row p {
+    margin-bottom: 0;
+}
+
+.table_row .col-lg-1  {
+    padding: 0;
+    text-align: center;
+}
+.table_row .col-lg-2  {
+    padding: 0;
+    text-align: center;
+}
+
+.table_row .col-lg-4  {
+    color: var(--color-bl);
+    font-weight: 500;
+}

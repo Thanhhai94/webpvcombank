@@ -1,0 +1,54 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/homepage.css">
+<link rel="stylesheet" href="/css/DSCV_title.css">
+<link rel="stylesheet" href="/css/DSCV_thongke.css">
+<link rel="stylesheet" href="/css/DSCV_ND.css">
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script>dayjs().format()</script>
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container homepage">
+        <div class="row">
+        
+                <h2>Danh sách công việc</h2>
+            
+        </div>
+        <%- include('includes/DSCV_Thongke.ejs') %>
+        <%- include('includes/DSCV_title.ejs') %>
+        <% for(let job of listjob) { %>
+            <%- include('includes/QUAN_LY_DSCV_ND.ejs',{job:job}) %>
+        <% } %>
+    </div>
+
+    <script>
+        var makeDate = function(date){
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        return day + "-" + month + "-" + year ;
+        }
+    
+
+        const dealineJobElement = document.getElementsByClassName("deadlineJob")        
+        for(let i = 0 ; i < dealineJobElement.length; i++) {
+            const datevalue = new Date(dealineJobElement[i].innerHTML.toString())
+            dealineJobElement[i].innerHTML = makeDate(datevalue)
+        }
+
+        const timelineJobElement = document.getElementsByClassName("timelineJob") 
+        console.log((timelineJobElement[0].innerHTML)? 'ok':'nook')       
+        for(let i = 0 ; i < timelineJobElement.length; i++) {
+            
+            if(timelineJobElement[i].innerHTML){
+                return timelineJobElement[i].innerHTML = makeDate(new Date(timelineJobElement[i].innerHTML.toString()))
+            } else {
+                return timelineJobElement[i].innerHTML = "__"
+            }
+            
+        }
+
+    </script>
+
+<%- include('includes/end.ejs') %>

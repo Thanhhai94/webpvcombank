@@ -1,0 +1,95 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/homepage.css">
+<link rel="stylesheet" href="/css/CV_Chitiet.css">
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container homepage">
+        <form action="/DScongviec/<%= jobId %>" method="POST">
+            <input hidden type="text" name="id" value="<%= jobId %>"/>
+            <div class="row Form-GiaoCV">
+                <div class="col-lg-8">
+                    <h5><%=`Tiêu đề: ${jobDetail.titleJob}` %></h5>         
+        
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>Nội dung công việc được giao</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="form-floating">
+                        <textarea disabled class="form-control" placeholder="Nội dung cần thực hiện" id="floatingTextarea2" name="contentJob" ><%=jobDetail.contentJob %></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 row_select">
+                    <div class="row" >
+                    <div class="col-lg-4">Thời hạn thực hiện</div>
+                    <div class="col-lg-4">Tiến độ thực hiện</div>
+                    <div class="col-lg-4">Trạng thái</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 row_select">
+                    <div class="row" >
+                    <div class="col-lg-4">
+                        <input class="input_time" value="<%=jobDetail.deadlineJob %>" name="deadlineJob" type="date" disabled/>
+                    </div>
+                    <div class="col-lg-4">
+                        <input class="input_time" value="<%=jobDetail.timelineJob %>" name="timelineJob" type="date" disabled/>
+                    </div>
+                    <div class="col-lg-4">
+                        <select class="select_statusJob" name="statusJob" id="">
+                            <option <%= (jobDetail.statusJob==0) ? 'selected' : '' %> value="0">Chưa thực hiện</option>
+                            <option <%= (jobDetail.statusJob==1) ? 'selected' : '' %> value="1">Đang thực hiện</option>
+                            <option <%= (jobDetail.statusJob==2) ? 'selected' : '' %> value="2">Hoàn thành</option>
+                        </select>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>Ghi chú</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Ghi chú" id="floatingTextarea2" name="noteJob" ><%= jobDetail.noteJob %></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8" style="margin-top: 20px;">
+                    <div class="row">
+                        <div class="col-lg-6"></div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                            
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <button type="submit" class="button_update">Cập nhật</button>
+                                </div>
+                                <div class="col-lg-3 button_cancel">
+                                    <a class="a_cancel" href="/DSCongviec">Hủy</a>                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+
+
+        
+
+
+<%- include('includes/end.ejs') %>

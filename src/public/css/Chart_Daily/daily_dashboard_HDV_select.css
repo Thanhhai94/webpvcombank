@@ -1,0 +1,26 @@
+.daily_dashboard_HDV_select {
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgb(187, 189, 191);
+    padding-bottom: 5px;
+}
+
+.daily_dashboard_HDV_select a {
+    padding-bottom: 6px;
+    color: black;
+    font-weight: 600;
+}
+
+.daily_dashboard_HDV_select a:hover {
+   border-bottom: 2px solid var(--color-bl);
+   color: var(--color-bl);
+}
+
+.padding_select a{
+    margin-right: 42px;
+}
+
+.daily_dashboard_HDV_select .active {
+    border-bottom: 2px solid var(--color-bl);
+    color: var(--color-bl);
+    font-size: 18px;
+}
