@@ -55,7 +55,7 @@
             Kht_value:''
     }) %>
 </div>
-<div style="width: 20%; padding: 0 10px 0 10px;">
+<div <%= (active == 'TOAN_HANG'? '': 'hidden') %> style="width: 20%; padding: 0 10px 0 10px;">
     <%- include('daily_dashboard_HDV_1_1.ejs',{
             title: titles[4], 
             current: "", 

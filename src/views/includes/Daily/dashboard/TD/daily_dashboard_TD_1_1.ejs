@@ -1,0 +1,56 @@
+<div class="daily_dashboard_TD_1_1">
+    <div class="row">
+        <div class="col-12 row_1">
+            <p><%= title %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 row_2">
+            <p><%= current %></p>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-12">
+            <div style="background-color: rgb(221, 235, 247); padding: 0 0px ;">
+                <div class="row row_3">
+                    <div class="col-lg-5" style="padding-left: 20px;"><p style="float: left">Net ngày</p></div>
+                    <div style="line-height: 28px;" class="col-lg-1"><i class="<%= (Dtd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                    <div style="line-height: 28px; font-weight: 400" class="col-lg-5"><p style="float: right; padding-right: 10px;"><%= Dtd %></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="background-color: rgb(221, 235, 247); padding: 0 0px ;">
+                <div class="row row_3">
+                    <div class="col-lg-5" style="padding-left: 20px;"><p style="float: left">Net tháng</p></div>
+                    <div style="line-height: 28px;" class="col-lg-1"><i class="<%= (Mtd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                    <div style="line-height: 28px; font-weight: 400" class="col-lg-5"><p style="float: right; padding-right: 10px;"><%= Mtd %></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="background-color: rgb(221, 235, 247); padding: 0 0px ;">
+                <div class="row row_3">
+                    <div class="col-lg-5" style="padding-left: 20px;"><p style="float: left">Net năm</p></div>
+                    <div style="line-height: 28px;" class="col-lg-1"><i class="<%= (Ytd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                    <div style="line-height: 28px; font-weight: 400" class="col-lg-5"><p style="float: right; padding-right: 10px;"><%= Ytd %></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-12">
+            <div style="background-color: rgb(221, 235, 247); padding: 0 0px ;">
+                <div class="row row_3">
+                    <div class="col-lg-5" style="padding-left: 20px;"><p style="float: left">KH tháng</p></div>
+                    <div style="line-height: 28px;" class="col-lg-1"><i class="<%= (Kht_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                    <div style="line-height: 28px; font-weight: 400" class="col-lg-5"><p style="float: right; padding-right: 10px;"><%= Kht %></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

@@ -16,6 +16,9 @@ Highcharts.chart('chart_2', {
     subtitle: {
       text: ''
     },
+    credits: {
+      enabled: false
+    },
     xAxis: [{
       categories: input_month,
       crosshair: true,

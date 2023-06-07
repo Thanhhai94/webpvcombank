@@ -89,6 +89,30 @@ const getDataTDDaily = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
     }
 }
 
+const getDataFromToDateTD = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TD.findAll({
+            where: {
+                Rptdate: {
+                    [Op.in]: Rptdate
+                  },
+                  KHOI_QL: KHOI_QL,
+                  KY_HAN: KY_HAN,
+                  NHOM_KH: NHOM_KH,
+                  CHI_TIEU: CHI_TIEU
+            },
+            order: [['Rptdate', 'ASC']]
+        })
+        if(KQ) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const getCustomerTDDailyCNTang = async(Rptdate) => {
     try {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
@@ -186,7 +210,7 @@ const getCustomerTDDailyTCDNGiam = async(Rptdate) => {
     }
 }
 
-const getCostumerAsc = async (Rptdate, KY_HAN, KHOI_QL) => {
+const getCustomerAsc = async (Rptdate, KY_HAN, KHOI_QL) => {
     try {
         const KQ = await db.Report_HDV_Customer_Daily.findAll({
             where : {
@@ -208,7 +232,7 @@ const getCostumerAsc = async (Rptdate, KY_HAN, KHOI_QL) => {
     }
 }
 
-const getCostumerDesc = async (Rptdate, KY_HAN, KHOI_QL) => {
+const getCustomerDesc = async (Rptdate, KY_HAN, KHOI_QL) => {
     try {
         const KQ = await db.Report_HDV_Customer_Daily.findAll({
             where : {
@@ -231,9 +255,6 @@ const getCostumerDesc = async (Rptdate, KY_HAN, KHOI_QL) => {
 }
 
 
-
-
-
 module.exports = {
     getDataHDVDaily: getDataHDVDaily,
     getDataTDDaily: getDataTDDaily,
@@ -241,7 +262,8 @@ module.exports = {
     getCustomerTDDailyCNGiam: getCustomerTDDailyCNGiam,
     getCustomerTDDailyTCDNTang: getCustomerTDDailyTCDNTang,
     getCustomerTDDailyTCDNGiam:getCustomerTDDailyTCDNGiam,
-    getCostumerAsc: getCostumerAsc,
-    getCostumerDesc : getCostumerDesc,
-    getDataFromToDate: getDataFromToDate
+    getCustomerAsc: getCustomerAsc,
+    getCustomerDesc : getCustomerDesc,
+    getDataFromToDate: getDataFromToDate,
+    getDataFromToDateTD:getDataFromToDateTD
 }

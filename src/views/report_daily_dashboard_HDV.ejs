@@ -6,17 +6,20 @@
 <link rel="stylesheet" href="/css/Chart_Daily/daily_dashboard_HDV_title.css">
 <link rel="stylesheet" href="/css/Chart_Daily/daily_dashboard_HDV_select.css">
 <link rel="stylesheet" href="/css/Chart_Daily/dashboard/HDV/daily_dashboard_HDV_chart_1.css">
+<link rel="stylesheet" href="/css/Chart_Daily/dashboard/HDV/daily_dashboard_HDV_chart_2.css">
+<link rel="stylesheet" href="/css/Chart_Daily/dashboard/HDV/TKTT.css">
+
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/pareto.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 </head>
 <body>
     <%- include('includes/navigation.ejs') %>
-    <div class="container-fluid homepage" >
+    <div class="container-fluid homepage" style="background-color: #DDDDDD;">
         <div class="row">
             <div class="col-lg-2" style="padding: 0; height: 100vh; ">
                 <%- include('includes/menu_left_daily') %>
@@ -25,23 +28,117 @@
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_title')%>
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_select') %>
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_1') %>
-
-                <div class="row">
-                    <div class="col-lg-5">
-                        <%- include('includes/Daily/dashboard/HDV/Chart1')%>
+                <div style="border: 3px solid #0772ba; margin-top: 20px; border-radius: 50px; z-index: 10000;">
+                    <div class="row" style="margin-top: 20px; margin-bottom: 30px;">
+                        <div class="col-lg-6">
+                            <%- include('includes/Daily/dashboard/HDV/Chart1')%>
+                        </div>
+                        <div class="col-lg-6">
+                            <%- include('includes/Daily/dashboard/HDV/Chart2')%>
+                        </div>
                     </div>
-                    <div class="col-lg-5">
-                        
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <%- include('includes/Daily/dashboard/HDV/Chart3')%>
+                        </div>
+                        <div class="col-lg-4" >
+                            <%- include('includes/Daily/dashboard/HDV/Chart6')%>
+                        </div>
+                        <div class="col-lg-4">
+                            <%- include('includes/Daily/dashboard/HDV/TKTT')%>
+                        </div>
                     </div>
-                    <div class="col-lg-2">
-                        
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <%- include('includes/Daily/dashboard/HDV/Chart4')%>
+                        </div>
+                        <div class="col-lg-6">
+                            <%- include('includes/Daily/dashboard/HDV/Chart5')%>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <%- include('includes/Daily/dashboard/HDV/Chart7')%>
+                        </div>
+                        <div class="col-lg-6">
+                            <%- include('includes/Daily/dashboard/HDV/Chart8')%>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6" style="
+                            text-align: center;
+                            border: 2px solid #0772ba;
+                            color: #0772ba;
+                            margin-bottom: 0;
+                            padding-bottom: 3px;
+                            padding-top: 3px;
+                            border-radius: 15px;
+                            margin-bottom: 20px;">
+                            <p style="margin-bottom: 0; font-weight: bold;">TOP KHÁCH HÀNG CÁ NHÂN BIẾN ĐỘNG</p>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                    <div class="row" style="font-size: 12px; margin-bottom: 20px;">
+                        <div class="col-6">
+                            <%- include('includes/Daily/dashboard/HDV/table_Daily_HDV_Dashboard',{
+                                title: 'HĐV CÓ KỲ HẠN',
+                                dataAsc: TOP_CKH_KHCN_DESC,
+                                dataDesc: TOP_CKH_KHCN_ASC 
+                            })%>
+                        </div>
+                        <div class="col-6">
+                            <%- include('includes/Daily/dashboard/HDV/table_Daily_HDV_Dashboard',{
+                                title: 'HĐV KHÔNG KỲ HẠN',
+                                dataAsc: TOP_KKH_KHCN_DESC,
+                                dataDesc: TOP_KKH_KHCN_ASC
+                            })%>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6" style="
+                            text-align: center;
+                            border: 2px solid #0772ba;
+                            color: #0772ba;
+                            margin-bottom: 0;
+                            padding-bottom: 3px;
+                            padding-top: 3px;
+                            border-radius: 15px;
+                            margin-bottom: 20px;">
+                            <p style="margin-bottom: 0; font-weight: bold;">TOP KHÁCH HÀNG DN/DNL BIẾN ĐỘNG</p>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                    <div class="row " style="font-size: 12px; margin-bottom: 40px;">
+                        <div class="col-6">
+                            <%- include('includes/Daily/dashboard/HDV/table_Daily_HDV_Dashboard',{
+                                title: 'HĐV CÓ KỲ HẠN',
+                                dataAsc: TOP_CKH_KHDN_DESC,
+                                dataDesc: TOP_CKH_KHDN_ASC 
+                            })%>
+                        </div>
+                        <div class="col-6">
+                            <%- include('includes/Daily/dashboard/HDV/table_Daily_HDV_Dashboard',{
+                                title: 'HĐV KHÔNG KỲ HẠN',
+                                dataAsc: TOP_KKH_KHDN_DESC,
+                                dataDesc: TOP_KKH_KHDN_ASC
+                            })%>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
     <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_1.js"></script>
+    <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_2.js"></script>
+    <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_3.js"></script>
+    <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_4.js"></script>
+    <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_5.js"></script>
+    <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_6.js"></script>
+    <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_7.js"></script>
+    <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_8.js"></script>
+
 <%- include('includes/end.ejs') %>
 
 

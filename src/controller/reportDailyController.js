@@ -140,14 +140,14 @@ const reportDailyTable = async (req,res) => {
     let TOP_DOANHNGHIEP_GIAM = await dailyServices.getCustomerTDDailyTCDNGiam(Rptdate)
 
     //Customer_HDV
-    let TOP_CKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','CN')
-    let TOP_CKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','CN')
-    let TOP_CKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','DN')
-    let TOP_CKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','DN')
-    let TOP_KKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','CN')
-    let TOP_KKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','CN')
-    let TOP_KKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','DN')
-    let TOP_KKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','DN')
+    let TOP_CKH_KHCN_ASC = await dailyServices.getCustomerAsc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'CKH','DN')
+    let TOP_CKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'CKH','DN')
+    let TOP_KKH_KHCN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','DN')
+    let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
 
     //GIAI_NGAN
 
@@ -490,14 +490,14 @@ const reportDailyTableSelect = async (req,res) => {
     let TOP_DOANHNGHIEP_GIAM = await dailyServices.getCustomerTDDailyTCDNGiam(Rptdate)
 
     //Customer_HDV
-    let TOP_CKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','CN')
-    let TOP_CKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','CN')
-    let TOP_CKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','DN')
-    let TOP_CKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','DN')
-    let TOP_KKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','CN')
-    let TOP_KKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','CN')
-    let TOP_KKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','DN')
-    let TOP_KKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','DN')
+    let TOP_CKH_KHCN_ASC = await dailyServices.getCustomerAsc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'CKH','DN')
+    let TOP_CKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'CKH','DN')
+    let TOP_KKH_KHCN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','DN')
+    let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
 
     //GIAI_NGAN
 

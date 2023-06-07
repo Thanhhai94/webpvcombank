@@ -1,0 +1,22 @@
+<div class="row daily_dashboard_TD_title" >
+    <div class="col-7">
+        <h4 style="float: left;"><%= `BÁO CÁO TÍN DỤNG ${dateFormat}` %></h4>
+    </div>
+    <div class="col-2">
+        <p>Ngày báo cáo</p>
+    </div>
+    <div class="col-1">
+        <input  name="bao_cao_ngay" value="<%=date %>" type="date" />
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('input[name="bao_cao_ngay"]').change(function(){
+           console.log($(this).val())
+           let date = $(this).val()
+        //    let param = date.replaceAll('-','')
+           window.location.href = `/daily/dashboard/tindung/${date}/TOAN_HANG`
+        })
+    })
+</script>

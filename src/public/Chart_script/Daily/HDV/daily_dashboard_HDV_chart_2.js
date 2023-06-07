@@ -1,0 +1,66 @@
+Highcharts.chart('daily_dashboard_HDV_chart_2', {
+  chart: {
+    backgroundColor: '#DDDDDD',
+    renderTo: 'container',
+    type: 'column',
+    marginLeft:30
+  },
+  credits: {
+    enabled: false
+  },
+  exporting : {
+    enabled: false
+  },
+  legend: {
+    enabled: false
+},
+  title: {
+    text: 'Tăng trưởng HĐV KKH theo ngày',
+    style: {
+      color: '#0772ba',
+    }
+  },
+  tooltip: {
+    shared: true
+  },
+  xAxis: {
+    lineWidth: 0,
+    categories: arrayInputDate,
+    // crosshair: true,
+    labels: {
+      rotation: -45,
+    },
+  },
+  yAxis: [{
+    minPadding: 0,
+    gridLineWidth: 0,
+    plotLines:[{
+      color: '#000000',
+      width: 0.5,
+      value: 0,
+      zIndex: 5
+    }] ,
+    title: {
+      text: ''
+    },
+    labels: {
+      enabled: false,
+    }
+  }, {
+    title: {
+      text: ''
+    },
+  }],
+  series: [{
+    dataLabels : {
+      enabled: true,
+      format: '{point.y:.0f}'
+    },
+    color: '#66A54D',
+    pointWidth: 25,
+    name: 'Tỷ đồng',
+    type: 'column',
+    zIndex: 2,
+    data: data_HUY_DONG_VON_KKH
+  }]
+});

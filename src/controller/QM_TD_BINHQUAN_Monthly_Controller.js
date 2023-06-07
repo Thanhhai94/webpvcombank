@@ -29,7 +29,7 @@ const getAll_QM_TD_BINHQUAN = async(req,res) => {
     let inputMonth = month.map(value => +value)
     //end
 
-    return res.render('test',{
+    return res.render('report_monthly_dashboard_TD',{
         staff:staff,
         ky_bao_cao: (req.session.ky_bao_cao)?(req.session.ky_bao_cao):'',
         ky_so_sanh: (req.session.ky_so_sanh)?(req.session.ky_so_sanh):'',
@@ -120,7 +120,7 @@ const post_QM_TD_BINHQUAN = async(req,res) => {
     //Render
 
     if(data_BC && data_SS ) {
-        return res.render("test", {
+        return res.render("report_monthly_dashboard_TD", {
             ky_bao_cao: req.body.ky_bao_cao,
             ky_so_sanh: req.body.ky_so_sanh,
             data_ky_bao_cao: JSON.stringify(input_data_BC),
@@ -134,7 +134,7 @@ const post_QM_TD_BINHQUAN = async(req,res) => {
             KHOI_QL: KHOI_QL,
         })
     } else {
-        return res.render("test", {
+        return res.render("report_monthly_dashboard_TD", {
             ky_bao_cao: req.body.ky_bao_cao,
             ky_so_sanh: req.body.ky_so_sanh,
             data_ky_bao_cao: [],

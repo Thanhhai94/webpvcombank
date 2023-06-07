@@ -1,0 +1,72 @@
+/* .TKTT .col-12{
+    padding: 0;
+    margin-bottom: 24px;
+    height: 36px;
+    
+}
+
+.TKTT .col-12 h5{
+    
+    margin-bottom: 0;
+    height: 36px;
+    text-align: center;
+}
+
+.TKTT .row .SLTKTT{
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    font-weight: 500;
+    color: white;
+    background-color: #0772ba;
+    border: 1px solid #0772ba;
+    line-height: 40px
+}
+
+.TKTT .row .SLTKTTEKYC{
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    font-weight: 500;
+    color: white;
+    background-color: #024674;
+    border: 1px solid #024674;
+    line-height: 40px
+} */
+
+.TKTT h5{
+    text-align: center;
+    height: 36px;
+}
+.TKTT p{
+    text-align: center;
+    height: 36px;
+    padding: 0 20px;
+}
+
+.TKTT .SLTKTT{
+    background-color: #0772ba;
+    border: 1px solid #0772ba;
+    font-weight: 500;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    
+}
+
+.TKTT .SLTKTTEKYC{
+    background-color: #024674;
+    border: 1px solid #024674;
+    font-weight: 500;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+}
+
+.TKTT .note{
+    font-style: italic;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 0;
+    float: left;
+}

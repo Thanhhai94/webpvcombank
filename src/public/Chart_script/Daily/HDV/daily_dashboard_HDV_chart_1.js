@@ -1,9 +1,14 @@
 Highcharts.chart('daily_dashboard_HDV_chart_1', {
   chart: {
+    backgroundColor: '#DDDDDD',
     renderTo: 'container',
-    type: 'column'
+    type: 'column',
+    marginLeft:30
   },
   credits: {
+    enabled: false
+  },
+  exporting : {
     enabled: false
   },
   legend: {
@@ -20,13 +25,15 @@ Highcharts.chart('daily_dashboard_HDV_chart_1', {
   },
   xAxis: {
     lineWidth: 0,
-    categories: date_HUY_DONG_VON_CKH,
+    categories: arrayInputDate,
     crosshair: true,
     labels: {
-      rotation: -90,
+      rotation: -45,
     },
   },
   yAxis: [{
+    minPadding: 0,
+
     gridLineWidth: 0,
     plotLines:[{
       color: '#000000',
@@ -50,7 +57,9 @@ Highcharts.chart('daily_dashboard_HDV_chart_1', {
       enabled: true,
       format: '{point.y:.2f}'
     },
-    name: 'Nghìn tỷ',
+    color: '#336B87',
+    pointWidth: 25,
+    name: 'Tỷ đồng',
     type: 'column',
     zIndex: 2,
     data: data_HUY_DONG_VON_CKH

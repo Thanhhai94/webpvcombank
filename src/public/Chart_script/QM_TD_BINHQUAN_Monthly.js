@@ -3,9 +3,19 @@ input_data_ky_bao_cao = data_ky_bao_cao.map(value => value.toFixed(0))
 input_data_ky_so_sanh = data_ky_so_sanh.map(value => value.toFixed(0))
 console.log("input_data_ky_bao_cao",input_data_ky_bao_cao)
 
+Highcharts.setOptions({
+  lang: {
+    decimalPoint: '.',
+    thousandsSep: ','
+  }
+});
+
 Highcharts.chart('CHART_1', {
     chart: {
       type: 'column'
+    },
+    exporting : {
+      enabled: false
     },
     title: {
       text: 'Quy mô tín dụng bình quân'
@@ -38,6 +48,7 @@ Highcharts.chart('CHART_1', {
     series: [{
       dataLabels: {
         enabled:true,
+        format: '{point.y:,.0f}',
         style: {
           fontSize: 9,
           textOutline: '1px 1px contrast'
@@ -50,6 +61,7 @@ Highcharts.chart('CHART_1', {
       data: data_ky_bao_cao
     }, {
       dataLabels: {
+        format: '{point.y:,.0f}',
         enabled:true,
         style: {
           fontSize: 9,

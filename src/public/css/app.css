@@ -28,3 +28,9 @@ body {
     align-items: center;
     height: 100vh;
 }
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}

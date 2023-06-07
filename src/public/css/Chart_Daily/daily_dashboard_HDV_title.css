@@ -1,15 +1,22 @@
 .daily_dashboard_HDV_title {
     border-bottom: 2px solid var(--color-bl);
     margin-bottom: 10px;
+    line-height: 36px;
 }
 
 .daily_dashboard_HDV_title .col-7 {
     text-align: center;
 }
+.daily_dashboard_HDV_title .col-7 h4{
+    margin-bottom: 0;
+    line-height: 36px;
+}
 .daily_dashboard_HDV_title .col-2 p {
     float: right;
     font-weight: bold;
     color: var(--color-bl);
+    line-height: 36px;
+    margin-bottom: 0;
 
 }
 

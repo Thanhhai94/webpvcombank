@@ -1,0 +1,60 @@
+.daily_dashboard_TD_1_2 .row_1 {
+    margin: 0 0;
+    height: 36px;
+    background-color: rgb(221, 235, 247);
+}
+
+.daily_dashboard_TD_1_2 .row_1 p {
+    line-height: 36px;
+    color: rgb(31, 78, 120);
+    text-align: center;
+    font-weight: bold;
+}
+.daily_dashboard_TD_1_2 .row_2 {
+    margin: 0 0;
+    height: 46px;
+}
+.daily_dashboard_TD_1_2 .row_2 p {
+    line-height: 46px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.daily_dashboard_TD_1_2 .row_2_left {
+    height: 46px;
+    background-color: rgb(31, 78, 120);
+}
+
+.daily_dashboard_TD_1_2 .row_2_right {
+    height: 46px;
+    background-color: #0772BA;
+}
+
+.daily_dashboard_TD_1_2 .row_3 {
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+}
+.daily_dashboard_TD_1_2 .row_4 {
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+}
+
+.daily_dashboard_TD_1_2 .col-4 {
+    padding: 0;
+    height: 56px;
+    line-height: 56px;
+   background-color: rgb(221, 235, 247);
+}
+
+.daily_dashboard_TD_1_2 .col-4 p{
+    float: left;
+}
+.daily_dashboard_TD_1_2 .col-8 {
+    height: 56px;
+    line-height: 56px;
+    padding: 0;
+    background-color: rgb(221, 235, 247);
+}
