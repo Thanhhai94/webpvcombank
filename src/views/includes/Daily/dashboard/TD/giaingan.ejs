@@ -1,0 +1,49 @@
+<div style="width: 65%;">
+    <p style="border-radius: 5px;
+        color: white;
+        background-color: rgb(31, 78, 120);
+        text-align: center;
+        margin-bottom: 0px;
+        height: 42px;
+        line-height: 42px;">Giải ngân</p>
+</div>
+<div style="display: flex; margin-top: 5px;">
+    <div style="width: 65%;">
+        <p style="color: black;
+        background-color: rgb(221, 235, 247);
+        text-align: center;
+        margin-bottom: 0px;
+        height: 42px;
+        line-height: 42px;">Tổng giải ngân</p>
+    </div>
+    <div style="width: 35%;">
+        <p style="color: white;
+        margin-left: 5px;
+        background-color: rgb(31, 78, 120);
+        text-align: center;
+        margin-bottom: 0px;
+        height: 42px;
+        line-height: 42px;"><%= (Tong_giai_ngan) ? (Math.round(Tong_giai_ngan)).toLocaleString("en-US") : '' %></p>
+    </div>
+    
+</div>
+<div style="display: flex; margin-top: 5px;">
+    <div style="width: 65%;">
+        <p style="color: black;
+        background-color: rgb(221, 235, 247);
+        text-align: center;
+        margin-bottom: 0px;
+        height: 42px;
+        line-height: 42px;">Giải ngân CT ưu đãi</p>
+    </div>
+    <div style="width: 35%;">
+        <p style="color: white;
+        margin-left: 5px;
+        background-color: rgb(31, 78, 120);
+        text-align: center;
+        margin-bottom: 0px;
+        height: 42px;
+        line-height: 42px;"><%= (Tong_giai_ngan_uu_dai) ? (Math.round(Tong_giai_ngan_uu_dai)).toLocaleString("en-US") : '' %></p>
+    </div>
+</div>
+

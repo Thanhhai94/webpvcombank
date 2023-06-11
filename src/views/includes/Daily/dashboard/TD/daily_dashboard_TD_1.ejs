@@ -2,15 +2,15 @@
     <div style="width: 20%; padding: 0 10px 0 10px;">
             <%- include('daily_dashboard_TD_1_1.ejs',{
                     title: 'Quy mô kỳ báo cáo', 
-                    current: 1, 
-                        Dtd: 2,
-                        Dtd_value: 2,
-                        Mtd: 3,
-                        Mtd_value: 3,
-                        Ytd: 4,
-                        Ytd_value: 4,
-                    Kht: 5,
-                    Kht_value:5
+                    current: (QMTD_Amt=='') ? '' : Math.round(QMTD_Amt).toLocaleString("en-US"), 
+                        Dtd: (QMTD_Dtd=='') ? '' : Math.round(QMTD_Dtd).toLocaleString("en-US"),
+                        Dtd_value: QMTD_Dtd,
+                        Mtd: (QMTD_Mtd=='') ? '' : Math.round(QMTD_Mtd).toLocaleString("en-US"),
+                        Mtd_value: QMTD_Mtd,
+                        Ytd: (QMTD_Ytd=='') ? '' : Math.round(QMTD_Ytd).toLocaleString("en-US"),
+                        Ytd_value: QMTD_Ytd,
+                    Kht: 0,
+                    Kht_value:0
             }) %>
     </div>
     <div style="width: 30%; padding: 0 10px 0 10px;">

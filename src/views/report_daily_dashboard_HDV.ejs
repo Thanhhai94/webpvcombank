@@ -20,14 +20,16 @@
 <body>
     <%- include('includes/navigation.ejs') %>
     <div class="container-fluid homepage" style="background-color: #DDDDDD;">
-        <div class="row">
-            <div class="col-lg-2" style="padding: 0; height: 100vh; ">
+        <div class="row" style="margin-bottom: 50px;">
+            <div class="col-lg-2" style="padding: 0; position: fixed; width: 100%; top: 46px;">
                 <%- include('includes/menu_left_daily') %>
             </div>
-            <div class="col-lg-10" style="padding-left: 0; padding-right: 10px;">
+            <div class="col-lg-10" style="padding-left: 0; padding-right: 10px; left: 215px; position: relative;">
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_title')%>
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_select') %>
+                <div style="position: relative; top: 80px;">
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_1') %>
+                
                 <div style="border: 3px solid #0772ba; margin-top: 20px; border-radius: 50px; z-index: 10000;">
                     <div class="row" style="margin-top: 20px; margin-bottom: 30px;">
                         <div class="col-lg-6">
@@ -127,6 +129,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

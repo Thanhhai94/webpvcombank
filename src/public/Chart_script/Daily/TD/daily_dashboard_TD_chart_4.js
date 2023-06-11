@@ -1,3 +1,9 @@
+Highcharts.setOptions({
+  lang: {
+    decimalPoint: '.',
+    thousandsSep: ','
+  }
+});
 Highcharts.chart('daily_dashboard_TD_chart_4', {
   chart: {
     renderTo: 'container',
@@ -25,7 +31,7 @@ Highcharts.chart('daily_dashboard_TD_chart_4', {
   },
   xAxis: {
     lineWidth: 0,
-    categories: ['KHDN','Core','Upper','KHDNL','THN'],
+    categories: ['KHDN','Core','Upper','KHDNL'],
     crosshair: true,
     labels: {
     },
@@ -54,13 +60,13 @@ Highcharts.chart('daily_dashboard_TD_chart_4', {
   series: [{
     dataLabels : {
       enabled: true,
-      format: '{point.y:.2f}'
+      format: '{point.y:,.0f}'
     },
     color: '#336B87',
-    pointWidth: 25,
+    pointWidth: 35,
     name: 'Tỷ đồng',
     type: 'column',
     zIndex: 2,
-    data: [10000,10000,10000,20000,30000]
+    data: data_TD_NHOMKH.Amt
   }]
 });

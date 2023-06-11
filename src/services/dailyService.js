@@ -2,6 +2,24 @@ import { syncTimeout } from "highcharts"
 import db from "../models/index"
 const { Op } = require("sequelize")
 
+const getArrayDataHDVDaily = async(Rptdate,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT.findAll({
+            where: {
+                Rptdate: Rptdate,
+                CHI_TIEU: CHI_TIEU  
+            }
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const getDataHDVDaily = async(Rptdate,KHOI_QL,NHOM_KH,CHI_TIEU) => {
     try {
         const KQ = await db.DAILYREPORT.findAll({
@@ -48,6 +66,24 @@ const getDataFromToDate = async(Rptdate,KHOI_QL,NHOM_KH,CHI_TIEU) => {
             order: [['Rptdate', 'ASC']]
         })
         if(KQ) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getArrayDataTDDaily = async(Rptdate,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TD.findAll({
+            where: {
+                Rptdate: Rptdate,
+                CHI_TIEU: CHI_TIEU  
+            }
+        })
+        if(KQ.length) {
             return KQ
         } else {
             return []
@@ -118,9 +154,6 @@ const getCustomerTDDailyCNTang = async(Rptdate) => {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
             where: {
                 Rptdate: Rptdate,
-                NOTE: {
-                    [Op.in]: ['PS_TANG','PS_MOI']
-                  },
                 KHOI_QL: 'KHCN',
             },
             order: [['DIFF', 'DESC']]
@@ -143,7 +176,6 @@ const getCustomerTDDailyCNGiam = async(Rptdate) => {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
             where: {
                 Rptdate: Rptdate,
-                NOTE: 'PS_GIAM',
                 KHOI_QL: 'KHCN',
             },
             order: [['DIFF', 'ASC']]
@@ -254,8 +286,28 @@ const getCustomerDesc = async (Rptdate, KY_HAN, KHOI_QL) => {
     }
 }
 
+const getTTTK = async(Rptdate,KHOI_QL) => {
+    try {
+        const KQ = await db.TKTT_Daily.findAll({
+            where: {
+                Rptdate : Rptdate,
+                KHOI_QL: {
+                    [Op.in]: KHOI_QL
+                  }
+            }
+        })
+        if(KQ) {
+            return KQ
+        } else {
+            return [{}]
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 module.exports = {
+    getArrayDataHDVDaily:getArrayDataHDVDaily,
     getDataHDVDaily: getDataHDVDaily,
     getDataTDDaily: getDataTDDaily,
     getCustomerTDDailyCNTang: getCustomerTDDailyCNTang,
@@ -265,5 +317,7 @@ module.exports = {
     getCustomerAsc: getCustomerAsc,
     getCustomerDesc : getCustomerDesc,
     getDataFromToDate: getDataFromToDate,
-    getDataFromToDateTD:getDataFromToDateTD
+    getDataFromToDateTD:getDataFromToDateTD,
+    getArrayDataTDDaily:getArrayDataTDDaily,
+    getTTTK: getTTTK
 }

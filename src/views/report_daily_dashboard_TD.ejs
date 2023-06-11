@@ -19,72 +19,90 @@
 <body>
     <%- include('includes/navigation.ejs') %>
     <div class="container-fluid homepage" style="background-color: #a8a8a8;">
-        <div class="row">
-            <div class="col-lg-2" style="padding: 0; height: 100vh; ">
+        <div class="row" style="margin-bottom: 50px;">
+            <div class="col-lg-2" style="padding: 0; position: fixed; width: 100%; top: 46px;">
                 <%- include('includes/menu_left_daily') %>
             </div>
-            <div class="col-lg-10" style="padding-left: 0; padding-right: 10px;">
+            <div class="col-lg-10" style="padding-left: 0; padding-right: 10px; left: 215px; position: relative;">
                 <%- include('includes/Daily/dashboard/TD/daily_dashboard_TD_title')%>
                 <%- include('includes/Daily/dashboard/TD/daily_dashboard_TD_select') %>
-                <%- include('includes/Daily/dashboard/TD/daily_dashboard_TD_1')%>
-                <div style="margin-top: 30px;">
-                    <div class="row">
-                        <div class="col-7">
-                            <div class="row">
-                                <div class="col-12">
-                                    <%- include('includes/Daily/dashboard/TD/chart1')%>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <%- include('includes/Daily/dashboard/TD/chart2')%>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-5">
-                            <div class="row">
-                                <div class="col-1"></div>
-                                <div class="col-10">
-                                    <p style="    border-radius: 25px;
-                                    line-height: 32px;
-                                    background-color: white;
-                                    border: 1px solid var(--color-bl);
-                                    height: 32px;
-                                    margin-bottom: 0;
-                                    text-align: center;
-                                    color: var(--color-bl);">Top 5 khách hàng biến động trong ngày</p>
-                                </div>
-                                <div class="col-1"></div>
-                            </div>
-                            <div class="row" style="margin-top: 20px;">
-                                <div class="col-12">
-                                    <%- include('includes/Daily/dashboard/TD/tableCustomerUp', {
-                                        title: 'Biến động tăng',
-                                        data: customerUp
-                                    })%>
-                                </div>
-                            </div>
-                            <div class="row" style="margin-top: 20px;">
-                                
+                <div style="position: relative; top: 80px;">
+                    <%- include('includes/Daily/dashboard/TD/daily_dashboard_TD_1')%>
+                    <div style="margin-top: 30px;">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="row">
                                     <div class="col-12">
-                                        <%- include('includes/Daily/dashboard/TD/tableCustomerDown', {
-                                            title: 'Biến động giảm',
-                                            data: customerDown
+                                        <%- include('includes/Daily/dashboard/TD/chart1')%>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <%- include('includes/Daily/dashboard/TD/chart2')%>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-10">
+                                        <p style="    border-radius: 25px;
+                                        line-height: 32px;
+                                        background-color: white;
+                                        border: 1px solid var(--color-bl);
+                                        height: 32px;
+                                        margin-bottom: 0;
+                                        text-align: center;
+                                        color: var(--color-bl);">Top 5 khách hàng biến động trong ngày</p>
+                                    </div>
+                                    <div class="col-1"></div>
+                                </div>
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-12">
+                                        <%- include('includes/Daily/dashboard/TD/tableCustomerUp', {
+                                            title: 'Biến động tăng',
+                                            data: customerUp
                                         })%>
                                     </div>
-                                
+                                </div>
+                                <div class="row" style="margin-top: 20px;">
+                                    
+                                        <div class="col-12">
+                                            <%- include('includes/Daily/dashboard/TD/tableCustomerDown', {
+                                                title: 'Biến động giảm',
+                                                data: customerDown
+                                            })%>
+                                        </div>
+                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div style="width: 35%; padding-left: 15px; padding-right: 5px;">
-                            <%- include('includes/Daily/dashboard/TD/chart3')%>
+                        <div class="row">
+                            <div style="width: 35%; padding-left: 15px; padding-right: 5px;">
+                                <%- include('includes/Daily/dashboard/TD/chart3')%>
+                            </div>
+                            <div style="width: 32%; padding-right: 5px;">
+                                <%- include('includes/Daily/dashboard/TD/chart4')%>
+                            </div>
+                            <div style="width: 33%; padding-right: 15px;">
+                                <%- include('includes/Daily/dashboard/TD/chart5')%>
+                            </div>
                         </div>
-                        <div style="width: 32%; padding-right: 5px;">
-                            <%- include('includes/Daily/dashboard/TD/chart4')%>
+                        <div class="row" style="padding-right: 0;">
+                            <div class="col-3" style="padding-right: 0;">
+                                <%- include('includes/Daily/dashboard/TD/tattoan')%>
+                            </div>
+                            <div class="col-9">
+                                <%- include('includes/Daily/dashboard/TD/chart6')%>
+                            </div>
                         </div>
-                        <div style="width: 33%; padding-right: 15px;">
-                            <%- include('includes/Daily/dashboard/TD/chart5')%>
+                        <div class="row" style="padding-right: 0;">
+                            <div class="col-3" style="padding-right: 0;">
+                                <%- include('includes/Daily/dashboard/TD/giaingan')%>
+                            </div>
+                            <div class="col-9">
+                                <%- include('includes/Daily/dashboard/TD/chart7')%>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,7 +114,8 @@
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_3.js"></script>
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_4.js"></script>
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_5.js"></script>
-    
+    <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_6.js"></script>
+    <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_7.js"></script>
 
 <%- include('includes/end.ejs') %>
 

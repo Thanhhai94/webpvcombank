@@ -15,7 +15,7 @@ Highcharts.chart('daily_dashboard_TD_chart_5', {
     enabled: false
   },
   title: {
-    text: 'Tỷ trọng dư nợ khách hàng doanh nghiệp',
+    text: 'Tỷ trọng dư nợ tín dụng KHDN',
     align: 'center'
   },
   tooltip: {

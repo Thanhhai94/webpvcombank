@@ -17,153 +17,153 @@
     </tr>
     <tr style="background-color: rgb(25, 104, 25);color: #fff;font-weight: bold;">
             <td colspan="2">Toàn hàng</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG[0].Amt >0) ? 'white' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG[0].Ty_trong >0) ? 'white' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Amt >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Amt == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Dtd >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Mtd >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Ytd >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG.Amt >0) ? 'white' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG.Ty_trong >0) ? 'white' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Amt >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Amt == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd >0) ? 'white' : 'red' %>"><%= (BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd*100).toFixed(2)} %` %></td>
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
             <td colspan="2">KHCN</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_TONGKHOI.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_TONGKHOI.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_TONGKHOI.Ytd*100).toFixed(2)} %` %></td>
 
         </tr>
         <tr style="background-color: rgb(223, 157, 229);font-weight: bold;">
             <td colspan="2">Cá nhân</td>
-            <td colspan="2"></td>
-            <td colspan="2"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Canhan.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Canhan.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_Canhan.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Canhan.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Canhan.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_Canhan.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Canhan.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Canhan.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_Canhan.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Canhan.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Canhan.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Canhan.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Canhan.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Canhan.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Canhan.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Canhan.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Canhan.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Canhan.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2"> <6M </td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_6M[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_6M[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_6M.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_6M.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M.Ytd*100).toFixed(2)} %` %></td>
 
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2"> 6-9M </td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_6M9M[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_6M9M[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_6M9M.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_6M9M.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_6M9M.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_6M9M.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_6M9M.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_6M9M.Ytd*100).toFixed(2)} %` %></td>
 
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2"> 9-12M </td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_9M12M[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_9M12M[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_9M12M.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_9M12M.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_9M12M.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_9M12M.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_9M12M.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_9M12M.Ytd*100).toFixed(2)} %` %></td>
 
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2"> >=12M </td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_12M[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_12M[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_12M[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_12M[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_12M[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_12M[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_12M[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_12M[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_12M[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHCN_12M[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_12M.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_12M.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_12M.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_12M.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_12M.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_12M.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M.Ytd*100).toFixed(2)} %` %></td>
 
         </tr>
         <tr style="background-color: rgb(223, 157, 229);font-weight: bold;">
             <td colspan="2">Msme</td>
-            <td colspan="2"></td>
-            <td colspan="2"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Msme.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Msme.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_Msme.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Msme.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Msme.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_Msme.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">Hộ kinh doanh</td>
-            <td colspan="2"></td>
-            <td colspan="2"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_HKD.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_HKD.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_Msme_HKD.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_HKD.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_HKD.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_Msme_HKD.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_HKD.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_HKD.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_HKD.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_HKD.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_HKD.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_HKD.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_HKD.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_HKD.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_HKD.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_HKD.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_HKD.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_HKD.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">TCKT</td>
-            <td colspan="2"></td>
-            <td colspan="2"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_TCKT.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_TCKT.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_Msme_TCKT.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_TCKT.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_Msme_TCKT.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_Msme_TCKT.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_TCKT.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_TCKT.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_TCKT.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_Msme_TCKT.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHCN_Msme_TCKT.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
             <td colspan="2">KHDN</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDN_TONGKHOI.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI.Amt == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_TONGKHOI.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_TONGKHOI.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDN_TONGKHOI.Ytd*100).toFixed(2)} %` %></td>
 
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">Core</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Core[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Core[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDN_Core[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Core[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Core[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDN_Core[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Core[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Core[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Core.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Core.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDN_Core.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Core.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Core.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDN_Core.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Core.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core.Amt == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Core.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Core.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Core.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Core.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Core.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="font-style: italic;"> 
             <td colspan="2">Upper</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Upper[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDN_Upper[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Upper[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Upper[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDN_Upper[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDN_Upper[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Upper.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Upper.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDN_Upper.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDN_Upper.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDN_Upper.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDN_Upper.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Upper.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper.Amt == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Upper.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Upper.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDN_Upper.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDN_Upper.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDN_Upper.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
             <td colspan="2">KHDNL</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Amt == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_TONGKHOI.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_TONGKHOI.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">PVN</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDNL_PVN[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDNL_PVN[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDNL_PVN.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_PVN.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDNL_PVN.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN.Amt == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_PVN.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_PVN.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_PVN.Ytd*100).toFixed(2)} %` %></td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">Non-PVN</td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN[0].Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN[0].Amt).toLocaleString("en-US") %></td>
-            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN[0].Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN[0].Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN[0].Ty_trong*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Amt == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN[0].Amt*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN[0].Dtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN[0].Mtd*100).toFixed(2)} %` %></td>
-            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN[0].Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN[0].Ytd*100).toFixed(2)} %` %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN.Amt).toLocaleString("en-US") %></td>
+            <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN.Ty_trong*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN.Amt == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN.Amt*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN.Dtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN.Dtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN.Dtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN.Mtd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN.Mtd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN.Mtd*100).toFixed(2)} %` %></td>
+            <td class="<%= (BIEN_DO_CONG_KHDNL_Non_PVN.Ytd >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHDNL_Non_PVN.Ytd == '') ? '' : `${(BIEN_DO_CONG_KHDNL_Non_PVN.Ytd*100).toFixed(2)} %` %></td>
         </tr>
     
     

@@ -18,7 +18,7 @@ Highcharts.setOptions({
     },
     xAxis: {
       lineWidth:0,
-      categories: ['KHCN', 'Core', 'Upper', 'KHDNL', 'THN']
+      categories: ['KHCN', 'Core', 'Upper', 'KHDNL']
     },
     yAxis: {
       gridLineWidth: 0,
@@ -52,22 +52,23 @@ Highcharts.setOptions({
       },
       color: '#003B46',
       name: 'DTD',
-      data: [1,1,1,1,1]
+      data: data_TD_NHOMKH.Dtd
     }, {
       dataLabels: {
+        x: -5,
         enabled:true,
         format: '{point.y:,.0f}'
       },
       color: '#07575B',
       name: 'MTD',
-      data: [2,2,-2,2,2]
+      data: data_TD_NHOMKH.Mtd
     }, {
       dataLabels: {
         enabled:true,
         format: '{point.y:,.0f}'
       },
       color: '#66A5AD',
-      name: 'PVN',
-      data: [3,3,3,3,3]
+      name: 'YTD',
+      data: data_TD_NHOMKH.Ytd
     }]
   });

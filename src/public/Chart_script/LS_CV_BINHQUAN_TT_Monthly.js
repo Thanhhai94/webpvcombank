@@ -1,8 +1,3 @@
-// var input_month = ["20221231","20230131","20230128","20230331","20230430"]
-
-// var input_month = inputMonth.map(value => value.toString())
-
-// console.log("input_month",input_month)
 
 Highcharts.chart('chart_2', {
     chart: {
@@ -15,6 +10,9 @@ Highcharts.chart('chart_2', {
     },
     subtitle: {
       text: ''
+    },
+    exporting : {
+      enabled: false
     },
     credits: {
       enabled: false

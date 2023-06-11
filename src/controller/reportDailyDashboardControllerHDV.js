@@ -2,7 +2,7 @@ import staffServices from "../services/StaffService";
 import dayjs from "dayjs";
 import dailyServices from "../services/dailyService";
 import getFromToDate from "../utils/getfromtodate"
-
+import getTKTT from "../utils/TKTT"
 
 // const reportDailyDashboardHDV = async(req,res) => {
 //     let titles = ['QUY MÔ CKH','QUY MÔ KKH','TỶ TRỌNG CASA','LÃI SUẤT HĐ CKH', 'HDV ONLINE']
@@ -118,6 +118,13 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
     let arrayDate = getFromToDate.generateDateArray(date,14)
     let arrayInputDate = getFromToDate.arrayInputDate(arrayDate)
 
+    let selectTKTT =[]
+    if(select != 'TOAN_HANG') {
+        selectTKTT.push(select)
+    } else {
+        selectTKTT = ['KHCN','KHDN','KHDNL']
+    }
+
     let NHOM_KH = ''
 
     if(select == "TOAN_HANG" || select == "") {
@@ -130,6 +137,7 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
     let QUY_MO_KKH = await dailyServices.getDataHDVDaily(Rptdate,select,NHOM_KH,'QUY_MO_KKH')
     let TY_TRONG_CASA = await dailyServices.getDataHDVDaily(Rptdate,select,NHOM_KH,'TY_TRONG_CASA')
     let LAI_SUAT_CKH = await dailyServices.getDataHDVDaily(Rptdate,select,NHOM_KH,'LAI_SUAT_CKH')
+    let HDV_ONLINE = await dailyServices.getDataHDVDaily(Rptdate,select,NHOM_KH,'HDV_ONLINE')
 
     let HUY_DONG_VON_CKH = await dailyServices.getDataFromToDate(arrayInputDate,select,NHOM_KH,'QUY_MO_CKH')
     let HUY_DONG_VON_KKH = await dailyServices.getDataFromToDate(arrayInputDate,select,NHOM_KH,'QUY_MO_KKH')
@@ -160,6 +168,9 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
     let TOP_KKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','CN')
     let TOP_KKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','DN')
     let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
+
+    let TKTT = await dailyServices.getTTTK(Rptdate,selectTKTT)
+    let getDataTKTT = getTKTT.getTotalTKTT(TKTT)
 
     let data_HUY_DONG_VON_CKH = getFromToDate.getContinuousData(arrayInputDate,HUY_DONG_VON_CKH)
     let data_HUY_DONG_VON_KKH = getFromToDate.getContinuousData(arrayInputDate,HUY_DONG_VON_KKH)
@@ -192,6 +203,7 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
         QUY_MO_KKH : QUY_MO_KKH,
         TY_TRONG_CASA : TY_TRONG_CASA,
         LAI_SUAT_CKH : LAI_SUAT_CKH,
+        HDV_ONLINE: HDV_ONLINE,
         data_HUY_DONG_VON_CKH : JSON.stringify(data_HUY_DONG_VON_CKH),
         data_HUY_DONG_VON_KKH : JSON.stringify(data_HUY_DONG_VON_KKH),
         arrayInputDate : JSON.stringify(arrayInputDate),
@@ -215,6 +227,7 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
         TOP_KKH_KHCN_DESC : TOP_KKH_KHCN_DESC,
         TOP_KKH_KHDN_ASC : TOP_KKH_KHDN_ASC,
         TOP_KKH_KHDN_DESC : TOP_KKH_KHDN_DESC,
+        getDataTKTT: getDataTKTT
     })
 }
 

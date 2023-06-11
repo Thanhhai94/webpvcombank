@@ -1,7 +1,8 @@
 .daily_dashboard_HDV_title {
-    border-bottom: 2px solid var(--color-bl);
     margin-bottom: 10px;
     line-height: 36px;
+    color: white;
+    background-color: var(--color-bl);
 }
 
 .daily_dashboard_HDV_title .col-7 {
@@ -14,7 +15,7 @@
 .daily_dashboard_HDV_title .col-2 p {
     float: right;
     font-weight: bold;
-    color: var(--color-bl);
+    color: white;
     line-height: 36px;
     margin-bottom: 0;
 

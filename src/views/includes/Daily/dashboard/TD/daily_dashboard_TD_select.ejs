@@ -1,6 +1,6 @@
-<div class="row daily_dashboard_HDV_select" >
-    <div class="col-lg-6"></div>
-    <div class="col-lg-6">
+<div class="row daily_dashboard_HDV_select" style="position: fixed; top: 88px; width: 90%; z-index: 52; background-color: rgba(168, 168, 168, 0.5);" >
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4" style="position: relative; top: 2px;">
         <div class="row">
             <div class="padding_select">
                 <a class="<%= active == 'TOAN_HANG' ? 'active' : '' %> " href="TOAN_HANG">Toàn hàng</a>
@@ -15,6 +15,9 @@
                 <a class="<%= active == 'KHDNL' ? 'active' : '' %> " href="KHDNL">KHDNL</a>
             </div>
         </div>
+    </div>
+    <div class="col-4">
+        <p style="margin-bottom: 0; padding-left: 100px; font-style: italic; font-weight: 600; color: white;">Đơn vị tính: Tỷ đồng</p>
     </div>
 </div>
 

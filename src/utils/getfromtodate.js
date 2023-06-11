@@ -11,6 +11,13 @@ const generateDateArray= (dateString, daysBefore) => {
     return dateArray;
   };
 
+const getYesterday = () => {
+  var today = new Date()
+  var yesterday = today.setDate(today.getDate()-1)
+  var value = new Date(yesterday)
+  return value
+}
+
 const arrayInputDate = (dateArray) => {
   let kq = dateArray.map(date => date.replaceAll('-',''))
   return kq
@@ -37,6 +44,20 @@ const getObjectdata = (data) => {
     dataArray.push({Rptdate: value.Rptdate, Dtd: value.Dtd})
   })
   return dataArray
+}
+
+const getContinuousDataAmt = (arrayDate,arrayData) => {
+  const result = []
+    for(let i = 0; i<arrayDate.length; i++){
+        let input = 0
+        for(let j=0; j<arrayData.length; j++){
+            if(arrayDate[i]==arrayData[j].Rptdate.trim()){
+                input = arrayData[j].Amt
+            }
+        }
+        result.push(input)
+    }
+  return result
 }
 
 const getContinuousData = (arrayDate,arrayData) => {
@@ -127,6 +148,80 @@ const sumArray = (array_1,array_2) => {
   }
   return result
 }
+function getArray_KHOIQL_NHOMKH(array,KHOI_QL,NHOM_KH) {
+  let results = []
+  array.map(result => {
+    if(result.KHOI_QL == KHOI_QL && result.NHOM_KH == NHOM_KH){
+      results.push(result)
+    }})
+  return results
+}
+function getObject_KHOIQL_NHOMKH(array,KHOI_QL,NHOM_KH) {
+  function sum(array,core){
+    let sum = 0;
+    array.map(result=> sum = sum + result[core])
+    return sum
+  }
+  let object = {
+    KHOI_QL: KHOI_QL,
+    NHOM_KH: NHOM_KH,
+    Amt: sum(array,'Amt'),
+    Dtd: sum(array,'Dtd'),
+    Mtd: sum(array,'Mtd'),
+    Ytd: sum(array,'Ytd')
+  }
+  return object
+}
+const getTilegiaingan = (array_1,array_2) => {
+  var result = [];
+  for(let i = 0; i< array_1.length; i++) {
+    if(array_1[i] === 0) {
+      result.push(array_1[i])
+    } else {
+      result = [...result,100*array_2[i]/array_1[i]]
+    }
+  }
+  return result
+}
+
+const getArrayTT_TD_NKH = (array) => {
+  let array_KHCN_TONGKHOI = getArray_KHOIQL_NHOMKH(array,'KHCN','TONG_KHOI')
+  let array_KHDN_Core = getArray_KHOIQL_NHOMKH(array,'KHDN','Core')
+  let array_KHDN_Upper = getArray_KHOIQL_NHOMKH(array,'KHDN','Upper')
+  let array_KHDNL_TONGKHOI = getArray_KHOIQL_NHOMKH(array,'KHDNL','TONG_KHOI')
+  let data_KHCN_TONGKHOI = getObject_KHOIQL_NHOMKH(array_KHCN_TONGKHOI,'KHCN','TONG_KHOI')
+  let data_KHDN_Core = getObject_KHOIQL_NHOMKH(array_KHDN_Core,'KHDN','Core')
+  let data_KHDN_Upper = getObject_KHOIQL_NHOMKH(array_KHDN_Upper,'KHDN','Upper')
+  let data_KHDNL_TONGKHOI = getObject_KHOIQL_NHOMKH(array_KHDNL_TONGKHOI,'KHDNL','TONG_KHOI')
+  let data = [
+    data_KHCN_TONGKHOI,data_KHDN_Core,data_KHDN_Upper,data_KHDNL_TONGKHOI
+  ]
+  let arrayAmtResult = []
+  data.map(result=> {arrayAmtResult.push(result.Amt)})
+  let arrayDtdResult = []
+  data.map(result=> {arrayDtdResult.push(result.Dtd)})
+  let arrayMtdResult = []
+  data.map(result=> {arrayMtdResult.push(result.Mtd)})
+  let arrayYtdResult = []
+  data.map(result=> {arrayYtdResult.push(result.Ytd)})
+  let object = {
+    Amt: arrayAmtResult,
+    Dtd: arrayDtdResult,
+    Mtd: arrayMtdResult,
+    Ytd: arrayYtdResult
+   }
+  return object 
+}
+
+const sumItemArray = (object, core) => {
+  var KQ = 0
+  for(let i=0; i< object[core].length; i++) {
+    KQ+=object[core][i]
+  }
+  return KQ
+}
+
+
 
   module.exports = {
     generateDateArray : generateDateArray,
@@ -142,6 +237,14 @@ const sumArray = (array_1,array_2) => {
     getCasaDaily:getCasaDaily,
     getCasaDailyValue: getCasaDailyValue,
     getContinuousDataLS:getContinuousDataLS,
-    sumArray: sumArray
+    sumArray: sumArray,
+    getYesterday: getYesterday,
+    getArrayTT_TD_NKH:getArrayTT_TD_NKH,
+    getContinuousDataAmt:getContinuousDataAmt,
+    getTilegiaingan:getTilegiaingan,
+    sumItemArray:sumItemArray
   }
 
+
+
+  

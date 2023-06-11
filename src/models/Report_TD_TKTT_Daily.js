@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class DAILYREPORT extends Model {
+  class TKTT_Daily extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,26 +11,23 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  DAILYREPORT.init(
+  TKTT_Daily.init(
     {
       Rptdate: DataTypes.STRING,
       KHOI_QL: DataTypes.STRING,
-      NHOM_KH: DataTypes.STRING,
-      CHI_TIEU: DataTypes.STRING,
-      NHOM_KH_LV1: DataTypes.STRING,
-      Amt: DataTypes.FLOAT,
-      Dtd: DataTypes.FLOAT,
-      Mtd: DataTypes.FLOAT,
-      Ytd: DataTypes.FLOAT,
-      Ty_trong: DataTypes.FLOAT,
-
+      SLTKTT_ytd: DataTypes.FLOAT,
+      SLTK_EKYC_ytd: DataTypes.FLOAT,
+      SLTKTT_mtd: DataTypes.FLOAT,
+      SLTK_EKYC_mtd: DataTypes.FLOAT,
+      SLTKTT_dtd: DataTypes.FLOAT,
+      SLTK_EKYC_dtd: DataTypes.FLOAT,
     },
     {
       sequelize,
-      modelName: "DAILYREPORT",
-      tableName: "DASHBOARD_HDV_DAILY",
+      modelName: "TKTT_Daily",
+      tableName: "DASHBOARD_TKTT_DAILY",
       timestamps: false,
     }
   );
-  return DAILYREPORT;
+  return TKTT_Daily;
 };
