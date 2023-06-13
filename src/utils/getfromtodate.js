@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 const generateDateArray= (dateString, daysBefore) => {
     var date = new Date(dateString);
     date.setDate(date.getDate() - daysBefore);
@@ -74,12 +76,27 @@ const getContinuousData = (arrayDate,arrayData) => {
   return result
 }
 
+
+const getContinuousDataCore = (arrayDate,arrayData,Core) => {
+  const result = []
+    for(let i = 0; i<arrayDate.length; i++){
+        let input = 0
+        for(let j=0; j<arrayData.length; j++){
+            if(arrayDate[i]==arrayData[j].Rptdate.trim()){
+                input = arrayData[j][Core]
+            }
+        }
+        result.push(input)
+    }
+  return result
+}
+
 const getContinuousDataLS = (arrayDate,arrayData) => {
   var result = []
     for(let i = 0; i<arrayDate.length; i++){
         let input = 0
         for(let j=0; j<arrayData.length; j++){
-            if(arrayDate[i]==arrayData[j].Rptdate){
+            if(arrayDate[i]==arrayData[j].Rptdate.trim()){
                 input = arrayData[j].Amt*100
             }
         }
@@ -184,7 +201,7 @@ const getTilegiaingan = (array_1,array_2) => {
   return result
 }
 
-const getArrayTT_TD_NKH = (array) => {
+const getArrayTT_TD_NKH = (array, select) => {
   let array_KHCN_TONGKHOI = getArray_KHOIQL_NHOMKH(array,'KHCN','TONG_KHOI')
   let array_KHDN_Core = getArray_KHOIQL_NHOMKH(array,'KHDN','Core')
   let array_KHDN_Upper = getArray_KHOIQL_NHOMKH(array,'KHDN','Upper')
@@ -193,9 +210,19 @@ const getArrayTT_TD_NKH = (array) => {
   let data_KHDN_Core = getObject_KHOIQL_NHOMKH(array_KHDN_Core,'KHDN','Core')
   let data_KHDN_Upper = getObject_KHOIQL_NHOMKH(array_KHDN_Upper,'KHDN','Upper')
   let data_KHDNL_TONGKHOI = getObject_KHOIQL_NHOMKH(array_KHDNL_TONGKHOI,'KHDNL','TONG_KHOI')
-  let data = [
-    data_KHCN_TONGKHOI,data_KHDN_Core,data_KHDN_Upper,data_KHDNL_TONGKHOI
-  ]
+  let data = []
+  switch(select) {
+    case 'TOAN_HANG': data = [data_KHCN_TONGKHOI,data_KHDN_Core,data_KHDN_Upper,data_KHDNL_TONGKHOI]
+    break
+    case 'KHCN': data = [data_KHCN_TONGKHOI]
+    break
+    case 'KHDN': data = [data_KHDN_Core,data_KHDN_Upper]
+    break
+    case 'KHDNL': data = [data_KHDNL_TONGKHOI]
+    break
+    default:  data = [data_KHCN_TONGKHOI,data_KHDN_Core,data_KHDN_Upper,data_KHDNL_TONGKHOI]
+  }
+
   let arrayAmtResult = []
   data.map(result=> {arrayAmtResult.push(result.Amt)})
   let arrayDtdResult = []
@@ -221,6 +248,14 @@ const sumItemArray = (object, core) => {
   return KQ
 }
 
+const formatDate = (arrayDate) => {
+  let newDate = []
+    arrayDate.map(value => {
+        newDate.push(dayjs(new Date(value)).format("DD-MM-YY"))
+    })
+    return newDate
+}
+
 
 
   module.exports = {
@@ -242,7 +277,9 @@ const sumItemArray = (object, core) => {
     getArrayTT_TD_NKH:getArrayTT_TD_NKH,
     getContinuousDataAmt:getContinuousDataAmt,
     getTilegiaingan:getTilegiaingan,
-    sumItemArray:sumItemArray
+    sumItemArray:sumItemArray,
+    formatDate: formatDate,
+    getContinuousDataCore:getContinuousDataCore
   }
 
 

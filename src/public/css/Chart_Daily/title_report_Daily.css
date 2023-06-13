@@ -1,6 +1,8 @@
 .title_report_Daily {
-    border-bottom: 2px solid var(--color-bl);
+    background-color: var(--color-bl);
     margin-bottom: 10px;
+    color: white;
+    line-height: 42px;
 }
 
 .title_report_Daily .col-7 {
@@ -10,9 +12,11 @@
     float: right;
     font-weight: bold;
     color: var(--color-bl);
-
+    color: white;
+    line-height: 42px;
 }
 
 .title_report_Daily .col-1 input {
     text-align: center;
+    height: 42px;
 }

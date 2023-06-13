@@ -13,15 +13,17 @@
     <%- include('includes/navigation.ejs') %>
     <div class="container-fluid homepage" >
         <div class="row">
-            <div class="col-lg-2" style="padding: 0; height: 100vh; ">
+            <div class="col-lg-2" style="padding: 0; position: fixed; width: 100%; top: 46px;">
                 <%- include('includes/menu_left_daily') %>
             </div>
-            <div class="col-lg-10" style="font-size: 12px; padding-left: 0; padding-right: 10px;">
+            <div class="col-lg-10" style="font-size: 12px; padding-left: 0; padding-right: 10px; position: relative; left: 215px;">
                 <%- include('includes/title_report_Daily.ejs') %>
+            <div style="position: absolute; top: 70px;">
                 <%- include('includes/daily_table_1.ejs') %>
                 <%- include('includes/daily_table_2.ejs') %>
                 <%- include('includes/daily_table_3.ejs') %>
                 <%- include('includes/daily_table_4.ejs') %>
+            </div>
             </div>
         </div>
     </div>

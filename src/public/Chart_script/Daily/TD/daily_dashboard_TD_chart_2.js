@@ -46,6 +46,6 @@ Highcharts.chart('daily_dashboard_TD_chart_2', {
     },
     name: 'HDV_CKH',
     color: 'rgba(0,112,192)',
-    data: [11,11,11,11,11,11,11,11,11,11,11,11,11,11,11]
+    data: data_LAI_SUAT_HD
   }]
 });

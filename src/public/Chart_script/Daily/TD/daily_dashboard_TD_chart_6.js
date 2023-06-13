@@ -42,8 +42,19 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
       gridLineWidth: 0,
     }],
     tooltip: {
+      formatter: function () {
+          return this.points.reduce(function (s, point) {
+              if(point.series.name == 'Gốc vay hợp đồng tất toán'){
+                return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
+                  Math.round(point.y) + ' tỉ đồng </b>' ;
+              } else {
+                return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
+                  point.y.toFixed(2) + '% </b>' ;
+              }
+          }, '<b>' + this.x + '</b>');
+      },
       shared: true
-    },
+  },
     legend: {
         align: 'center',
         verticalAlign: 'bottom',
@@ -55,13 +66,17 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
       color: 'rgba(31, 78, 120,0.6)',
       pointWidth: 30,
       yAxis: 1,
-      data: [5000,5000,5000,5000,5000,5000,5000,500,500,500,500,500,500,500,500],
+      data: total_DU_NO_TAT_TOAN,
       tooltip: {
         valueSuffix: 'tỷ '
       },
       dataLabels: {
         verticalAlign: 'bottom',
-        enabled: true
+        enabled: true,
+        style: {
+          color: 'rgb(31, 78, 120)'
+        },
+        format: '{point.y:,.0f}'
       }
   
     }, {
@@ -69,8 +84,7 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
       type: 'spline',
       color: 'rgb(153,0,255)',
       lineWidth: 2,
-      data: [13.6, 14.9, 9.8, 10.7, 9.1, 13.0, 14.5, 10.8, 5.8,
-        10.7, 11.0, 16.4,20,25,21],
+      data: ti_le_tat_toan_truoc_han,
       tooltip: {
         valueSuffix: ' %'
       },

@@ -149,6 +149,30 @@ const getDataFromToDateTD = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
     }
 }
 
+const getDataFromToDateTTGN = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TT_GN.findAll({
+            where: {
+                Rptdate: {
+                    [Op.in]: Rptdate
+                  },
+                  KHOI_QL: KHOI_QL,
+                  KY_HAN: KY_HAN,
+                  NHOM_KH: NHOM_KH,
+                  CHI_TIEU: CHI_TIEU
+            },
+            order: [['Rptdate', 'ASC']]
+        })
+        if(KQ) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const getCustomerTDDailyCNTang = async(Rptdate) => {
     try {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
@@ -319,5 +343,6 @@ module.exports = {
     getDataFromToDate: getDataFromToDate,
     getDataFromToDateTD:getDataFromToDateTD,
     getArrayDataTDDaily:getArrayDataTDDaily,
-    getTTTK: getTTTK
+    getTTTK: getTTTK,
+    getDataFromToDateTTGN:getDataFromToDateTTGN
 }

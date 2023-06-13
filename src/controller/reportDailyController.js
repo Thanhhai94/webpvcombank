@@ -26,53 +26,21 @@ const reportDailyTable = async (req,res) => {
     let data_SO_DU_BIEN_DO_CONG = await dailyServices.getArrayDataHDVDaily(Rptdate,'SO_DU_BIEN_DO_CONG')
 
     //TY_TRONG_CASA
-    let TY_TRONG_CASA_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','TONG_KHOI','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDN_Core = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Core','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDN_Upper = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Upper','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDNL_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','TONG_KHOI','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDNL_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','PVN','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','TY_TRONG_CASA')
+    let data_TY_TRONG_CASA = await dailyServices.getArrayDataHDVDaily(Rptdate,'TY_TRONG_CASA')
 
-    //QUY_MO_TIN_DUNG_DH
-    let QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','QUY_MO_TIN_DUNG')
+    //QUY_MO_TIN_DUNG
+    let data_QUY_MO_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'QUY_MO_TIN_DUNG')
 
-    //QUY_MO_TIN_DUNG_TDH
-    let QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','QUY_MO_TIN_DUNG')
+    //LAI_SUAT_TIN_DUNG
+    let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG')
 
-    //LAI_SUAT_TIN_DUNG_DH
-    let LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','LAI_SUAT_TIN_DUNG')
-    
-    //LAI_SUAT_TIN_DUNG_TDH
-    let LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','LAI_SUAT_TIN_DUNG')
-    
+    //GIAI_NGAN
+    let data_DU_NO_GIAI_NGAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_GIAI_NGAN')
+    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
+
+    //TAT_TOAN
+    let data_DU_NO_TAT_TOAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_TAT_TOAN')
+    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
 
     //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
@@ -90,41 +58,9 @@ const reportDailyTable = async (req,res) => {
     let TOP_KKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','DN')
     let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
 
-    //GIAI_NGAN
+    
 
-    let DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','DU_NO_GIAI_NGAN')
-
-    let DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','DU_NO_GIAI_NGAN')
-
-    let TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','TY_LE_GIAI_NGAN_UU_DAI')
-
-    let TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','TY_LE_GIAI_NGAN_UU_DAI')
+    
 
     return res.render('report_daily_table',{
         
@@ -213,49 +149,49 @@ const reportDailyTable = async (req,res) => {
         SO_DU_BIEN_DO_CONG_KHDNL_PVN: tableFunc.getRowDataHDVDailyBiendo(data_SO_DU_BIEN_DO_CONG,'KHDNL' ,'PVN' ,'TONG_NHOM' ),
         SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN: tableFunc.getRowDataHDVDailyBiendo(data_SO_DU_BIEN_DO_CONG,'KHDNL' ,'Non-PVN' ,'TONG_NHOM' ),
 
-        TY_TRONG_CASA_TOANHANG_TOANHANG : TY_TRONG_CASA_TOANHANG_TOANHANG,
-        TY_TRONG_CASA_KHCN_TONGKHOI : TY_TRONG_CASA_KHCN_TONGKHOI,
-        TY_TRONG_CASA_KHDN_TONGKHOI : TY_TRONG_CASA_KHDN_TONGKHOI,
-        TY_TRONG_CASA_KHDN_Core : TY_TRONG_CASA_KHDN_Core,
-        TY_TRONG_CASA_KHDN_Upper : TY_TRONG_CASA_KHDN_Upper,
-        TY_TRONG_CASA_KHDNL_TONGKHOI : TY_TRONG_CASA_KHDNL_TONGKHOI,
-        TY_TRONG_CASA_KHDNL_PVN : TY_TRONG_CASA_KHDNL_PVN,
-        TY_TRONG_CASA_KHDNL_Non_PVN : TY_TRONG_CASA_KHDNL_Non_PVN,
+        //Ty_TRONG_CASA
 
-        QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
-        QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG,
-        QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_NH_Core : QUY_MO_TIN_DUNG_KHDN_NH_Core,
-        QUY_MO_TIN_DUNG_KHDN_NH_Upper : QUY_MO_TIN_DUNG_KHDN_NH_Upper,
-        QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN,
-
-        QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG,
-        QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_TDH_Core : QUY_MO_TIN_DUNG_KHDN_TDH_Core,
-        QUY_MO_TIN_DUNG_KHDN_TDH_Upper : QUY_MO_TIN_DUNG_KHDN_TDH_Upper,
-        QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN,
-
-        LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
-        LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG,
-        LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_NH_Core : LAI_SUAT_TIN_DUNG_KHDN_NH_Core,
-        LAI_SUAT_TIN_DUNG_KHDN_NH_Upper : LAI_SUAT_TIN_DUNG_KHDN_NH_Upper,
-        LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN,
-
-        LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG,
-        LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_TDH_Core : LAI_SUAT_TIN_DUNG_KHDN_TDH_Core,
-        LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper : LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper,
-        LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN,
+        TY_TRONG_CASA_TOANHANG_TOANHANG : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'TOAN_HANG','TOAN_HANG'),
+        TY_TRONG_CASA_KHCN_TONGKHOI : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'KHCN','TONG_KHOI') ,
+        TY_TRONG_CASA_KHDN_TONGKHOI : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'KHDN','TONG_KHOI') ,
+        TY_TRONG_CASA_KHDNL_TONGKHOI : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'KHDNL','TONG_KHOI') ,
         
+        //QUy_MO_TD
+        QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHCN' ,'NH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'NH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'NH' ,'Core'),
+        QUY_MO_TIN_DUNG_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'NH' ,'Upper'),
+        QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'TDH' ,'Core'),
+        QUY_MO_TIN_DUNG_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'TDH' ,'Upper'),
+        QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+
+        //LS_TD
+        LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHCN' ,'NH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'NH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'NH' ,'Core'),
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'NH' ,'Upper'),
+        LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'TDH' ,'Core'),
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'TDH' ,'Upper'),
+        LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+        
+        
+        //Customer
         TOP_CANHAN_TANG:TOP_CANHAN_TANG,
         TOP_CANHAN_GIAM: TOP_CANHAN_GIAM,
         TOP_DOANHNGHIEP_TANG : TOP_DOANHNGHIEP_TANG,
@@ -270,39 +206,73 @@ const reportDailyTable = async (req,res) => {
         TOP_KKH_KHDN_ASC : TOP_KKH_KHDN_ASC,
         TOP_KKH_KHDN_DESC : TOP_KKH_KHDN_DESC,
 
-        DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG : DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG,
-        DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG : DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG,
-        DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI : DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI : DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_NH_Core : DU_NO_GIAI_NGAN_KHDN_NH_Core,
-        DU_NO_GIAI_NGAN_KHDN_NH_Upper : DU_NO_GIAI_NGAN_KHDN_NH_Upper,
-        DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI : DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDNL_NH_Non_PVN : DU_NO_GIAI_NGAN_KHDNL_NH_Non_PVN,
+        //GIAI NGAN
+        DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
         
-        DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG : DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG,
-        DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI : DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI : DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_TDH_Core : DU_NO_GIAI_NGAN_KHDN_TDH_Core,
-        DU_NO_GIAI_NGAN_KHDN_TDH_Upper : DU_NO_GIAI_NGAN_KHDN_TDH_Upper,
-        DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI : DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDNL_TDH_Non_PVN : DU_NO_GIAI_NGAN_KHDNL_TDH_Non_PVN,
+        DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHCN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'NH' ,'Core'),
+        DU_NO_GIAI_NGAN_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'NH' ,'Upper'),
+        DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDNL' ,'NH' ,'TONG_KHOI'),
 
-        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG : TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG,
-        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG : TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG,
-        TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core : TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper : TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_Non_PVN : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_Non_PVN,
+        DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'TDH' ,'Core'),
+        DU_NO_GIAI_NGAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'TDH' ,'Upper'),
+        DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+
         
-        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG : TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG,
-        TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core : TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper : TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_Non_PVN : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_Non_PVN,
+        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHCN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'NH' ,'Core'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'NH' ,'Upper'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'TDH' ,'Core'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'TDH' ,'Upper'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+        
+        //Tat toan
+        DU_NO_TAT_TOAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        DU_NO_TAT_TOAN_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHCN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'NH' ,'Core'),
+        DU_NO_TAT_TOAN_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'NH' ,'Upper'),
+        DU_NO_TAT_TOAN_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        DU_NO_TAT_TOAN_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'TDH' ,'Core'),
+        DU_NO_TAT_TOAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'TDH' ,'Upper'),
+        DU_NO_TAT_TOAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+
+        
+        TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHCN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'NH' ,'Core'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'NH' ,'Upper'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Core'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Upper'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
     })
 }
 
@@ -327,53 +297,22 @@ const reportDailyTableSelect = async (req,res) => {
     let data_SO_DU_BIEN_DO_CONG = await dailyServices.getArrayDataHDVDaily(Rptdate,'SO_DU_BIEN_DO_CONG')
 
     //TY_TRONG_CASA
-    let TY_TRONG_CASA_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','TONG_KHOI','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDN_Core = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Core','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDN_Upper = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Upper','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDNL_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','TONG_KHOI','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDNL_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','PVN','TY_TRONG_CASA')
-    let TY_TRONG_CASA_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','TY_TRONG_CASA')
+    let data_TY_TRONG_CASA = await dailyServices.getArrayDataHDVDaily(Rptdate,'TY_TRONG_CASA')
 
     //QUY_MO_TIN_DUNG_DH
-    let QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','QUY_MO_TIN_DUNG')
+    let data_QUY_MO_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'QUY_MO_TIN_DUNG')
 
-    //QUY_MO_TIN_DUNG_TDH
-    let QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
-    let QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','QUY_MO_TIN_DUNG')
+    //LAI_SUAT_TIN_DUNG
+    let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG')
+    
+    //GIAI_NGAN
+    let data_DU_NO_GIAI_NGAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_GIAI_NGAN')
+    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
 
-    //LAI_SUAT_TIN_DUNG_DH
-    let LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','LAI_SUAT_TIN_DUNG')
-    
-    //LAI_SUAT_TIN_DUNG_TDH
-    let LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
-    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','LAI_SUAT_TIN_DUNG')
-    
+    //TAT_TOAN
+    let data_DU_NO_TAT_TOAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_TAT_TOAN')
+    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
+
     //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
     let TOP_CANHAN_GIAM = await dailyServices.getCustomerTDDailyCNGiam(Rptdate)
@@ -389,42 +328,6 @@ const reportDailyTableSelect = async (req,res) => {
     let TOP_KKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','CN')
     let TOP_KKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','DN')
     let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
-
-    //GIAI_NGAN
-
-    let DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','DU_NO_GIAI_NGAN')
-
-    let DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','DU_NO_GIAI_NGAN')
-    let DU_NO_GIAI_NGAN_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','DU_NO_GIAI_NGAN')
-
-    let TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','TY_LE_GIAI_NGAN_UU_DAI')
-
-    let TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','TY_LE_GIAI_NGAN_UU_DAI')
-    let TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','TY_LE_GIAI_NGAN_UU_DAI')
 
     return res.render('report_daily_table',{
         
@@ -513,49 +416,46 @@ const reportDailyTableSelect = async (req,res) => {
         SO_DU_BIEN_DO_CONG_KHDNL_PVN: tableFunc.getRowDataHDVDailyBiendo(data_SO_DU_BIEN_DO_CONG,'KHDNL' ,'PVN' ,'TONG_NHOM' ),
         SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN: tableFunc.getRowDataHDVDailyBiendo(data_SO_DU_BIEN_DO_CONG,'KHDNL' ,'Non-PVN' ,'TONG_NHOM' ),
 
+        //Ty_TRONG_CASA
 
-        TY_TRONG_CASA_TOANHANG_TOANHANG : TY_TRONG_CASA_TOANHANG_TOANHANG,
-        TY_TRONG_CASA_KHCN_TONGKHOI : TY_TRONG_CASA_KHCN_TONGKHOI,
-        TY_TRONG_CASA_KHDN_TONGKHOI : TY_TRONG_CASA_KHDN_TONGKHOI,
-        TY_TRONG_CASA_KHDN_Core : TY_TRONG_CASA_KHDN_Core,
-        TY_TRONG_CASA_KHDN_Upper : TY_TRONG_CASA_KHDN_Upper,
-        TY_TRONG_CASA_KHDNL_TONGKHOI : TY_TRONG_CASA_KHDNL_TONGKHOI,
-        TY_TRONG_CASA_KHDNL_PVN : TY_TRONG_CASA_KHDNL_PVN,
-        TY_TRONG_CASA_KHDNL_Non_PVN : TY_TRONG_CASA_KHDNL_Non_PVN,
+        TY_TRONG_CASA_TOANHANG_TOANHANG : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'TOAN_HANG','TOAN_HANG'),
+        TY_TRONG_CASA_KHCN_TONGKHOI : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'KHCN','TONG_KHOI') ,
+        TY_TRONG_CASA_KHDN_TONGKHOI : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'KHDN','TONG_KHOI') ,
+        TY_TRONG_CASA_KHDNL_TONGKHOI : tableFunc.getRowDataHDVDaily(data_TY_TRONG_CASA,'KHDNL','TONG_KHOI') ,
 
-        QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
-        QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG,
-        QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_NH_Core : QUY_MO_TIN_DUNG_KHDN_NH_Core,
-        QUY_MO_TIN_DUNG_KHDN_NH_Upper : QUY_MO_TIN_DUNG_KHDN_NH_Upper,
-        QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN,
+        //QUy_MO_TD
+        QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHCN' ,'NH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'NH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'NH' ,'Core'),
+        QUY_MO_TIN_DUNG_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'NH' ,'Upper'),
+        QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDNL' ,'NH' ,'TONG_KHOI'),
 
-        QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG,
-        QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDN_TDH_Core : QUY_MO_TIN_DUNG_KHDN_TDH_Core,
-        QUY_MO_TIN_DUNG_KHDN_TDH_Upper : QUY_MO_TIN_DUNG_KHDN_TDH_Upper,
-        QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI,
-        QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN,
+        QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        QUY_MO_TIN_DUNG_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'TDH' ,'Core'),
+        QUY_MO_TIN_DUNG_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDN' ,'TDH' ,'Upper'),
+        QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_QUY_MO_TIN_DUNG,'KHDNL' ,'TDH' ,'TONG_KHOI'),
 
-        LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
-        LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG,
-        LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_NH_Core : LAI_SUAT_TIN_DUNG_KHDN_NH_Core,
-        LAI_SUAT_TIN_DUNG_KHDN_NH_Upper : LAI_SUAT_TIN_DUNG_KHDN_NH_Upper,
-        LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN,
+        //LS_TD
+        LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHCN' ,'NH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'NH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'NH' ,'Core'),
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'NH' ,'Upper'),
+        LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDNL' ,'NH' ,'TONG_KHOI'),
 
-        LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG,
-        LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDN_TDH_Core : LAI_SUAT_TIN_DUNG_KHDN_TDH_Core,
-        LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper : LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper,
-        LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI,
-        LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN,
+        LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'TDH' ,'Core'),
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDN' ,'TDH' ,'Upper'),
+        LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_LAI_SUAT_TIN_DUNG,'KHDNL' ,'TDH' ,'TONG_KHOI'),
         
         TOP_CANHAN_TANG: TOP_CANHAN_TANG,
         TOP_CANHAN_GIAM: TOP_CANHAN_GIAM,
@@ -571,39 +471,73 @@ const reportDailyTableSelect = async (req,res) => {
         TOP_KKH_KHDN_ASC : TOP_KKH_KHDN_ASC,
         TOP_KKH_KHDN_DESC : TOP_KKH_KHDN_DESC,
 
-        DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG : DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG,
-        DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG : DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG,
-        DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI : DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI : DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_NH_Core : DU_NO_GIAI_NGAN_KHDN_NH_Core,
-        DU_NO_GIAI_NGAN_KHDN_NH_Upper : DU_NO_GIAI_NGAN_KHDN_NH_Upper,
-        DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI : DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDNL_NH_Non_PVN : DU_NO_GIAI_NGAN_KHDNL_NH_Non_PVN,
+        //GIAI NGAN
+        DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
         
-        DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG : DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG,
-        DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI : DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI : DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDN_TDH_Core : DU_NO_GIAI_NGAN_KHDN_TDH_Core,
-        DU_NO_GIAI_NGAN_KHDN_TDH_Upper : DU_NO_GIAI_NGAN_KHDN_TDH_Upper,
-        DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI : DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI,
-        DU_NO_GIAI_NGAN_KHDNL_TDH_Non_PVN : DU_NO_GIAI_NGAN_KHDNL_TDH_Non_PVN,
+        DU_NO_GIAI_NGAN_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        DU_NO_GIAI_NGAN_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHCN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'NH' ,'Core'),
+        DU_NO_GIAI_NGAN_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'NH' ,'Upper'),
+        DU_NO_GIAI_NGAN_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDNL' ,'NH' ,'TONG_KHOI'),
 
-        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG : TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG,
-        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG : TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG,
-        TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core : TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper : TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_Non_PVN : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_Non_PVN,
+        DU_NO_GIAI_NGAN_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        DU_NO_GIAI_NGAN_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_GIAI_NGAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'TDH' ,'Core'),
+        DU_NO_GIAI_NGAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDN' ,'TDH' ,'Upper'),
+        DU_NO_GIAI_NGAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+
         
-        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG : TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG,
-        TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core : TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper : TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI,
-        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_Non_PVN : TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_Non_PVN,
+        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHCN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'NH' ,'Core'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'NH' ,'Upper'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        TY_LE_GIAI_NGAN_UU_DAI_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'TDH' ,'Core'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDN' ,'TDH' ,'Upper'),
+        TY_LE_GIAI_NGAN_UU_DAI_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_GIAI_NGAN_UU_DAI,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+
+        //Tat toan
+        DU_NO_TAT_TOAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        DU_NO_TAT_TOAN_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHCN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'NH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'NH' ,'Core'),
+        DU_NO_TAT_TOAN_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'NH' ,'Upper'),
+        DU_NO_TAT_TOAN_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        DU_NO_TAT_TOAN_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        DU_NO_TAT_TOAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'TDH' ,'Core'),
+        DU_NO_TAT_TOAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDN' ,'TDH' ,'Upper'),
+        DU_NO_TAT_TOAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_DU_NO_TAT_TOAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+
+        
+        TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
+        
+        TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'TOAN_HANG' ,'NH','TOAN_HANG'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHCN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHCN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'NH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_NH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'NH' ,'Core'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_NH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'NH' ,'Upper'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDNL_NH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDNL' ,'NH' ,'TONG_KHOI'),
+
+        TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'TOAN_HANG' ,'TDH','TOAN_HANG'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHCN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHCN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'TONG_KHOI'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Core'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Upper'),
+        TY_LE_TAT_TOAN_TRUOC_HAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
     })
 }
 

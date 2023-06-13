@@ -2,73 +2,73 @@
         <div class="col-lg-2">
                 <%- include('daily_table_1_1.ejs',{
                         title: titles[0], 
-                        current: (QUY_MO_KKH_TOANHANG_TOANHANG.Amt=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Amt + QUY_MO_CKH_TOANHANG_TOANHANG.Amt ).toLocaleString("en-US"), 
-                        Dtd: (QUY_MO_KKH_TOANHANG_TOANHANG.Dtd=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Dtd + QUY_MO_CKH_TOANHANG_TOANHANG.Dtd ).toLocaleString("en-US"),
+                        current: (QUY_MO_KKH_TOANHANG_TOANHANG.Amt=='' || 0) ? 0 : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Amt + QUY_MO_CKH_TOANHANG_TOANHANG.Amt ).toLocaleString("en-US"), 
+                        Dtd: (QUY_MO_KKH_TOANHANG_TOANHANG.Dtd=='' || 0) ? 0 : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Dtd + QUY_MO_CKH_TOANHANG_TOANHANG.Dtd ).toLocaleString("en-US"),
                         Dtd_value: QUY_MO_KKH_TOANHANG_TOANHANG.Dtd + QUY_MO_CKH_TOANHANG_TOANHANG.Dtd,
-                        Mtd: (QUY_MO_KKH_TOANHANG_TOANHANG.Mtd=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Mtd + QUY_MO_CKH_TOANHANG_TOANHANG.Mtd ).toLocaleString("en-US"),
+                        Mtd: (QUY_MO_KKH_TOANHANG_TOANHANG.Mtd=='' || 0) ? 0 : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Mtd + QUY_MO_CKH_TOANHANG_TOANHANG.Mtd ).toLocaleString("en-US"),
                         Mtd_value: QUY_MO_KKH_TOANHANG_TOANHANG.Mtd + QUY_MO_CKH_TOANHANG_TOANHANG.Mtd,
-                        Ytd: (QUY_MO_KKH_TOANHANG_TOANHANG.Ytd=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Ytd + QUY_MO_CKH_TOANHANG_TOANHANG.Ytd ).toLocaleString("en-US"),
+                        Ytd: (QUY_MO_KKH_TOANHANG_TOANHANG.Ytd=='' || 0) ? 0 : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG.Ytd + QUY_MO_CKH_TOANHANG_TOANHANG.Ytd ).toLocaleString("en-US"),
                         Ytd_value: QUY_MO_KKH_TOANHANG_TOANHANG.Ytd + QUY_MO_CKH_TOANHANG_TOANHANG.Ytd
                 }) %>
         </div>
         <div class="col-lg-2">
                 <%- include('daily_table_1_1.ejs',{
                         title: titles[1], 
-                        current: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Amt == '') ? '' : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %`, 
-                        Dtd: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Dtd == '') ? '' : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %`,
+                        current: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Amt =='' || 0) ? 0 : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %`, 
+                        Dtd: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Dtd =='' || 0) ? 0 : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %`,
                         Dtd_value: LAI_SUAT_CKH_TOANHANG_TOANHANG.Dtd,
-                        Mtd: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Mtd == '') ? '' : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %`,
+                        Mtd: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Mtd =='' || 0) ? 0 : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %`,
                         Mtd_value: LAI_SUAT_CKH_TOANHANG_TOANHANG.Mtd,
-                        Ytd: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Ytd == '') ? '' : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Ytd*100).toFixed(2)} %`,
+                        Ytd: (LAI_SUAT_CKH_TOANHANG_TOANHANG.Ytd =='' || 0) ? 0 : `${(LAI_SUAT_CKH_TOANHANG_TOANHANG.Ytd*100).toFixed(2)} %`,
                         Ytd_value: LAI_SUAT_CKH_TOANHANG_TOANHANG.Ytd
                 }) %>
         </div>
         <div class="col-lg-2">
                 <%- include('daily_table_1_1.ejs',{
                         title: titles[2], 
-                        current: (BIEN_DO_CONG_TOANHANG_TOANHANG.Amt == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %`, 
-                        Dtd: (BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %`,
+                        current: (BIEN_DO_CONG_TOANHANG_TOANHANG.Amt =='' || 0) ? 0 : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %`, 
+                        Dtd: (BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd =='' || 0) ? 0 : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %`,
                         Dtd_value: BIEN_DO_CONG_TOANHANG_TOANHANG.Dtd,
-                        Mtd: (BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %`,
+                        Mtd: (BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd =='' || 0) ? 0 : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %`,
                         Mtd_value: BIEN_DO_CONG_TOANHANG_TOANHANG.Mtd,
-                        Ytd: (BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd == '') ? '' : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd*100).toFixed(2)} %`,
+                        Ytd: (BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd =='' || 0) ? 0 : `${(BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd*100).toFixed(2)} %`,
                         Ytd_value: BIEN_DO_CONG_TOANHANG_TOANHANG.Ytd
                 }) %>
         </div>
         <div class="col-lg-2">
                 <%- include('daily_table_1_1.ejs',{
                         title: titles[3], 
-                        current: (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Amt == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Amt*100).toFixed(2)} %`, 
-                        Dtd: (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Dtd == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Dtd*100).toFixed(2)} %`,
-                        Dtd_value: TY_TRONG_CASA_TOANHANG_TOANHANG[0].Dtd,
-                        Mtd: (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Mtd == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Mtd*100).toFixed(2)} %`,
-                        Mtd_value: TY_TRONG_CASA_TOANHANG_TOANHANG[0].Mtd,
-                        Ytd: (TY_TRONG_CASA_TOANHANG_TOANHANG[0].Ytd == '') ? '' : `${(TY_TRONG_CASA_TOANHANG_TOANHANG[0].Ytd*100).toFixed(2)} %`,
-                        Ytd_value: TY_TRONG_CASA_TOANHANG_TOANHANG[0].Ytd
+                        current: (TY_TRONG_CASA_TOANHANG_TOANHANG.Amt =='' || 0) ? 0 : `${(TY_TRONG_CASA_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %`, 
+                        Dtd: (TY_TRONG_CASA_TOANHANG_TOANHANG.Dtd =='' || 0) ? 0 : `${(TY_TRONG_CASA_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %`,
+                        Dtd_value: TY_TRONG_CASA_TOANHANG_TOANHANG.Dtd,
+                        Mtd: (TY_TRONG_CASA_TOANHANG_TOANHANG.Mtd =='' || 0) ? 0 : `${(TY_TRONG_CASA_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %`,
+                        Mtd_value: TY_TRONG_CASA_TOANHANG_TOANHANG.Mtd,
+                        Ytd: (TY_TRONG_CASA_TOANHANG_TOANHANG.Ytd =='' || 0) ? 0 : `${(TY_TRONG_CASA_TOANHANG_TOANHANG.Ytd*100).toFixed(2)} %`,
+                        Ytd_value: TY_TRONG_CASA_TOANHANG_TOANHANG.Ytd
                 }) %>
         </div>
         <div class="col-lg-2">
                 <%- include('daily_table_1_2.ejs',{
                         title:titles[4], 
-                        current: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt ).toLocaleString("en-US"), 
-                        Dtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd ).toLocaleString("en-US"),
-                        Dtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd,
-                        Mtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd ).toLocaleString("en-US"),
-                        Mtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd ,
-                        Ytd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd ).toLocaleString("en-US"),
-                        Ytd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd
+                        current: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt ).toLocaleString("en-US"), 
+                        Dtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd ).toLocaleString("en-US"),
+                        Dtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd,
+                        Mtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd ).toLocaleString("en-US"),
+                        Mtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd ,
+                        Ytd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd ).toLocaleString("en-US"),
+                        Ytd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd
                 }) %>
         </div>
         <div class="col-lg-2">
                 <%- include('daily_table_1_2.ejs',{
                         title:titles[5],
-                        current: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt*100).toFixed(2)} %`, 
-                        Dtd: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd*100).toFixed(2)} %`,
-                        Dtd_value: LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd,
-                        Mtd: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd*100).toFixed(2)} %`,
-                        Mtd_value: LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd,
-                        Ytd: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd*100).toFixed(2)} %`,
-                        Ytd_value: LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd
+                        current: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt =='' || 0) ? 0 : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %`, 
+                        Dtd: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd =='' || 0) ? 0 : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %`,
+                        Dtd_value: LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd,
+                        Mtd: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd =='' || 0) ? 0 : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %`,
+                        Mtd_value: LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd,
+                        Ytd: (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd =='' || 0) ? 0 : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd*100).toFixed(2)} %`,
+                        Ytd_value: LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd
                 }) %>
         </div>  
         
