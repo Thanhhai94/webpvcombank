@@ -75,6 +75,28 @@ const getDataFromToDate = async(Rptdate,KHOI_QL,NHOM_KH,CHI_TIEU) => {
     }
 }
 
+const getDataFromToDateKH = async(Rptdate,KHOI_QL,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TD.findAll({
+            where: {
+                Rptdate: {
+                    [Op.in]: Rptdate
+                  },
+                KHOI_QL: KHOI_QL,
+                CHI_TIEU: CHI_TIEU
+            },
+            order: [['Rptdate', 'ASC']]
+        })
+        if(KQ) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const getArrayDataTDDaily = async(Rptdate,CHI_TIEU) => {
     try {
         const KQ = await db.DAILYREPORT_TD.findAll({
@@ -125,6 +147,67 @@ const getDataTDDaily = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
     }
 }
 
+const getDataTDByDaily = async(Rptdate,KHOI_QL,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TD.findAll({
+            where: {
+                Rptdate: Rptdate,
+                KHOI_QL: KHOI_QL,
+                CHI_TIEU: CHI_TIEU
+            }
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+                Rptdate: Rptdate,
+                KHOI_QL: KHOI_QL,
+                KY_HAN: '',
+                NHOM_KH: '',
+                CHI_TIEU: CHI_TIEU,
+                Amt: '',
+                Dtd: '',
+                Mtd: '',
+                Ytd: '',
+            }]
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getDataTDByDailySelect = async(Rptdate,KHOI_QL,CHI_TIEU,NHOM_KH) => {
+    try {
+        const KQ = await db.DAILYREPORT_TD.findAll({
+            where: {
+                Rptdate: Rptdate,
+                KHOI_QL: KHOI_QL,
+                CHI_TIEU: CHI_TIEU,
+                NHOM_KH: NHOM_KH
+            }
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+                Rptdate: Rptdate,
+                KHOI_QL: KHOI_QL,
+                KY_HAN: '',
+                NHOM_KH: '',
+                CHI_TIEU: CHI_TIEU,
+                Amt: '',
+                Dtd: '',
+                Mtd: '',
+                Ytd: '',
+            }]
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const getDataFromToDateTD = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
     try {
         const KQ = await db.DAILYREPORT_TD.findAll({
@@ -136,6 +219,43 @@ const getDataFromToDateTD = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
                   KY_HAN: KY_HAN,
                   NHOM_KH: NHOM_KH,
                   CHI_TIEU: CHI_TIEU
+            },
+            order: [['Rptdate', 'ASC']]
+        })
+        if(KQ) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getDataSLHD = async(Rptdate,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TT_GN.findAll({
+            where: {
+                Rptdate: Rptdate,
+                CHI_TIEU: CHI_TIEU
+            }
+        })
+        if(KQ) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        
+    }
+}
+
+const getDataFromToDateTTGNTable = async(Rptdate,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TT_GN.findAll({
+            where: {
+                Rptdate: Rptdate,
+                CHI_TIEU: CHI_TIEU
             },
             order: [['Rptdate', 'ASC']]
         })
@@ -193,6 +313,7 @@ const getCustomerTDDailyCNTang = async(Rptdate) => {
         console.log(error)
     }
 }
+
 
 
 const getCustomerTDDailyCNGiam = async(Rptdate) => {
@@ -330,6 +451,91 @@ const getTTTK = async(Rptdate,KHOI_QL) => {
     }
 }
 
+const getDataFromHDVPSMOIDAILY = async(Rptdate) => {
+    try {
+        const KQ = await db.HDV_PS_MOI_DAILY.findAll({
+            where: {
+                Rptdate: Rptdate
+            }
+        })
+        if(KQ) {
+            return KQ
+        }
+        else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getDataFromHDVPSMOIDAILYSPECIAL = async(Rptdate,KHOI_QL,KY_HAN) => {
+    try {
+        const KQ = await db.HDV_PS_MOI_DAILY.findOne({
+            where: {
+                Rptdate: Rptdate,
+                KHOI_QL: KHOI_QL,
+                KY_HAN: KY_HAN
+            }
+        })
+        if(KQ) {
+            return KQ
+        }
+        else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getCustomerTDDashboardDesc = async (Rptdate, KHOI_QL) => {
+    try {
+        const KQ = await db.Report_TD_Customer_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+                KHOI_QL: {
+                    [Op.in]: KHOI_QL
+                  }
+            },
+            order: [['DIFF', 'DESC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
+
+const getCustomerTDDashboardAsc = async (Rptdate, KHOI_QL) => {
+    try {
+        const KQ = await db.Report_TD_Customer_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+                KHOI_QL: {
+                    [Op.in]: KHOI_QL
+                  }
+            },
+            order: [['DIFF', 'ASC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
+
+
 module.exports = {
     getArrayDataHDVDaily:getArrayDataHDVDaily,
     getDataHDVDaily: getDataHDVDaily,
@@ -344,5 +550,43 @@ module.exports = {
     getDataFromToDateTD:getDataFromToDateTD,
     getArrayDataTDDaily:getArrayDataTDDaily,
     getTTTK: getTTTK,
-    getDataFromToDateTTGN:getDataFromToDateTTGN
+    getDataFromToDateTTGN:getDataFromToDateTTGN,
+    getDataFromHDVPSMOIDAILY:getDataFromHDVPSMOIDAILY,
+    getDataFromHDVPSMOIDAILYSPECIAL:getDataFromHDVPSMOIDAILYSPECIAL,
+    getDataFromToDateTTGNTable:getDataFromToDateTTGNTable,
+    getDataFromToDateKH:getDataFromToDateKH,
+    getDataTDByDaily: getDataTDByDaily,
+    getDataSLHD:getDataSLHD,
+    getCustomerTDDashboardDesc:getCustomerTDDashboardDesc,
+    getCustomerTDDashboardAsc: getCustomerTDDashboardAsc,
+    getDataTDByDailySelect:getDataTDByDailySelect
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      

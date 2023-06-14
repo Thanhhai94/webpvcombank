@@ -5,6 +5,7 @@ import getFromToDate from "../utils/getfromtodate"
 import getTKTT from "../utils/TKTT"
 
 const reportDailyDashboardHDVSelect = async(req,res) => {
+    let ruleReportDaily = req.session.ruleReportDaily
     let titles = ['QUY MÔ CKH','QUY MÔ KKH','TỶ TRỌNG CASA','LÃI SUẤT HĐ CKH', 'HDV ONLINE']
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF)
@@ -92,6 +93,8 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
     
 
     return res.render('report_daily_dashboard_HDV', {
+        ruleReportDaily: ruleReportDaily,
+        active_menu_left: 'HDV',
         pageTitle: 'Dashboard HDV',
         titles: titles,
         staff:staff,

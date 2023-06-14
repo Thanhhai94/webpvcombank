@@ -40,6 +40,15 @@ Highcharts.chart('LS_HD_Daily_KKH', {
       enableMouseTracking: false
     }
   },
+  tooltip: {
+    formatter: function () {
+        return this.points.reduce(function (s, point) {
+              return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
+                (point.y).toFixed(4) + ' % </b>' 
+        }, '<b>' + this.x + '</b>');
+    },
+    shared: true
+},
   series: [{
     dataLabels: {
       enabled:true,

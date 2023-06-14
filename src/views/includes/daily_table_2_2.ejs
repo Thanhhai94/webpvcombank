@@ -147,10 +147,20 @@
         <td></td>
     </tr>
     <tr style="font-style: italic;">
-        <td colspan="2">Trái phiếu</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td colspan="2">Trái phiếu</td>
+        <td class="<%= ( data_TRAI_PHIEU[0].Amt >0) ? 'green' : 'red' %>"><%= ( data_TRAI_PHIEU[0].Amt=='') ? '' : Math.round( data_TRAI_PHIEU[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( data_TRAI_PHIEU[0].Dtd >0) ? 'green' : 'red' %>"><%= ( data_TRAI_PHIEU[0].Dtd=='') ? '' : Math.round( data_TRAI_PHIEU[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( data_TRAI_PHIEU[0].Mtd >0) ? 'green' : 'red' %>"><%= ( data_TRAI_PHIEU[0].Mtd=='') ? '' : Math.round( data_TRAI_PHIEU[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( data_TRAI_PHIEU[0].Ytd >0) ? 'green' : 'red' %>"><%= ( data_TRAI_PHIEU[0].Ytd=='') ? '' : Math.round( data_TRAI_PHIEU[0].Ytd).toLocaleString("en-US") %></td>
+        <td></td><td></td><td></td><td></td>
     </tr>
     <tr style="font-style: italic;">
-        <td colspan="2">Bán nợ</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td colspan="2">Bán nợ</td>
+        <td class="<%= ( data_BAN_NO[0].Amt >0) ? 'green' : 'red' %>"><%= ( data_BAN_NO[0].Amt=='') ? '' : Math.round( data_BAN_NO[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( data_BAN_NO[0].Dtd >0) ? 'green' : 'red' %>"><%= ( data_BAN_NO[0].Dtd=='') ? '' : Math.round( data_BAN_NO[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( data_BAN_NO[0].Mtd >0) ? 'green' : 'red' %>"><%= ( data_BAN_NO[0].Mtd=='') ? '' : Math.round( data_BAN_NO[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( data_BAN_NO[0].Ytd >0) ? 'green' : 'red' %>"><%= ( data_BAN_NO[0].Ytd=='') ? '' : Math.round( data_BAN_NO[0].Ytd).toLocaleString("en-US") %></td>
+        <td></td><td></td><td></td><td></td>
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHDNL</td>
@@ -164,7 +174,15 @@
         <td></td>
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: bold;">
-        <td colspan="2" style="text-align: left;">Cầm cố STK,TP,CK</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td colspan="2" style="text-align: left;">Cầm cố STK,TP,CK</td>
+        <td class="<%= ( CAM_CO_STK_TP.Amt >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Amt=='') ? '' : Math.round( CAM_CO_STK_TP.Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( CAM_CO_STK_TP.Dtd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Dtd=='') ? '' : Math.round( CAM_CO_STK_TP.Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( CAM_CO_STK_TP.Mtd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Mtd=='') ? '' : Math.round( CAM_CO_STK_TP.Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( CAM_CO_STK_TP.Ytd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Ytd=='') ? '' : Math.round( CAM_CO_STK_TP.Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (LS_CAM_CO_STK_TP.Amt >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP.Amt == '') ? '' : `${(LS_CAM_CO_STK_TP.Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (LS_CAM_CO_STK_TP.Dtd >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP.Dtd == '') ? '' : `${(LS_CAM_CO_STK_TP.Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (LS_CAM_CO_STK_TP.Mtd >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP.Mtd == '') ? '' : `${(LS_CAM_CO_STK_TP.Mtd*100).toFixed(2)} %` %></td>
+        <td></td>
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: bold;">
         <td colspan="2" style="text-align: left;">GN đặc thù</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>

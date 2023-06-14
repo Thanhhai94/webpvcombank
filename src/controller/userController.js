@@ -19,6 +19,8 @@ const loginPost = async (req, res) => {
   let user = await UserServices.getUser(userName);
   if(user && user.password == password){
     req.session.CIF = user.CIF;
+    req.session.ruleReportDaily = user.Rule_Report_Daily
+    console.log('rule',user.Rule_Report_Daily,user.CIF)
     return res.redirect('/homepage')
   } else {
     res.redirect('/login')

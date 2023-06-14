@@ -8,6 +8,7 @@ const reportDailyTable = async (req,res) => {
     let yesterday = getfromtodate.getYesterday()
     let titles = ['QUY MÔ HĐV','LÃI SUẤT HĐV','BIÊN ĐỘ CỘNG','%CASA', 'QUY MÔ TD', 'LÃI SUẤT TD']
     let CIF = req.session.CIF
+    let ruleReportDaily = req.session.ruleReportDaily
     let staff = await staffServices.getStaffInfo(CIF)
     let date = dayjs(yesterday).format("YYYY-MM-DD")
     let Rptdate = date.replaceAll('-','')
@@ -29,18 +30,18 @@ const reportDailyTable = async (req,res) => {
     let data_TY_TRONG_CASA = await dailyServices.getArrayDataHDVDaily(Rptdate,'TY_TRONG_CASA')
 
     //QUY_MO_TIN_DUNG
-    let data_QUY_MO_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'QUY_MO_TIN_DUNG')
+    let data_QUY_MO_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'QUY_MO_TIN_DUNG_ALM')
 
     //LAI_SUAT_TIN_DUNG
-    let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG')
+    let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG_ALM')
 
     //GIAI_NGAN
-    let data_DU_NO_GIAI_NGAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_GIAI_NGAN')
-    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
+    let data_DU_NO_GIAI_NGAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_GIAI_NGAN')
+    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
 
     //TAT_TOAN
-    let data_DU_NO_TAT_TOAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_TAT_TOAN')
-    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
+    let data_DU_NO_TAT_TOAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_TAT_TOAN')
+    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
 
     //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
@@ -59,11 +60,20 @@ const reportDailyTable = async (req,res) => {
     let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
 
     
+    //PS_MOI
+    let data_HDV_PS_MOI_DAILY = await dailyServices.getDataFromHDVPSMOIDAILY(Rptdate)
 
+    //TRAI_PHIEU
+    let data_TRAI_PHIEU = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','TRAI_PHIEU')
+    let data_BAN_NO = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','BAN_NO')
     
-
+    //Cam co
+    let CAM_CO_STK_TP = await dailyServices.getArrayDataTDDaily(Rptdate,'CAM_CO_STK_TP')
+    let LS_CAM_CO_STK_TP = await dailyServices.getArrayDataTDDaily(Rptdate,'LS_CAM_CO_STK_TP')
+    
     return res.render('report_daily_table',{
-        
+        ruleReportDaily: ruleReportDaily,
+        active_menu_left: 'BTH',
         pageTitle: 'Báo cáo ngày',
         titles: titles,
         staff:staff,
@@ -74,7 +84,7 @@ const reportDailyTable = async (req,res) => {
         QUY_MO_KKH_KHCN_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHCN','TONG_KHOI'),
         QUY_MO_KKH_KHDN_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','TONG_KHOI'),
         QUY_MO_KKH_KHDN_Core : tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','Core'),
-        QUY_MO_KKH_KHDN_Upper :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','Core'),
+        QUY_MO_KKH_KHDN_Upper :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','Upper'),
         QUY_MO_KKH_KHDNL_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDNL','TONG_KHOI'),
         QUY_MO_KKH_KHDNL_Non_PVN :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDNL','Non-PVN'),
         QUY_MO_KKH_KHDNL_PVN :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDNL','PVN'),
@@ -96,7 +106,7 @@ const reportDailyTable = async (req,res) => {
         LAI_SUAT_KKH_KHCN_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHCN','TONG_KHOI'),
         LAI_SUAT_KKH_KHDN_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHDN','TONG_KHOI'),
         LAI_SUAT_KKH_KHDN_Core : tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHDN','Core'),
-        LAI_SUAT_KKH_KHDN_Upper :  tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHDN','Core'),
+        LAI_SUAT_KKH_KHDN_Upper :  tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHDN','Upper'),
         LAI_SUAT_KKH_KHDNL_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHDNL','TONG_KHOI'),
         LAI_SUAT_KKH_KHDNL_Non_PVN :  tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHDNL','Non-PVN'),
         LAI_SUAT_KKH_KHDNL_PVN :  tableFunc.getRowDataHDVDaily(data_LAI_SUAT_KKH,'KHDNL','PVN'),
@@ -273,6 +283,35 @@ const reportDailyTable = async (req,res) => {
         TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Core'),
         TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Upper'),
         TY_LE_TAT_TOAN_TRUOC_HAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+    
+        //HDV_PS_MOI_DAILY
+        HDV_PS_MOI_DAILY_TOANHANG : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'TOAN_HANG','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_KHCN : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_CANHAN: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','ALL','ALL'),
+        HDV_PS_MOI_DAILY_TGBT_TGDC: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','TGBT/TGDC','ALL'),
+        HDV_PS_MOI_DAILY_TGBT_TGDC_12M: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGBT/TGDC','1. <12M'),
+        HDV_PS_MOI_DAILY_TGBT_TGDC_12M_plus: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGBT/TGDC','2. >=12M'),
+        HDV_PS_MOI_DAILY_TGTLTDK: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','TGTLTDK','ALL'),
+        HDV_PS_MOI_DAILY_TGTLTDK_12M: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGTLTDK','1. <12M'),
+        HDV_PS_MOI_DAILY_TGTLTDK_12M_plus: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGTLTDK','2. >=12M'),
+        HDV_PS_MOI_DAILY_SP_KHAC: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','SP_KHAC','ALL'),
+        HDV_PS_MOI_DAILY_SP_KHAC_12M: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','SP_KHAC','1. <12M'),
+        HDV_PS_MOI_DAILY_SP_KHAC_12M_plus: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','SP_KHAC','2. >=12M'),
+        HDV_PS_MOI_DAILY_mMSE: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','m.MSE','ALL','ALL'),
+        HDV_PS_MOI_DAILY_mMSE_TCKT: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','m.MSE','TCKT',undefined),
+        HDV_PS_MOI_DAILY_mMSE_HKD: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','m.MSE','HKD',undefined),
+        HDV_PS_MOI_DAILY_KHDN : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHDN','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_KHDN_12M : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHDN',undefined,undefined,'1 <12M'),
+        HDV_PS_MOI_DAILY_KHDNL : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHDNL','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_KHDNL_12M : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHDNL',undefined,undefined,'1 <12M'),
+        
+
+        //TRAI PHIEU BAN NO
+        data_TRAI_PHIEU : data_TRAI_PHIEU,
+        data_BAN_NO : data_BAN_NO,
+
+        CAM_CO_STK_TP : CAM_CO_STK_TP,
+        LS_CAM_CO_STK_TP : LS_CAM_CO_STK_TP,
     })
 }
 
@@ -282,6 +321,7 @@ const reportDailyTableSelect = async (req,res) => {
     let staff = await staffServices.getStaffInfo(CIF)
     let date = req.params.date
     let Rptdate = date.replaceAll('-','')
+    let ruleReportDaily = req.session.ruleReportDaily
 
     //Data Quy mô KKH
     let data_Quy_Mo_KKH = await dailyServices.getArrayDataHDVDaily(Rptdate,'QUY_MO_KKH')
@@ -300,18 +340,18 @@ const reportDailyTableSelect = async (req,res) => {
     let data_TY_TRONG_CASA = await dailyServices.getArrayDataHDVDaily(Rptdate,'TY_TRONG_CASA')
 
     //QUY_MO_TIN_DUNG_DH
-    let data_QUY_MO_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'QUY_MO_TIN_DUNG')
+    let data_QUY_MO_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'QUY_MO_TIN_DUNG_ALM')
 
     //LAI_SUAT_TIN_DUNG
-    let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG')
+    let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG_ALM')
     
     //GIAI_NGAN
-    let data_DU_NO_GIAI_NGAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_GIAI_NGAN')
-    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
+    let data_DU_NO_GIAI_NGAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_GIAI_NGAN')
+    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
 
     //TAT_TOAN
-    let data_DU_NO_TAT_TOAN = await dailyServices.getArrayDataTDDaily(Rptdate,'DU_NO_TAT_TOAN')
-    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getArrayDataTDDaily(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
+    let data_DU_NO_TAT_TOAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_TAT_TOAN')
+    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
 
     //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
@@ -329,8 +369,23 @@ const reportDailyTableSelect = async (req,res) => {
     let TOP_KKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','DN')
     let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
 
+     //PS_MOI
+     let data_HDV_PS_MOI_DAILY = await dailyServices.getDataFromHDVPSMOIDAILY(Rptdate)
+
+     let HDV_PS_MOI_DAILY_KHDN_12M = await dailyServices.getDataFromHDVPSMOIDAILYSPECIAL(Rptdate,'KHDN','1. <12M')
+     let HDV_PS_MOI_DAILY_KHDNL_12M = await dailyServices.getDataFromHDVPSMOIDAILYSPECIAL(Rptdate,'KHDNL','1. <12M')
+
+    //TRAI_PHIEU
+    let data_TRAI_PHIEU = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','TRAI_PHIEU')
+    let data_BAN_NO = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','BAN_NO')
+    
+     //Cam co
+     let CAM_CO_STK_TP = await dailyServices.getArrayDataTDDaily(Rptdate,'CAM_CO_STK_TP')
+     let LS_CAM_CO_STK_TP = await dailyServices.getArrayDataTDDaily(Rptdate,'LS_CAM_CO_STK_TP')
+
     return res.render('report_daily_table',{
-        
+        ruleReportDaily:ruleReportDaily,
+        active_menu_left: 'BTH',
         pageTitle: 'Báo cáo ngày',
         titles: titles,
         staff:staff,
@@ -340,7 +395,7 @@ const reportDailyTableSelect = async (req,res) => {
         QUY_MO_KKH_KHCN_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHCN','TONG_KHOI'),
         QUY_MO_KKH_KHDN_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','TONG_KHOI'),
         QUY_MO_KKH_KHDN_Core : tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','Core'),
-        QUY_MO_KKH_KHDN_Upper :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','Core'),
+        QUY_MO_KKH_KHDN_Upper :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDN','Upper'),
         QUY_MO_KKH_KHDNL_TONGKHOI :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDNL','TONG_KHOI'),
         QUY_MO_KKH_KHDNL_Non_PVN :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDNL','Non-PVN'),
         QUY_MO_KKH_KHDNL_PVN :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'KHDNL','PVN'),
@@ -538,6 +593,33 @@ const reportDailyTableSelect = async (req,res) => {
         TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Core : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Core'),
         TY_LE_TAT_TOAN_TRUOC_HAN_KHDN_TDH_Upper : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDN' ,'TDH' ,'Upper'),
         TY_LE_TAT_TOAN_TRUOC_HAN_KHDNL_TDH_TONGKHOI : tableFunc.getRowDataTDDaily(data_TY_LE_TAT_TOAN_TRUOC_HAN,'KHDNL' ,'TDH' ,'TONG_KHOI'),
+        
+        //HDV_PS_MOI_DAILY
+        HDV_PS_MOI_DAILY_TOANHANG : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'TOAN_HANG','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_KHCN : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_CANHAN: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','ALL','ALL'),
+        HDV_PS_MOI_DAILY_TGBT_TGDC: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','TGBT/TGDC','ALL'),
+        HDV_PS_MOI_DAILY_TGBT_TGDC_12M: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGBT/TGDC','1. <12M'),
+        HDV_PS_MOI_DAILY_TGBT_TGDC_12M_plus: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGBT/TGDC','2. >=12M'),
+        HDV_PS_MOI_DAILY_TGTLTDK: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','TGTLTDK','ALL'),
+        HDV_PS_MOI_DAILY_TGTLTDK_12M: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGTLTDK','1. <12M'),
+        HDV_PS_MOI_DAILY_TGTLTDK_12M_plus: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','TGTLTDK','2. >=12M'),
+        HDV_PS_MOI_DAILY_SP_KHAC: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','ALL','SP_KHAC','ALL'),
+        HDV_PS_MOI_DAILY_SP_KHAC_12M: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','SP_KHAC','1. <12M'),
+        HDV_PS_MOI_DAILY_SP_KHAC_12M_plus: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','CN','SP_KHAC','2. >=12M'),
+        HDV_PS_MOI_DAILY_mMSE: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','m.MSE','ALL','ALL'),
+        HDV_PS_MOI_DAILY_mMSE_TCKT: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','m.MSE','TCKT',undefined),
+        HDV_PS_MOI_DAILY_mMSE_HKD: tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHCN','m.MSE','HKD',undefined),
+        HDV_PS_MOI_DAILY_KHDN : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHDN','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_KHDN_12M : tableFunc.getRowDataHDVPSMOIDAILYSPECIAL(HDV_PS_MOI_DAILY_KHDN_12M),
+        HDV_PS_MOI_DAILY_KHDNL : tableFunc.getRowDataHDVPSMOIDAILY(data_HDV_PS_MOI_DAILY,'KHDNL','ALL','ALL','ALL'),
+        HDV_PS_MOI_DAILY_KHDNL_12M : tableFunc.getRowDataHDVPSMOIDAILYSPECIAL(HDV_PS_MOI_DAILY_KHDNL_12M),
+
+        data_TRAI_PHIEU : data_TRAI_PHIEU,
+        data_BAN_NO : data_BAN_NO,
+
+        CAM_CO_STK_TP : CAM_CO_STK_TP,
+        LS_CAM_CO_STK_TP : LS_CAM_CO_STK_TP,
     })
 }
 

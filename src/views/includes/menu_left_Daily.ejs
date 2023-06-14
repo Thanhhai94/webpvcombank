@@ -5,10 +5,10 @@
 
         <div class="col-12"><h4>DAILY REPORT</h4></div>
     </div>
-        <div class="col-12">
+        <div class="col-12 <%= active_menu_left == 'BTH' ? 'active_menu_left' : '' %>">
            <a href="<%=`/daily/${date}`%>"><i class="fa-solid fa-table-list"></i> Bảng tổng hợp</a>
         </div>
-        <div class="col-12" id="menu_left_nav">
+        <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %> class="col-12 <%= active_menu_left == 'HDV' ? 'active_menu_left' : '' %>" id="menu_left_nav">
            <a href="<%=`/daily/dashboard/hdv/${date}/TOAN_HANG`%>"><i class="fa-solid fa-chart-simple"></i> Dashboard HĐV</a>
             <!-- <ul class="subnav_menu_left">
                 <ul class="subnav_menu_left">
@@ -19,7 +19,7 @@
                 </ul>
             </ul> -->
         </div>
-        <div class="col-12" id="menu_left_nav">
+        <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %> class="col-12 <%= active_menu_left == 'TIN_DUNG' ? 'active_menu_left' : '' %>" id="menu_left_nav">
             <a href="<%=`/daily/dashboard/tindung/${date}/TOAN_HANG`%>"><i class="fa-solid fa-chart-simple"></i> Dashboard Tín Dụng</a>
             <!-- <ul class="subnav_menu_left">
                 <ul class="subnav_menu_left">

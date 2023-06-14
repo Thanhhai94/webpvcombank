@@ -1,6 +1,6 @@
 .formLogin {
   margin: auto;
-  margin-top: 150px;
+  margin-top: 20px;
   align-items: center;
   width: 400px;
   background-color: white;
@@ -56,4 +56,19 @@
 
 .success{
   color: green;
+}
+.logo {
+  margin-top: 50px;
+}
+
+.login-page .logo .col-12 {
+  display: flex;
+  justify-content: center;
+}
+
+.login-page .title .col-12 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: var(--color-bl);
 }

@@ -10,6 +10,15 @@ Highcharts.chart('TT_HDV_CKH_Daily', {
     type: 'column',
     
   },
+  tooltip: {
+    formatter: function () {
+        return this.points.reduce(function (s, point) {
+              return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
+                Number((point.y).toFixed(2)).toLocaleString("en-US") + ' tỉ đồng </b>' 
+        }, '<b>' + this.x + '</b>');
+    },
+    shared: true
+},
   exporting : {
     enabled: false
   },
@@ -70,7 +79,7 @@ Highcharts.chart('TT_HDV_CKH_Daily', {
     },
     color: '#66A5AD',
     pointWidth: 30,
-    name: 'PVN',
+    name: 'YTD',
     data: data_TT_HDV_CKH_YTD
   }]
 });

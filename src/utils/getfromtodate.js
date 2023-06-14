@@ -173,6 +173,18 @@ function getArray_KHOIQL_NHOMKH(array,KHOI_QL,NHOM_KH) {
     }})
   return results
 }
+function getArray_KHOIQL(array,KHOI_QL,NHOM_KH) {
+  let objectValue = {KHOI_QL: KHOI_QL,NHOM_KH: NHOM_KH, Amt: 0, Dtd: 0, Mtd: 0, Ytd: 0}
+  array.map(result => {
+    if(result.KHOI_QL == KHOI_QL && result.NHOM_KH == NHOM_KH){
+      objectValue.Amt = result.Amt
+      objectValue.Dtd = result.Dtd
+      objectValue.Mtd = result.Mtd
+      objectValue.Ytd = result.Ytd
+    }})
+  return objectValue
+}
+
 function getObject_KHOIQL_NHOMKH(array,KHOI_QL,NHOM_KH) {
   function sum(array,core){
     let sum = 0;
@@ -199,6 +211,30 @@ const getTilegiaingan = (array_1,array_2) => {
     }
   }
   return result
+}
+
+const getArrayTT_TD_NKH_KH = (array) => {
+  let TOANHANG = getArray_KHOIQL(array,'TOAN_HANG','TOAN_HANG')
+  let KHCN = getArray_KHOIQL(array,'KHCN','TONG_KHOI')
+  let KHDN_Core = getArray_KHOIQL(array,'KHDN','Core')
+  let KHDN_Upper = getArray_KHOIQL(array,'KHDN','Upper')
+  let KHDNL = getArray_KHOIQL(array,'KHDNL','TONG_KHOI')
+  let data = [KHCN,KHDN_Core,KHDN_Upper,KHDNL]
+  
+  function getValue(array,core) {
+    let valueArray = []
+    if(array) {
+      array.map(value => valueArray.push(value[core]))
+    }
+    return valueArray
+}
+  let object = {
+    Amt: getValue(data,'Amt'),
+    Dtd: getValue(data,'Dtd'),
+    Mtd: getValue(data,'Mtd'),
+    Ytd: getValue(data,'Ytd')
+   }
+  return object 
 }
 
 const getArrayTT_TD_NKH = (array, select) => {
@@ -257,6 +293,44 @@ const formatDate = (arrayDate) => {
 }
 
 
+const calculateTyTrongDuNoTinDungKHDN = (a,b,c) => {
+  var sum = a + b + c
+  var object = {
+    a: 0, b : 0,c: 0
+  }
+  if(sum || sum != 0) {
+    object.a = Math.round(a*100/sum)
+    object.b = Math.round(b*100/sum)
+    object.c = 100- object.a - object.b
+  } 
+  return object
+}
+
+function getObject_SLHD_KHOIQL_NHOMKH(array,KHOI_QL) {
+  function sum(array,core){
+    let sum = 0;
+    array.map(result=> sum = sum + result[core])
+    return sum
+  }
+  let object = {KHOI_QL: KHOI_QL, Amt: 0, Mtd: 0, Ytd: 0}
+
+  if(KHOI_QL == 'TOAN_HANG') {
+    object.Amt = sum(array,'Amt')/2
+    object.Mtd = sum(array,'Mtd')/2
+    object.Ytd = sum(array,'Ytd')/2
+  } else {
+    object.Amt = sum(array,'Amt')
+    object.Mtd = sum(array,'Mtd')
+    object.Ytd = sum(array,'Ytd')
+  }
+  return object
+}
+
+const getSLHD = (array,select,NHOM_KH) => {
+  let arrayNHOMKH = getArray_KHOIQL_NHOMKH(array,select,NHOM_KH)
+  let KQ = getObject_SLHD_KHOIQL_NHOMKH(arrayNHOMKH,select)
+  return KQ
+}
 
   module.exports = {
     generateDateArray : generateDateArray,
@@ -279,9 +353,13 @@ const formatDate = (arrayDate) => {
     getTilegiaingan:getTilegiaingan,
     sumItemArray:sumItemArray,
     formatDate: formatDate,
-    getContinuousDataCore:getContinuousDataCore
+    getContinuousDataCore:getContinuousDataCore,
+    calculateTyTrongDuNoTinDungKHDN: calculateTyTrongDuNoTinDungKHDN,
+    getArrayTT_TD_NKH_KH: getArrayTT_TD_NKH_KH,
+    getSLHD:getSLHD
   }
 
 
 
-  
+      
+   

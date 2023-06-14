@@ -14,6 +14,15 @@ Highcharts.chart('daily_dashboard_TD_chart_4', {
   credits: {
     enabled: false
   },
+  tooltip: {
+    formatter: function () {
+        return this.points.reduce(function (s, point) {
+              return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
+                Number((point.y).toFixed(2)).toLocaleString("en-US") + ' tỉ đồng </b>' 
+        }, '<b>' + this.x + '</b>');
+    },
+    shared: true
+},
   exporting : {
     enabled: false
   },
@@ -26,12 +35,9 @@ Highcharts.chart('daily_dashboard_TD_chart_4', {
       color: '#0772ba',
     }
   },
-  tooltip: {
-    shared: true
-  },
   xAxis: {
     lineWidth: 0,
-    categories: ['KHDN','Core','Upper','KHDNL'],
+    categories: ['KHCN', 'Core', 'Upper', 'KHDNL'],
     crosshair: true,
     labels: {
     },

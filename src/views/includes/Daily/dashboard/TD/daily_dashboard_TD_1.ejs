@@ -18,11 +18,11 @@
                 title_1: 'Tất toán' ,
                 title_2: 'SLHD tất toán',
                 current_1: (Tong_du_no_tat_toan=='' || 0) ? 0 : Math.round(Tong_du_no_tat_toan).toLocaleString("en-US"),
-                current_2: 12,
+                current_2: (data_SLHD_TAT_TOAN.Amt=='' || 0) ? 0 : Math.round(data_SLHD_TAT_TOAN.Amt).toLocaleString("en-US"),
                 LKT_1: (Tong_du_no_tat_toan_Mtd=='' || 0) ? 0 : Math.round(Tong_du_no_tat_toan_Mtd).toLocaleString("en-US"),
-                LKT_2: 112,
+                LKT_2: (data_SLHD_TAT_TOAN.Mtd=='' || 0) ? 0 : Math.round(data_SLHD_TAT_TOAN.Mtd).toLocaleString("en-US"),
                 LKN_1: (Tong_du_no_tat_toan_Ytd=='' || 0) ? 0 : Math.round(Tong_du_no_tat_toan_Ytd).toLocaleString("en-US"),
-                LKN_2: 1112 
+                LKN_2: (data_SLHD_TAT_TOAN.Ytd=='' || 0) ? 0 : Math.round(data_SLHD_TAT_TOAN.Ytd).toLocaleString("en-US")
             }) %>
     </div>
     <div style="width: 30%; padding: 0 10px 0 10px;">
@@ -30,11 +30,11 @@
             title_1: 'Dư nợ' ,
             title_2: 'SLHD giải ngân',
             current_1: (Tong_giai_ngan=='' || 0) ? 0 : Math.round(Tong_giai_ngan).toLocaleString("en-US"),
-            current_2: 22,
+            current_2: (data_SLHD_GIAI_NGAN.Amt=='' || 0) ? 0 : Math.round(data_SLHD_GIAI_NGAN.Amt).toLocaleString("en-US"),
             LKT_1: (Tong_giai_ngan_Mtd=='' || 0) ? 0 : Math.round(Tong_giai_ngan_Mtd).toLocaleString("en-US"),
-            LKT_2: 212,
+            LKT_2: (data_SLHD_GIAI_NGAN.Mtd=='' || 0) ? 0 : Math.round(data_SLHD_GIAI_NGAN.Mtd).toLocaleString("en-US"),
             LKN_1: (Tong_giai_ngan_Ytd=='' || 0) ? 0 : Math.round(Tong_giai_ngan_Ytd).toLocaleString("en-US"),
-            LKN_2: 2112
+            LKN_2: (data_SLHD_GIAI_NGAN.Ytd=='' || 0) ? 0 : Math.round(data_SLHD_GIAI_NGAN.Ytd).toLocaleString("en-US")
         }) %>
     </div>
     <div style="width: 20%; padding: 0 10px 0 10px;">
@@ -47,8 +47,8 @@
                 Mtd_value: LAI_SUAT_HD_select[0].Mtd,
                 Ytd: (LAI_SUAT_HD_select[0].Ytd == '' || 0) ? '0.00 %' : `${(LAI_SUAT_HD_select[0].Ytd*100).toFixed(2)} %`,
                 Ytd_value: LAI_SUAT_HD_select[0].Ytd,
-                Kht: 5,
-                Kht_value:5
+                Kht: 0,
+                Kht_value:0
         }) %>
 </div>
     

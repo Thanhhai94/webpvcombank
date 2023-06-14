@@ -1,6 +1,7 @@
+
 Highcharts.chart('LS_HD_Daily_CKH', {
   chart: {
-    type: 'line',
+    type: 'spline',
     backgroundColor: '#DDDDDD',
     marginLeft:30,
     height: 250
@@ -21,7 +22,7 @@ Highcharts.chart('LS_HD_Daily_CKH', {
     }
   },
   xAxis: {
-    categories: arrayInputDateLSCKH
+    categories: arrayInputDateLSKKH
   },
   yAxis: {
     gridLineWidth: 0,
@@ -40,6 +41,15 @@ Highcharts.chart('LS_HD_Daily_CKH', {
       enableMouseTracking: false
     }
   },
+  tooltip: {
+    formatter: function () {
+        return this.points.reduce(function (s, point) {
+              return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
+                (point.y).toFixed(4) + ' % </b>' 
+        }, '<b>' + this.x + '</b>');
+    },
+    shared: true
+},
   series: [{
     dataLabels: {
       enabled:true,
@@ -47,6 +57,7 @@ Highcharts.chart('LS_HD_Daily_CKH', {
     },
     name: 'HDV_CKH',
     color: 'rgba(0,112,192)',
-    data: data_LAI_SUAT_HD_CKH
+    data: data_LAI_SUAT_HD_CKH,
+    dashStyle: 'Solid'
   }]
 });

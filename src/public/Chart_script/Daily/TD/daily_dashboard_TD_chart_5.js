@@ -46,8 +46,8 @@ Highcharts.chart('daily_dashboard_TD_chart_5', {
   series: [{
     name: 'Tỷ trọng',
     colorByPoint: true,
-    data: [{ name: 'Tín dụng thông thường', y: 49, color: 'rgb(1,104,134)' },
-      { name: 'Trái phiếu', y: 35,color: 'rgb(1,51,65)' },
-      { name: 'Các khoản bán nợ', y: 16, color: 'rgb(172,236,254)' },]
+    data: [{ name: 'Tín dụng thông thường', y: data_TT_DU_NO_TIN_DUNG_KHDN.a, color: 'rgb(1,104,134)' },
+      { name: 'Trái phiếu', y: data_TT_DU_NO_TIN_DUNG_KHDN.b,color: 'rgb(1,51,65)' },
+      { name: 'Các khoản bán nợ', y: data_TT_DU_NO_TIN_DUNG_KHDN.c, color: 'rgb(172,236,254)' },]
   }]
 });

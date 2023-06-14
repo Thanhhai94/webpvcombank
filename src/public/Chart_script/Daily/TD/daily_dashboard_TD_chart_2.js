@@ -10,6 +10,13 @@ Highcharts.chart('daily_dashboard_TD_chart_2', {
   exporting : {
     enabled: false
   },
+  tooltip: {
+    formatter: function () {
+      return '<b>' + this.x +
+          '</b> : <b>' + (this.y).toFixed(2) +'</b><b> % </b>';
+  },
+    shared: true
+  },
   legend: {
     enabled: false
   },

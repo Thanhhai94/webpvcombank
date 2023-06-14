@@ -48,7 +48,7 @@ Highcharts.chart('daily_dashboard_TD_chart_7', {
         return this.points.reduce(function (s, point) {
             if(point.series.name == 'Số dư hợp đồng giải ngân'){
               return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
-                Math.round(point.y) + ' tỉ đồng </b>' ;
+              Number((point.y).toFixed(2)).toLocaleString("en-US") + ' tỉ đồng </b>' ;
             } else {
               return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
                 point.y.toFixed(2) + '% </b>' ;

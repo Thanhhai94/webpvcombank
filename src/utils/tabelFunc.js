@@ -38,9 +38,38 @@ const getRowDataTDDaily = (array,KHOI_QL,KY_HAN,NHOM_KH) => {
     }}) 
     return value
 }
+const getRowDataHDVPSMOIDAILY = (array,KHOI_QL,NHOM_KH,PRODUCT,KY_HAN) => {
+    let value = {Amt: 0,Lai_suat: 0, Lai_suat_max: 0, Amt_bien_do_cong: 0, Lai_suat_bien_do_cong:0,Lai_suat_max_bien_do_cong:0}
+    array.map(row => {
+        if(row.KHOI_QL == KHOI_QL && row.NHOM_KH == NHOM_KH && row.PRODUCT == PRODUCT && row.KY_HAN == KY_HAN) {
+        value.Amt = row.Amt
+        value.Lai_suat = row.Lai_suat
+        value.Lai_suat_max = row.Lai_suat_max
+        value.Amt_bien_do_cong = row.Amt_bien_do_cong
+        value.Lai_suat_bien_do_cong = row.Lai_suat_bien_do_cong
+        value.Lai_suat_max_bien_do_cong = row.Lai_suat_max_bien_do_cong
+}})
+    return value
+}
+
+const getRowDataHDVPSMOIDAILYSPECIAL = (row) => {
+    let value = {Amt: 0,Lai_suat: 0, Lai_suat_max: 0, Amt_bien_do_cong: 0, Lai_suat_bien_do_cong:0,Lai_suat_max_bien_do_cong:0}
+        if(row) {
+            value.Amt = row.Amt
+            value.Lai_suat = row.Lai_suat
+            value.Lai_suat_max = row.Lai_suat_max
+            value.Amt_bien_do_cong = row.Amt_bien_do_cong
+            value.Lai_suat_bien_do_cong = row.Lai_suat_bien_do_cong
+            value.Lai_suat_max_bien_do_cong = row.Lai_suat_max_bien_do_cong
+        } else {}
+
+    return value
+}
 
 module.exports = {
     getRowDataHDVDaily: getRowDataHDVDaily,
     getRowDataHDVDailyBiendo:getRowDataHDVDailyBiendo,
-    getRowDataTDDaily:getRowDataTDDaily
+    getRowDataTDDaily:getRowDataTDDaily,
+    getRowDataHDVPSMOIDAILY: getRowDataHDVPSMOIDAILY,
+    getRowDataHDVPSMOIDAILYSPECIAL: getRowDataHDVPSMOIDAILYSPECIAL
 }

@@ -62,3 +62,7 @@
 #menu_left_nav:hover .subnav_menu_left {
     display: block;
 }
+
+.active_menu_left {
+    background-color: #8d8b8b;
+}

@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       CIF: DataTypes.STRING,
       username: DataTypes.STRING,
       password: DataTypes.STRING,
+      Rule_Report_Daily: DataTypes.STRING
     },
     {
       sequelize,

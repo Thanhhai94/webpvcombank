@@ -48,8 +48,14 @@ Highcharts.chart('QM_HDV_NKH_Daily', {
     shadow: false
   },
   tooltip: {
+    formatter: function () {
+        return this.points.reduce(function (s, point) {
+              return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
+                Number((point.y).toFixed(2)).toLocaleString("en-US") + ' tỉ đồng </b>' 
+        }, '<b>' + this.x + '</b>');
+    },
     shared: true
-  },
+},
   plotOptions: {
     column: {
       grouping: false,

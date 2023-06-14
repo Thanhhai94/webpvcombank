@@ -21,6 +21,10 @@ Highcharts.chart('daily_dashboard_HDV_chart_2', {
     }
   },
   tooltip: {
+    formatter: function () {
+      return '<b>' + this.x +
+          '</b> : <b>' + (this.y).toFixed(2) + ' tỉ đồng</b>';
+  },
     shared: true
   },
   xAxis: {
