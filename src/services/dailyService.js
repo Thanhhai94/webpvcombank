@@ -108,7 +108,25 @@ const getArrayDataTDDaily = async(Rptdate,CHI_TIEU) => {
         if(KQ.length) {
             return KQ
         } else {
-            return []
+            return [{}]
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getArrayDataTDCPBNDaily = async(Rptdate,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TD.findAll({
+            where: {
+                Rptdate: Rptdate,
+                CHI_TIEU: CHI_TIEU  
+            }
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{Amt: 0, Dtd:0, Mtd: 0, Ytd:0}]
         }
     } catch (error) {
         console.log(error)
@@ -342,9 +360,7 @@ const getCustomerTDDailyTCDNTang = async(Rptdate) => {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
             where: {
                 Rptdate: Rptdate,
-                NOTE: {
-                    [Op.in]: ['PS_TANG','PS_MOI']
-                  },
+            
                 KHOI_QL: {
                     [Op.in]: ['KHDN','KHDNL']
                   }
@@ -368,7 +384,6 @@ const getCustomerTDDailyTCDNGiam = async(Rptdate) => {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
             where: {
                 Rptdate: Rptdate,
-                NOTE: 'PS_GIAM',
                 KHOI_QL: {
                     [Op.in]: ['KHDN','KHDNL']
                   }
@@ -471,7 +486,7 @@ const getDataFromHDVPSMOIDAILY = async(Rptdate) => {
 
 const getDataFromHDVPSMOIDAILYSPECIAL = async(Rptdate,KHOI_QL,KY_HAN) => {
     try {
-        const KQ = await db.HDV_PS_MOI_DAILY.findOne({
+        const KQ = await db.HDV_PS_MOI_DAILY.findAll({
             where: {
                 Rptdate: Rptdate,
                 KHOI_QL: KHOI_QL,
@@ -535,6 +550,46 @@ const getCustomerTDDashboardAsc = async (Rptdate, KHOI_QL) => {
     }
 }
 
+const getCustomerHDVDesc = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_HDV_Customer_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+            },
+            order: [['DIFF', 'DESC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
+
+const getCustomerHDVAsc = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_HDV_Customer_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+            },
+            order: [['DIFF', 'ASC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
+
 
 module.exports = {
     getArrayDataHDVDaily:getArrayDataHDVDaily,
@@ -559,7 +614,10 @@ module.exports = {
     getDataSLHD:getDataSLHD,
     getCustomerTDDashboardDesc:getCustomerTDDashboardDesc,
     getCustomerTDDashboardAsc: getCustomerTDDashboardAsc,
-    getDataTDByDailySelect:getDataTDByDailySelect
+    getDataTDByDailySelect:getDataTDByDailySelect,
+    getArrayDataTDCPBNDaily:getArrayDataTDCPBNDaily,
+    getCustomerHDVDesc:getCustomerHDVDesc,
+    getCustomerHDVAsc:getCustomerHDVAsc
 }
 
 

@@ -1,13 +1,12 @@
 
-var data = [13,21,2]
-
 Highcharts.chart('TT_Casa', {
   colors: ['#345DA7', '#3B8AC4', '#4BB4DE'],
   chart: {
     backgroundColor: '#DDDDDD',
     type: 'column',
     inverted: true,
-    polar: true
+    polar: true,
+    height : 320
   },
    exporting : {
     enabled: false
@@ -17,7 +16,10 @@ Highcharts.chart('TT_Casa', {
   },
   title: {
     text: 'Tỷ trọng Casa',
-    align: 'center'
+    align: 'center',
+    style: {
+      color: '#0772ba',
+    }
   },
   tooltip: {
     outside: true

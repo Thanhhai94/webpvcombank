@@ -1,12 +1,17 @@
 Highcharts.chart('daily_dashboard_TD_chart_6', {
     chart: {
     marginLeft: 30,
-    height: 300,
-    zoomType: 'xy'
+    height: 320,
+    zoomType: 'xy',
+    marginTop: 40
     },
     title: {
       text: 'Tỉ lệ tất toán trước hạn lũy kế tháng',
-      align: 'center'
+      align: 'center',
+      style: {
+        color: '#0772ba',
+      },
+      margin: 20
     },
    credits: {
       enabled: false
@@ -44,7 +49,7 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
     tooltip: {
       formatter: function () {
           return this.points.reduce(function (s, point) {
-              if(point.series.name == 'Gốc vay hợp đồng tất toán'){
+              if(point.series.name == 'Dư nợ tất toán'){
                 return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
                 Number((point.y).toFixed(2)).toLocaleString("en-US") + ' tỉ đồng </b>' ;
               } else {
@@ -61,7 +66,7 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
         
     },
     series: [{
-      name: 'Gốc vay hợp đồng tất toán',
+      name: 'Dư nợ tất toán',
       type: 'column',
       color: 'rgba(31, 78, 120,0.6)',
       pointWidth: 30,
@@ -89,7 +94,6 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
         valueSuffix: ' %'
       },
       dataLabels: {
-        
         style : {
             color: 'rgb(153,0,255)',
             fontSize : 10,
@@ -98,7 +102,7 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
             textOutline: 0,
     
         },
-        y: -5,
+        y: -10,
         enabled: true,
         format: '{point.y:,.1f}%'
       }

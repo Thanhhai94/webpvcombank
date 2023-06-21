@@ -332,6 +332,18 @@ const getSLHD = (array,select,NHOM_KH) => {
   return KQ
 }
 
+
+const sumTPBN = (array1,array2,select) => {
+  let object = {Amt: 0,Dtd:0,Mtd:0,Ytd:0}
+  if(select == 'TOAN_HANG' || select == 'KHDN'){
+    object.Amt = array1[0].Amt + array2[0].Amt
+    object.Dtd = array1[0].Dtd + array2[0].Dtd
+    object.Mtd = array1[0].Mtd + array2[0].Mtd
+    object.Ytd = array1[0].Ytd + array2[0].Ytd
+  }
+  return object
+}
+
   module.exports = {
     generateDateArray : generateDateArray,
     arrayInputDate: arrayInputDate,
@@ -356,7 +368,8 @@ const getSLHD = (array,select,NHOM_KH) => {
     getContinuousDataCore:getContinuousDataCore,
     calculateTyTrongDuNoTinDungKHDN: calculateTyTrongDuNoTinDungKHDN,
     getArrayTT_TD_NKH_KH: getArrayTT_TD_NKH_KH,
-    getSLHD:getSLHD
+    getSLHD:getSLHD,
+    sumTPBN:sumTPBN
   }
 
 

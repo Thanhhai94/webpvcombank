@@ -23,7 +23,10 @@ Highcharts.chart('TT_HDV_KKH_Daily', {
     enabled: false
   },
   title: {
-    text: 'Tăng trưởng HĐV KKH'
+    text: 'Tăng trưởng HĐV KKH',
+    style: {
+      color: '#0772ba',
+    }
   },
   xAxis: {
     lineWidth:0,

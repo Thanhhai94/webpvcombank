@@ -1,0 +1,11 @@
+<div class="row <%= (STT % 2 == 0) ? 'evenRow' : 'oddRow' %>" style="padding: 5px;display: flex; align-items: center; margin: 0; font-size: 14px; min-height: 42px;">
+    <div class="col-lg-1 col-sm-1 " style="display: flex; justify-content: center;">
+        <p style="margin-bottom: 0;"><%= STT %></p>
+    </div>
+    <div class="col-lg-7 col-sm-7 " style="display: flex;">
+        <a href="/DScongviec/<%= job.id %>" style="margin-bottom: 0; color: black; font-weight: 400;"><%= job.titleJob %></a>
+    </div>
+    <div class="col-lg-4 col-sm-4 " style="display: flex; justify-content: flex-end;">
+        <p class="<%= (job.statusJob == 0) ? 'chuathuchien' : (job.statusJob) == 1 ? 'dangthuchien' : 'hoanthanh' %>" style="margin-bottom: 0;"><%= (job.statusJob==0)?'Chưa thực hiện' : (job.statusJob==1)? 'Đang thực hiện':'Hoàn thành' %></p>
+    </div>
+</div>

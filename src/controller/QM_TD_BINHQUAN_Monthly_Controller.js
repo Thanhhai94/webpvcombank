@@ -14,7 +14,7 @@ const getAll_QM_TD_BINHQUAN = async(req,res) => {
     for(let i=1; i<m+1;i++){
         month.push(dayjs(new Date(y,i,0,7,0,0)).format("YYYY-MM-DD").toString().replaceAll('-',''))
     }
-    console.log(month)
+   
     
     let table_LS_CV_BINHQUAN_TT = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'TOAN_HANG')
     let table_LS_CV_BINHQUAN_TT_KHCN = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHCN')

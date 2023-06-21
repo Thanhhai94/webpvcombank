@@ -1,17 +1,17 @@
 <div class="div">
-    <div class="row frame_profile">
+    <div class="row frame_profile" style="height: 220px">
         <div class="col-4 ">
-            <div class="avatar">
-                <img src="" alt="Avatar">
+            <div class="avatar" style="display: flex; align-items: center; clip-path: circle(70px at 50% 50%); justify-content: center;">
+                <img style="width: 80%; " src="/img/User-avatar.svg.png" alt="Avatar">
             </div>
         </div>
         <div class="col-8">
             <div class="row infor_Detail_Row">
-                <div class="col-8 staffname">
-                    <p><%= staff.Name %></p>
+                <div class="col-7 staffname">
+                    <p><i class="fa-solid fa-user" style="color: #0772ba;"></i>   <%= staff.Name %></p>
                 </div>
-                <div class="col-4 staffcif">
-                    <p><%= staff.CIF %></p>
+                <div class="col-5 staffcif">
+                    <p>CIF: <%= staff.CIF %></p>
                 </div>
             </div>
             <div class="row infor_Detail_Row">
@@ -19,31 +19,39 @@
                     <p>Vị trí:</p>
                 </div>
                 <div class="col-8 itemContent">
-                    <p><%= staff.Name %></p>
+                    <p></p>
                 </div>
             </div>
-            <div class="row infor_Detail_Row">
-                <div class="col-4 itemInfo">
-                    <p>E-mail:</p>
+            <div class="row infor_Detail_Row" style="display: flex; align-items: center;">
+                <div class="col-3 itemInfo" >
+                    <p>Email:</p>
                 </div>
-                <div class="col-8 itemContent">
-                    <p><%= staff.Email %></p>
+                <div class="col-1" style="display: flex;">
+                    <i class="fa-solid fa-envelope fa-2xs" style="color: #4258ff; font-size: 20px;"></i> 
+                </div>
+                <div class="col-7 itemContent" style="display: flex; align-items: center;">
+                    <p style="margin-bottom: 0;"><%= staff.Email %></p>
                 </div>
             </div>
-            <div class="row infor_Detail_Row">
-                <div class="col-4 itemInfo">
+            <div class="row infor_Detail_Row" style="display: flex; align-items: center;">
+                <div class="col-3 itemInfo" >
                     <p>Mobile:</p>
                 </div>
-                <div class="col-8 itemContent">
-                    <p><%= staff.Mobile %></p>
+                <div class="col-1" style="display: flex;">
+                    <i class="fa-solid fa-mobile" style="color: #0c9d1d; font-size: 20px;"></i> 
+                </div>
+                <div class="col-7 itemContent" style="display: flex; align-items: center;">
+                    <p style="margin-bottom: 0;"><%= staff.Mobile %></p>
                 </div>
             </div>
-            <div class="row infor_Detail_Row">
-                <div class="col-4 itemInfo">
+            <div class="row infor_Detail_Row" style="display: flex; align-items: center;">
+                <div class="col-3 itemInfo" >
                     <p>Phòng:</p>
                 </div>
-                <div class="col-8 itemContent">
-                    <p><%= staff.Team %></p>
+                <div class="col-1" style="display: flex;">
+                    <i class="fa-solid fa-users" style="color: #ffc708;"></i>                </div>
+                <div class="col-7 itemContent" style="display: flex; align-items: center;">
+                    <p style="margin-bottom: 0;"><%= staff.Team %></p>
                 </div>
             </div>
             <div class="row infor_Detail_Row">

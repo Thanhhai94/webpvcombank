@@ -1,14 +1,19 @@
 Highcharts.chart('daily_dashboard_TD_chart_7', {
   chart: {
   marginLeft: 30,
-  height: 300,
-  zoomType: 'xy'
+  height: 320,
+  zoomType: 'xy',
+  marginTop: 40
   },
 
 
   title: {
     text: 'Tỉ lệ giải ngân ưu đãi/tổng giải ngân lũy kế tháng',
-    align: 'center'
+    align: 'center',
+    style: {
+      color: '#0772ba',
+    },
+    
   },
  credits: {
     enabled: false
@@ -46,7 +51,7 @@ Highcharts.chart('daily_dashboard_TD_chart_7', {
   tooltip: {
     formatter: function () {
         return this.points.reduce(function (s, point) {
-            if(point.series.name == 'Số dư hợp đồng giải ngân'){
+            if(point.series.name == 'Dư nợ giải ngân'){
               return s + '<br/>' + `<span style="color:${point.series.color}">\u25CF</span>`+ point.series.name + ': ' +
               Number((point.y).toFixed(2)).toLocaleString("en-US") + ' tỉ đồng </b>' ;
             } else {
@@ -63,7 +68,7 @@ Highcharts.chart('daily_dashboard_TD_chart_7', {
       
   },
   series: [{
-    name: 'Số dư hợp đồng giải ngân',
+    name: 'Dư nợ giải ngân',
     type: 'column',
     borderWidth: 2,
     borderColor: 'rgb(31, 78, 120)',

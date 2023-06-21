@@ -1,0 +1,13 @@
+<div class="div" >
+    <div class="row" style="background-color: #0772ba; padding: 5px;display: flex; align-items: center; margin: 0;">
+        <div style="display: flex; justify-content: center; color: white; font-weight: 500;" class="col-1">STT</div>
+        <div style="display: flex; justify-content: center; color: white; font-weight: 500" class="col-7">Nội dung công việc thực hiện</div>
+        <div style="display: flex; justify-content: center; color: white; font-weight: 500" class="col-4">Trạng thái</div>
+    </div>
+    <div style="overflow-y:scroll; height: 200px;">
+        
+        <% for(i = 0; i < listjob.length; i++) { %>
+            <%- include('DS_Thuc_hien_CV_Chi_tiet.ejs',{STT:i+1,job:listjob[i]}) %>
+        <% } %>
+    </div>
+</div>

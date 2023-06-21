@@ -9,7 +9,7 @@ Highcharts.chart('daily_dashboard_TD_chart_4', {
     renderTo: 'container',
     type: 'column',
     marginLeft:30,
-    height: 400
+    height: 350
   },
   credits: {
     enabled: false

@@ -1,7 +1,9 @@
 import staffServices from "../services/StaffService";
 import dayjs from "dayjs";
 import dailyServices from "../services/dailyService";
-import getFromToDate from "../utils/getfromtodate"
+import getFromToDate from "../utils/getfromtodate";
+import getCustomer from "../utils/getCustomer";
+
 
 const reportDailyDashboardTDSelect = async(req,res) => {
     let ruleReportDaily = req.session.ruleReportDaily
@@ -73,6 +75,11 @@ const reportDailyDashboardTDSelect = async(req,res) => {
     
     let LAI_SUAT_HD_select = await dailyServices.getDataTDByDaily(Rptdate,select,'LAI_SUAT_TIN_DUNG_KH')
 
+    //TRAI_PHIEU
+    let data_TRAI_PHIEU = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','TRAI_PHIEU')
+    let data_BAN_NO = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','BAN_NO')
+
+
     let data_TD_NHOMKH_TOANHANG = getFromToDate.getArrayTT_TD_NKH_KH(arrayData_QUY_MO_TIN_DUNG_KH)
     
     let data_TT_QUY_MO_TIN_DUNG_KH = getFromToDate.getContinuousDataCore(arrayInputDate,QUY_MO_TIN_DUNG_KH,'Dtd')
@@ -126,13 +133,14 @@ const reportDailyDashboardTDSelect = async(req,res) => {
         pageTitle: 'Dashboard tín dụng',
         staff:staff,
         date:date,
+        selectedDate: JSON.stringify(date),
         active: select,
         dateFormat: dateFormat,
         arrayInputDate: JSON.stringify(formatDate),
         total_TT_TD_TN: JSON.stringify(data_TT_QUY_MO_TIN_DUNG_KH),
         data_LAI_SUAT_HD: JSON.stringify(data_LAI_SUAT_HD),
-        customerUp: customerUp,
-        customerDown: customerDown,
+        customerUp: getCustomer.getListCustomerIncreaseTD(customerUp),
+        customerDown: getCustomer.getListCustomerDecreaseTD(customerDown),
         data_TD_NHOMKH: JSON.stringify(data_TD_NHOMKH_TOANHANG),
         total_DU_NO_GIAI_NGAN: JSON.stringify(total_DU_NO_GIAI_NGAN),
         Tong_giai_ngan : total_DU_NO_GIAI_NGAN[total_DU_NO_GIAI_NGAN.length-1],
@@ -154,7 +162,7 @@ const reportDailyDashboardTDSelect = async(req,res) => {
         data_TT_DU_NO_TIN_DUNG_KHDN: JSON.stringify(data_TT_DU_NO_TIN_DUNG_KHDN),
         data_SLHD_TAT_TOAN: getFromToDate.getSLHD(SLHD_TAT_TOAN,select,NHOM_KH),
         data_SLHD_GIAI_NGAN: getFromToDate.getSLHD(SLHD_GIAI_NGAN,select,NHOM_KH),
-
+        totalTPMN : getFromToDate.sumTPBN(data_TRAI_PHIEU,data_BAN_NO,select) 
     })
 }
 

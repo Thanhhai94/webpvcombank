@@ -1,0 +1,35 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/homepage.css">
+<link rel="stylesheet" href="/css/Chart_Daily/title_report_Daily.css">
+<script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/reportKPIs.css">
+
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div>
+        <%- include('includes/KPIs/title.ejs') %>
+        <%- (KHOI_QL == 'KHCN') ? '' : (KHOI_QL == 'KHDN') ? include('includes/KPIs/selectNHOM_KH_KHDN.ejs') : include('includes/KPIs/selectNHOM_KH_KHDNL.ejs') %>
+    </div>
+    <div class="container-fluid homepage" style="top:150px; padding: 0 30px 50px 30px;">
+        <%- include('includes/KPIs/tableReportKPIs.ejs') %>
+        
+    </div>
+<%- include('includes/end.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

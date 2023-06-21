@@ -1,0 +1,130 @@
+.reportKPIs {
+    overflow-x:scroll; 
+    overflow-y: scroll; 
+    height: calc(100vh - 200px) !important;
+}
+
+.reportKPIs table,th,tr,td {
+    border: 0.5px solid black;
+    min-width: 92px;
+    font-size: 14px;
+}
+th {
+    height: 32px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+td {
+    height: 26px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.reportKPIs th {
+    padding: 5px;
+}
+
+.title {
+    right: 0;
+    height: 46px;
+    top: 46px;
+    width: 102%;
+    position: fixed;
+    background-color: var(--color-bl);
+    z-index: 50;
+}
+
+.title h5 {
+    margin-bottom: 0;
+    line-height: 46px;
+    color: #FFFFFF;
+    padding-left: 50px;
+}
+
+.background_1 {
+    background-color: var(--color-bl);
+    color: #FFFFFF;
+}
+.background_2 {
+    background-color: rgb(169, 208, 142);
+}
+.background_3 {
+    background-color: rgb(255, 217, 102);
+}
+.background_4 {
+    background-color: rgb(248, 203, 173);
+}
+
+.title .row .col-4 a {
+    color: #FFFFFF;
+    line-height: 46px;
+    width: 100%;
+}
+
+.title .row .col-4 a:hover {
+    height: 46px;
+    background-color: var(--color-background);
+    padding: 2px 39px;
+    color: var(--color-bl);
+    font-size: 18px;
+    font-weight: 600;
+}
+.active {
+    height: 46px;
+    background-color: var(--color-background);
+    padding: 2px 39px;
+    color: var(--color-bl);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.title .row {
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+}
+.title .row .col-4 {
+    text-align: center;
+    padding: 0;
+    display: flex;
+}
+.title .row .col-4 {
+    text-align: center;
+    padding: 0;
+}
+
+.title input {
+    text-align: center;
+    height: 100%;
+}
+
+.NHOM_KH {
+    right: 0;
+    height: 36px;
+    top: 92px;
+    width: 102%;
+    position: fixed;
+    background-color: rgba(168, 168, 168);
+    z-index: 50;
+    line-height: 36px;
+}
+
+/* .NHOM_KH .col-4 a {
+    color: black;
+    border-radius: 10px;
+    padding: 3px 30px;
+    background-color: var(--color-border);
+} */
+
+.active_NHOM_KH {
+    border-radius: 10px;
+    color: #FFFFFF;
+    padding: 3px 30px;
+    background-color: var(--color-bl);
+}
+
+.reportKPIs p{
+    margin-bottom: 0;
+    font-size: 13px;
+    text-align: center;
+}

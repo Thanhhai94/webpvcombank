@@ -3,7 +3,8 @@ Highcharts.chart('daily_dashboard_HDV_chart_1', {
     backgroundColor: '#DDDDDD',
     renderTo: 'container',
     type: 'column',
-    marginLeft:30
+    marginLeft:30,
+    height: 350
   },
   credits: {
     enabled: false

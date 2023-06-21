@@ -4,3 +4,28 @@
     top: 60px;
     padding-bottom: 40px;
 }
+
+.evenRow {
+    background-color: rgb(222, 220, 220);
+}
+.oddRow {
+    background-color: #FFFFFF
+}
+.chuathuchien {
+    background-color: rgb(190, 45, 45);
+    border-radius: 5px;
+    padding: 3px;
+    color: #FFFFFF;
+}
+.dangthuchien {
+    background-color: rgb(147, 19, 93);
+    border-radius: 5px;
+    padding: 3px;
+    color: #FFFFFF;
+}
+.hoanthanh {
+    background-color: rgb(102, 141, 120);
+    border-radius: 5px;
+    padding: 3px;
+    color: #FFFFFF;
+}

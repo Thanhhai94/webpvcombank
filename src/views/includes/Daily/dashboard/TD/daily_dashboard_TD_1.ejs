@@ -2,20 +2,20 @@
     <div style="width: 20%; padding: 0 10px 0 10px;">
             <%- include('daily_dashboard_TD_1_1.ejs',{
                     title: 'Quy mô kỳ báo cáo', 
-                    current: (QMTD_Amt=='' || 0) ? 0 : Math.round(QMTD_Amt).toLocaleString("en-US"), 
-                        Dtd: (QMTD_Dtd=='' || 0) ? 0 : Math.round(QMTD_Dtd).toLocaleString("en-US"),
-                        Dtd_value: QMTD_Dtd,
-                        Mtd: (QMTD_Mtd=='' || 0) ? 0 : Math.round(QMTD_Mtd).toLocaleString("en-US"),
-                        Mtd_value: QMTD_Mtd,
-                        Ytd: (QMTD_Ytd=='' || 0) ? 0 : Math.round(QMTD_Ytd).toLocaleString("en-US"),
-                        Ytd_value: QMTD_Ytd,
+                    current: (QMTD_Amt=='' || 0) ? 0 : Math.round(QMTD_Amt + totalTPMN.Amt).toLocaleString("en-US"), 
+                        Dtd: (QMTD_Dtd=='' || 0) ? 0 : Math.round(QMTD_Dtd + totalTPMN.Dtd).toLocaleString("en-US"),
+                        Dtd_value: QMTD_Dtd+ totalTPMN.Dtd,
+                        Mtd: (QMTD_Mtd=='' || 0) ? 0 : Math.round(QMTD_Mtd + totalTPMN.Mtd).toLocaleString("en-US"),
+                        Mtd_value: QMTD_Mtd + totalTPMN.Mtd,
+                        Ytd: (QMTD_Ytd=='' || 0) ? 0 : Math.round(QMTD_Ytd + totalTPMN.Ytd).toLocaleString("en-US"),
+                        Ytd_value: QMTD_Ytd + totalTPMN.Ytd,
                     Kht: 0,
                     Kht_value:0
             }) %>
     </div>
     <div style="width: 30%; padding: 0 10px 0 10px;">
             <%- include('daily_dashboard_TD_1_2.ejs',{
-                title_1: 'Tất toán' ,
+                title_1: 'Dư nợ Tất toán' ,
                 title_2: 'SLHD tất toán',
                 current_1: (Tong_du_no_tat_toan=='' || 0) ? 0 : Math.round(Tong_du_no_tat_toan).toLocaleString("en-US"),
                 current_2: (data_SLHD_TAT_TOAN.Amt=='' || 0) ? 0 : Math.round(data_SLHD_TAT_TOAN.Amt).toLocaleString("en-US"),
@@ -27,7 +27,7 @@
     </div>
     <div style="width: 30%; padding: 0 10px 0 10px;">
         <%- include('daily_dashboard_TD_1_2.ejs',{
-            title_1: 'Dư nợ' ,
+            title_1: 'Dư nợ giải ngân' ,
             title_2: 'SLHD giải ngân',
             current_1: (Tong_giai_ngan=='' || 0) ? 0 : Math.round(Tong_giai_ngan).toLocaleString("en-US"),
             current_2: (data_SLHD_GIAI_NGAN.Amt=='' || 0) ? 0 : Math.round(data_SLHD_GIAI_NGAN.Amt).toLocaleString("en-US"),

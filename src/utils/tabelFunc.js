@@ -52,16 +52,17 @@ const getRowDataHDVPSMOIDAILY = (array,KHOI_QL,NHOM_KH,PRODUCT,KY_HAN) => {
     return value
 }
 
-const getRowDataHDVPSMOIDAILYSPECIAL = (row) => {
+const getRowDataHDVPSMOIDAILYSPECIAL = (array) => {
     let value = {Amt: 0,Lai_suat: 0, Lai_suat_max: 0, Amt_bien_do_cong: 0, Lai_suat_bien_do_cong:0,Lai_suat_max_bien_do_cong:0}
-        if(row) {
-            value.Amt = row.Amt
-            value.Lai_suat = row.Lai_suat
-            value.Lai_suat_max = row.Lai_suat_max
-            value.Amt_bien_do_cong = row.Amt_bien_do_cong
-            value.Lai_suat_bien_do_cong = row.Lai_suat_bien_do_cong
-            value.Lai_suat_max_bien_do_cong = row.Lai_suat_max_bien_do_cong
-        } else {}
+    array.map(row => {
+        if(array.length>0) {
+        value.Amt = row.Amt
+        value.Lai_suat = row.Lai_suat
+        value.Lai_suat_max = row.Lai_suat_max
+        value.Amt_bien_do_cong = row.Amt_bien_do_cong
+        value.Lai_suat_bien_do_cong = row.Lai_suat_bien_do_cong
+        value.Lai_suat_max_bien_do_cong = row.Lai_suat_max_bien_do_cong
+}})
 
     return value
 }

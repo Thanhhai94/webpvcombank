@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <div class="container-fluid login-page">
+    <div class="container-fluid login-page" style="background-image: linear-gradient(#FFFFFF, #ffc708); height: 100%; " >
         <div class="row logo">
             <div class="col-12">
                 <img src="/img/Logo_PVcombank.png" alt="" style="width: 200px;">
@@ -10,17 +10,22 @@
         </div>
         <div class="row title">
             <div class="col-12">
-                <h4>Phòng kế hoạch và quản lý hiệu quả công việc - Khối Tài chính kế toán</h4>
+                <h4>Phòng kế hoạch và quản lý kết quả công việc - Khối Tài chính kế toán</h4>
             </div>
         </div>
         <div class="formLogin">
             <form action="/login" method="POST" class="form">
-                <h1>Đăng nhập</h1>
+                <h1 style="color: #0772ba;">Đăng nhập</h1>
                 <div class="form-control-pv">
-                    <input id="username" name="username" type="text"  placeholder="Tên đăng nhập">
+                    <div class="row">
+                        <input id="username" name="username" type="text"  placeholder="Tên đăng nhập">
+                    </div>
                 </div>
                 <div class="form-control-pv">
-                    <input id="password" name="password" type="password" placeholder="Mật khẩu">
+                    <div class="row">
+                        <input id="password" name="password" type="password" placeholder="Mật khẩu">
+                        <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                    </div>
                 </div>
                 <div class="form-button">
                     <button type="submit" class="btn btn-secondary">ĐĂNG NHẬP</button>
@@ -29,4 +34,16 @@
         </div>
     </div>
 
+    <script>
+        $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+        input.attr("type", "text");
+        } else {
+        input.attr("type", "password");
+        }
+        });
+       
+    </script>
 <%- include('includes/end.ejs') %>

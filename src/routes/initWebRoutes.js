@@ -7,6 +7,7 @@ import reportMonthly from '../controller/reportMonthly'
 import reportDailyController from '../controller/reportDailyController'
 import reportDailyDashboardControllerHDV from '../controller/reportDailyDashboardControllerHDV'
 import reportDailyDashboardControllerTinDung from '../controller/reportDailyDashboardControllerTinDung'
+import reportKPIs from '../controller/reportKPIs'
 import test from '../controller/test'
 
 
@@ -43,6 +44,10 @@ const initWebRoutes = (app) => {
   router.get("/monthly", reportMonthly.reportMonthly)
   router.get("/monthly/tindung", QM_TD_BINHQUAN_Monthly_Controller.getAll_QM_TD_BINHQUAN)
   router.post("/monthly/tindung", QM_TD_BINHQUAN_Monthly_Controller.post_QM_TD_BINHQUAN)
+
+  router.get("/KPIs/:KHOI_QL",reportKPIs.getReportKPIs)
+  router.get("/KPIs/:KHOI_QL/:NHOM_KH",reportKPIs.getReportKPIs)
+  router.get("/KPIs/:KHOI_QL/:NHOM_KH/:selectedMonth",reportKPIs.getReportKPIsSelected)
 
   router.get("/testget", test.test)
   router.get("/test/get", test.testget)

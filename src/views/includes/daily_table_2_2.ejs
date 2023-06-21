@@ -16,10 +16,10 @@
     </tr>
     <tr style="background-color: rgb(25, 104, 25);color: #fff;font-weight: bold;">
         <td colspan="2">Toàn hàng</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt + data_BAN_NO[0].Amt + ((data_TRAI_PHIEU[0].Amt)? data_TRAI_PHIEU[0].Amt: 0)).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd + data_TRAI_PHIEU[0].Dtd +data_BAN_NO[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd + data_TRAI_PHIEU[0].Mtd +data_BAN_NO[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd + data_TRAI_PHIEU[0].Ytd +data_BAN_NO[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt >0) ? 'white' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd >0) ? 'white' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd >0) ? 'white' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd*100).toFixed(2)} %` %></td>
@@ -93,10 +93,10 @@
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: 800;">
         <td colspan="2" style="text-align: left;">Trung/dài hạn</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt + data_TRAI_PHIEU[0].Amt +data_BAN_NO[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd + data_TRAI_PHIEU[0].Dtd +data_BAN_NO[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd + data_TRAI_PHIEU[0].Mtd +data_BAN_NO[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG.Ytd + data_TRAI_PHIEU[0].Ytd +data_BAN_NO[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG.Mtd*100).toFixed(2)} %` %></td>
@@ -115,10 +115,10 @@
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHDN</td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt + data_TRAI_PHIEU[0].Amt +data_BAN_NO[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd + data_TRAI_PHIEU[0].Dtd +data_BAN_NO[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd + data_TRAI_PHIEU[0].Mtd +data_BAN_NO[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI.Ytd + data_TRAI_PHIEU[0].Ytd +data_BAN_NO[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI.Mtd*100).toFixed(2)} %` %></td>
@@ -175,13 +175,13 @@
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: bold;">
         <td colspan="2" style="text-align: left;">Cầm cố STK,TP,CK</td>
-        <td class="<%= ( CAM_CO_STK_TP.Amt >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Amt=='') ? '' : Math.round( CAM_CO_STK_TP.Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( CAM_CO_STK_TP.Dtd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Dtd=='') ? '' : Math.round( CAM_CO_STK_TP.Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( CAM_CO_STK_TP.Mtd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Mtd=='') ? '' : Math.round( CAM_CO_STK_TP.Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( CAM_CO_STK_TP.Ytd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP.Ytd=='') ? '' : Math.round( CAM_CO_STK_TP.Ytd).toLocaleString("en-US") %></td>
-        <td class="<%= (LS_CAM_CO_STK_TP.Amt >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP.Amt == '') ? '' : `${(LS_CAM_CO_STK_TP.Amt*100).toFixed(2)} %` %></td>
-        <td class="<%= (LS_CAM_CO_STK_TP.Dtd >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP.Dtd == '') ? '' : `${(LS_CAM_CO_STK_TP.Dtd*100).toFixed(2)} %` %></td>
-        <td class="<%= (LS_CAM_CO_STK_TP.Mtd >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP.Mtd == '') ? '' : `${(LS_CAM_CO_STK_TP.Mtd*100).toFixed(2)} %` %></td>
+        <td class="<%= ( CAM_CO_STK_TP[0].Amt >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP[0].Amt=='') ? '' : Math.round( CAM_CO_STK_TP[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( CAM_CO_STK_TP[0].Dtd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP[0].Dtd=='') ? '' : Math.round( CAM_CO_STK_TP[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( CAM_CO_STK_TP[0].Mtd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP[0].Mtd=='') ? '' : Math.round( CAM_CO_STK_TP[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( CAM_CO_STK_TP[0].Ytd >0) ? 'green' : 'red' %>"><%= ( CAM_CO_STK_TP[0].Ytd=='') ? '' : Math.round( CAM_CO_STK_TP[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (LS_CAM_CO_STK_TP[0].Amt >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP[0].Amt == '') ? '' : `${(LS_CAM_CO_STK_TP[0].Amt*100).toFixed(2)} %` %></td>
+        <td class="<%= (LS_CAM_CO_STK_TP[0].Dtd >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP[0].Dtd == '') ? '' : `${(LS_CAM_CO_STK_TP[0].Dtd*100).toFixed(2)} %` %></td>
+        <td class="<%= (LS_CAM_CO_STK_TP[0].Mtd >0) ? 'green' : 'red' %>"><%= (LS_CAM_CO_STK_TP[0].Mtd == '') ? '' : `${(LS_CAM_CO_STK_TP[0].Mtd*100).toFixed(2)} %` %></td>
         <td></td>
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: bold;">

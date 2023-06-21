@@ -3,6 +3,8 @@ import dayjs from "dayjs";
 import dailyServices from "../services/dailyService";
 import getFromToDate from "../utils/getfromtodate"
 import getTKTT from "../utils/TKTT"
+import getCustomer from "../utils/getCustomer";
+
 
 const reportDailyDashboardHDVSelect = async(req,res) => {
     let ruleReportDaily = req.session.ruleReportDaily
@@ -60,14 +62,8 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
     let TT_CASA_KHDN = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','TONG_KHOI','TY_TRONG_CASA')
     let TT_CASA_KHCN = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','TY_TRONG_CASA')
 
-    let TOP_CKH_KHCN_ASC = await dailyServices.getCustomerAsc(Rptdate,'CKH','CN')
-    let TOP_CKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'CKH','CN')
-    let TOP_CKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'CKH','DN')
-    let TOP_CKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'CKH','DN')
-    let TOP_KKH_KHCN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','CN')
-    let TOP_KKH_KHCN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','CN')
-    let TOP_KKH_KHDN_ASC = await dailyServices.getCustomerAsc(Rptdate,'KKH','DN')
-    let TOP_KKH_KHDN_DESC = await dailyServices.getCustomerDesc(Rptdate,'KKH','DN')
+    let KH_HDV_DESC = await dailyServices.getCustomerHDVDesc(Rptdate)
+    let KH_HDV_ASC = await dailyServices.getCustomerHDVAsc(Rptdate)
 
     let TKTT = await dailyServices.getTTTK(Rptdate,selectTKTT)
     let getDataTKTT = getTKTT.getTotalTKTT(TKTT)
@@ -99,6 +95,7 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
         titles: titles,
         staff:staff,
         date:date,
+        selectedDate: JSON.stringify(date),
         active: select,
         dateFormat: dateFormat,
         QUY_MO_CKH : QUY_MO_CKH, 
@@ -121,14 +118,14 @@ const reportDailyDashboardHDVSelect = async(req,res) => {
         TT_CASA_Value : JSON.stringify(TT_CASA_Value),
         data_LAI_SUAT_HD_CKH: JSON.stringify(data_LAI_SUAT_HD_CKH),
         data_LAI_SUAT_HD_KKH: JSON.stringify(data_LAI_SUAT_HD_KKH),
-        TOP_CKH_KHCN_ASC : TOP_CKH_KHCN_ASC,
-        TOP_CKH_KHCN_DESC : TOP_CKH_KHCN_DESC,
-        TOP_CKH_KHDN_ASC : TOP_CKH_KHDN_ASC,
-        TOP_CKH_KHDN_DESC : TOP_CKH_KHDN_DESC,
-        TOP_KKH_KHCN_ASC : TOP_KKH_KHCN_ASC,
-        TOP_KKH_KHCN_DESC : TOP_KKH_KHCN_DESC,
-        TOP_KKH_KHDN_ASC : TOP_KKH_KHDN_ASC,
-        TOP_KKH_KHDN_DESC : TOP_KKH_KHDN_DESC,
+        TOP_CKH_KHCN_ASC : getCustomer.getListCustomerDecrease(KH_HDV_ASC,'CKH','CN'),
+        TOP_CKH_KHCN_DESC : getCustomer.getListCustomerIncrease(KH_HDV_DESC,'CKH','CN'),
+        TOP_CKH_KHDN_ASC : getCustomer.getListCustomerDecrease(KH_HDV_ASC,'CKH','DN'),
+        TOP_CKH_KHDN_DESC :getCustomer.getListCustomerIncrease(KH_HDV_DESC,'CKH','DN'),
+        TOP_KKH_KHCN_ASC : getCustomer.getListCustomerDecrease(KH_HDV_ASC,'KKH','CN'),
+        TOP_KKH_KHCN_DESC : getCustomer.getListCustomerIncrease(KH_HDV_DESC,'KKH','CN'),
+        TOP_KKH_KHDN_ASC : getCustomer.getListCustomerDecrease(KH_HDV_ASC,'KKH','DN'),
+        TOP_KKH_KHDN_DESC : getCustomer.getListCustomerIncrease(KH_HDV_DESC,'KKH','DN'),
         getDataTKTT: getDataTKTT
     })
 }

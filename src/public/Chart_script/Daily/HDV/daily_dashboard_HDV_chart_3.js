@@ -9,6 +9,7 @@ Highcharts.chart('QM_HDV_NKH_Daily', {
   chart: {
     backgroundColor: '#DDDDDD',
     type: 'column',
+    height : 320
   },
   credits: {
     enabled: false
@@ -17,7 +18,10 @@ Highcharts.chart('QM_HDV_NKH_Daily', {
     enabled: false
   },
   title: {
-    text: 'Quy mô HDV theo nhóm KH'
+    text: 'Quy mô HDV theo nhóm KH',
+    style: {
+      color: '#0772ba',
+    }
   },
   xAxis: {
     gridLineWidth: 0,
@@ -40,7 +44,8 @@ Highcharts.chart('QM_HDV_NKH_Daily', {
     }
   }, {
     title: {
-      text: ''
+      text: '',
+      
     },
     opposite: true
   }],

@@ -50,12 +50,12 @@
         <div class="col-lg-2">
                 <%- include('daily_table_1_2.ejs',{
                         title:titles[4], 
-                        current: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt ).toLocaleString("en-US"), 
-                        Dtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd ).toLocaleString("en-US"),
+                        current: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Amt  + data_TRAI_PHIEU[0].Amt +data_BAN_NO[0].Amt ).toLocaleString("en-US"), 
+                        Dtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd + data_TRAI_PHIEU[0].Amt +data_BAN_NO[0].Amt ).toLocaleString("en-US"),
                         Dtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Dtd,
-                        Mtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd ).toLocaleString("en-US"),
+                        Mtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd + data_TRAI_PHIEU[0].Amt +data_BAN_NO[0].Amt ).toLocaleString("en-US"),
                         Mtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Mtd ,
-                        Ytd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd ).toLocaleString("en-US"),
+                        Ytd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd=='' || 0) ? 0 : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd + data_TRAI_PHIEU[0].Amt +data_BAN_NO[0].Amt ).toLocaleString("en-US"),
                         Ytd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG.Ytd
                 }) %>
         </div>

@@ -1,0 +1,32 @@
+<div class="div">
+    <div class="row frame_profile" style="height: 220px; background-color: #F4CC70;" >
+        <div style="padding-left: 30px;" class="col-6">
+            <div class="div">
+                <p style="font-size: 22px;font-weight: 800; color: #0772ba;">Thực hiện công việc</p>
+            </div>
+            <div class="div">
+                <p style="color: #1E434C; font-weight: 600; font-size: 18px;">
+                    Tổng số công việc: <%= countStatusJob.total%>
+                </p>
+            </div>
+            <div class="div">
+                <p style=" color: rgb(190, 45, 45); font-weight: 500; margin-bottom: 8px;">
+                    Chưa thực hiện: <%= countStatusJob.chuathuchien%>
+                </p>
+            </div>
+            <div class="div">
+                <p style=" color: rgb(147, 19, 93); font-weight: 500; margin-bottom: 8px">
+                    Đang thực hiện: <%= countStatusJob.thuchien%>
+                </p>
+            </div>
+            <div class="div">
+                <p style=" color: rgb(102, 141, 120); font-weight: 500; margin-bottom: 8px">
+                    Hoàn thành: <%= countStatusJob.hoanthanh%>
+                </p>
+            </div>
+        </div>
+        <div class="col-6">
+            <%- include('Dashboard_Count_Job')%>
+        </div>
+    </div>
+</div>

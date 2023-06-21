@@ -1,22 +1,33 @@
 <div class="row title_report_Daily" style="position: fixed; top: 46px; width: 90%; z-index: 50; height: 42px;" >
     <div class="col-7">
-        <h4 style="float: left;margin-bottom: 0; line-height: 42px;">BÁO CÁO TÌNH HÌNH HOẠT ĐỘNG HĐV - TD</h4>
+        <h5 style="float: left;margin-bottom: 0; line-height: 42px;"><%= `BÁO CÁO TÌNH HÌNH HOẠT ĐỘNG HĐV-TD ${dateFormat}` %></h5>
     </div>
     <div class="col-2">
         <p>Ngày báo cáo</p>
     </div>
     <div class="col-1">
-        <input  name="bao_cao_ngay" value="<%=date %>" type="date" />
+        <input style="font-size: 16px;" id="input" name="bao_cao_ngay"  type="text" readonly placeholder="Chọn ngày"  />
     </div>
 </div>
 
 <script>
-    $(document).ready(function(){
-        $('input[name="bao_cao_ngay"]').change(function(){
-           console.log($(this).val())
-           let date = $(this).val()
-        //    let param = date.replaceAll('-','')
-           window.location.href = `/daily/${date}`
-        })
+    var selectedDate = <%- selectedDate %>
+    let startDate = new Date(selectedDate)
+    new AirDatepicker('#input', {
+        selectedDates: [startDate],
+        position: 'left top',
+        locale: {
+        days: ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+        daysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+        daysMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+        months: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+        monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        today: 'Today',
+        clear: 'Clear',
+        firstDay: 1},
+        onSelect({date}) {
+        let day = dayjs(date).format('YYYY-MM-DD')
+        return window.location.href = `/daily/${day}`
+       }
     })
-</script>
+    </script>

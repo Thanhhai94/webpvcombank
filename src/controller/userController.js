@@ -1,6 +1,6 @@
 import UserServices from "../services/UserService";
 import staffServices from "../services/StaffService";
-
+import JobService from "../services/JobService"
 
 const getLogin = async (req,res) => {
   console.log(req.session.CIF);

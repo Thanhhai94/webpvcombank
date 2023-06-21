@@ -2,6 +2,12 @@
 <link rel="stylesheet" href="/css/navigation.css">
 <link rel="stylesheet" href="/css/homepage.css">
 <link rel="stylesheet" href="/css/staff.css">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/pareto.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 </head>
 <body>
     <%- include('includes/navigation.ejs') %>
@@ -12,11 +18,23 @@
     
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-6" style="padding-right: 30px;">
                 <%- include('includes/staff.ejs') %>
             </div>
-        </div>
-        
+            <div class="col-6" style="padding-left: 30px;">
+                <div class="row">
+                    <div class="col-12">
+                        <%- include('includes/report_Thuc_hien_CV.ejs') %>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-12" style="padding: 0;">
+                        <%- include('includes/DS_Thuc_hien_CV.ejs') %>
+                    </div>
+                </div>
+            </div>
+        </div>    
     </div>
+    <script src="/Chart_script/CountJobStaff.js"></script>
 
 <%- include('includes/end.ejs') %>

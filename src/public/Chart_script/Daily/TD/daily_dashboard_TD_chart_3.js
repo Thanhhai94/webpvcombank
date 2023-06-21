@@ -6,7 +6,7 @@ Highcharts.setOptions({
   });
   Highcharts.chart('daily_dashboard_TD_chart_3', {
     chart: {
-      height: 400,
+      height: 350,
       type: 'column',
       
     },
@@ -23,7 +23,10 @@ Highcharts.setOptions({
       enabled: false
     },
     title: {
-      text: 'Tăng trưởng tín dụng theo nhóm KH'
+      text: 'Tăng trưởng tín dụng theo nhóm KH',
+      style: {
+        color: '#0772ba',
+      }
     },
     xAxis: {
       lineWidth:0,
