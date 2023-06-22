@@ -3,7 +3,6 @@ const { Op } = require("sequelize")
 const dayjs = require('dayjs')
 
 const getListJob = async (CIF) => {
-
     try {
       const jobList = await db.Jobs.findAll({
         where: {CIF:CIF},
@@ -37,13 +36,6 @@ const getDetailJob = async (CIF,id) => {
 }
 
 const updateJob = async(data, CIF) => {
-  var makeDate = function(){
-    var date = new Date();
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
-    return year + "-" + month + "-" + day ;
-}
 var makeTime = function(){
   var date = new Date();
   var hours = date.getHours();
@@ -51,8 +43,6 @@ var makeTime = function(){
   var seconds = date.getSeconds();
   return hours + ":" + minutes + ":" + seconds ;
 }
-
-console.log('date',makeDate())
   try {
     const jobUpdate = await db.Jobs.findOne({
       where: {id:data.id}

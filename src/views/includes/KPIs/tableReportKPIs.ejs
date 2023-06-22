@@ -1,4 +1,4 @@
-<div class="reportKPIs">
+<!-- <div class="reportKPIs">
     <table >
         <tr>
             <th class="background_1" colspan="1" rowspan="2">STT</th>
@@ -42,19 +42,19 @@
                                 <td colspan="2"></td>
                                 <td colspan="2" style="font-size: 12px;font-style: italic; "><%= getListKPI[u].DON_VI_TINH %></td>
                                 <td colspan="2">
-                                    <p>
+                                    
                                         <%= (getListKPI[u].Actual_amt == 0 || getListKPI[u].Actual_amt == null) ? '' :  (getListKPI[u].DON_VI_TINH == 'tỷ đồng') ? Math.round(getListKPI[u].Actual_amt).toLocaleString("en-US") : (getListKPI[u].DON_VI_TINH == '%') ? `${(getListKPI[u].Actual_amt*100).toFixed(2)} %` : (getListKPI[u].DON_VI_TINH == 'triệu USD') ? Number((getListKPI[u].Actual_amt).toFixed(2)).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Khách hàng') ? Math.round(getListKPI[u].Actual_amt).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Thẻ') ? Math.round(getListKPI[u].Actual_amt).toLocaleString("en-US"): ''%>
-                                    </p>
+                                    
                                 </td>
                                 <td colspan="2">
-                                    <p>
+                                    
                                         <%= (getListKPI[u].Amt == 0 || getListKPI[u].Amt == null) ? '' : (getListKPI[u].DON_VI_TINH == 'tỷ đồng') ? Math.round(getListKPI[u].Amt).toLocaleString("en-US") : (getListKPI[u].DON_VI_TINH == '%') ? `${(getListKPI[u].Amt*100).toFixed(2)} %` : (getListKPI[u].DON_VI_TINH == 'triệu USD') ? Number((getListKPI[u].Amt).toFixed(2)).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Khách hàng') ? Math.round(getListKPI[u].Amt).toLocaleString("en-US"):(getListKPI[u].DON_VI_TINH == 'Thẻ') ? Math.round(getListKPI[u].Amt).toLocaleString("en-US"):''%>
-                                    </p>
+                                    
                                 </td>
                                 <td colspan="2">
-                                    <p>
+                                    
                                         <%=(getListKPI[u].Amt == 0 || getListKPI[u].Amt == null || getListKPI[u].Actual_amt == 0 || getListKPI[u].Actual_amt == null ) ? '' : `${(getListKPI[u].Actual_amt/getListKPI[u].Amt*100).toFixed(2)} %`  %>
-                                    </p>
+                                    
                                 </td>
                                 <td colspan="2"></td>
                                 <td colspan="2"></td>
@@ -64,11 +64,11 @@
                                     <td colspan="2">
                                         <%for(let k=0; k < getAllKPI.length; k++) { %>
                                             <% if(getAllKPI[k].NHOM_CHI_TIEU == array_NHOM_CHI_TIEU[i] && getAllKPI[k].LOAI == arrayFull[i][j] && getAllKPI[k].Rptdate == getmonths[l] && getAllKPI[k].CHI_TIEU == getListKPI[u].CHI_TIEU){ %>
-                                                <p>
+                                                
                                                     <%= (getAllKPI[k].Actual_amt == 0 || getAllKPI[k].Actual_amt == null) ? '' :   (getListKPI[u].DON_VI_TINH == 'tỷ đồng') ? Math.round(getAllKPI[k].Actual_amt).toLocaleString("en-US") : (getListKPI[u].DON_VI_TINH == '%') ? `${(getAllKPI[k].Actual_amt*100).toFixed(2)} %` : (getListKPI[u].DON_VI_TINH == 'triệu USD') ? Number((getAllKPI[k].Actual_amt).toFixed(2)).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Khách hàng') ? Math.round(getAllKPI[k].Actual_amt).toLocaleString("en-US"):(getListKPI[u].DON_VI_TINH == 'Thẻ') ? Math.round(getAllKPI[k].Actual_amt).toLocaleString("en-US"):''%>
-                                                </p>
+                                                
                                             <% } else { %>
-                                                <p></p>
+                                                
                                             <% }} %>
                                     </td>
                                 <% } %>
@@ -86,7 +86,99 @@
         
 
     </table>
+</div> -->
+
+<div id="table-scroll" class="table-scroll">
+  <table id="main-table" class="main-table">
+    <thead>
+        <tr>
+            <th style="min-width: 350px; z-index: 100; background-color: rgb(0, 112, 192); color: #FFFFFF;text-align: center;padding-left: 0;" rowspan="2" >Chỉ tiêu</th>
+            <th style="background-color: rgb(0, 112, 192); color: #FFFFFF;text-align: center;padding-left: 0" rowspan="2">Mô tả</th>
+            <th style="background-color: rgb(0, 112, 192); color: #FFFFFF;text-align: center;padding-left: 0" rowspan="2">Đơn vị tính</th>
+            <th style="background-color: rgb(169, 208, 142);text-align: center;padding-left: 0" colspan="3">Tháng thực hiện</th>
+            <th style=" background-color: rgb(255, 217, 102);text-align: center;padding-left: 0" colspan="3">Lũy kế đến tháng hiện tại</th>
+            <th style="background-color: rgb(248, 203, 173);text-align: center;padding-left: 0" colspan="12" >Thực hiện các tháng</th>
+        </tr>
+        <tr>
+            <th style="top: 32px; background-color: rgb(169, 208, 142);text-align: center;padding-left: 0" >Thực hiện tháng</th>
+            <th style="top: 32px; background-color: rgb(169, 208, 142);text-align: center;padding-left: 0" >Kế hoạch tháng</th>
+            <th style="top: 32px; background-color: rgb(169, 208, 142);text-align: center;padding-left: 0" >% HTKH tháng</th>
+            <th style="top: 32px; background-color: rgb(255, 217, 102);text-align: center;padding-left: 0" >Thực hiện tháng</th>
+            <th style="top: 32px; background-color: rgb(255, 217, 102) ;text-align: center;padding-left: 0" >Kế hoạch tháng</th>
+            <th style="top: 32px; background-color: rgb(255, 217, 102);text-align: center;padding-left: 0" >% HTKH tháng</th>
+            <% for(let month of months) { %>
+                <th style="top: 32px; background-color: #CCCCCC;text-align: center;padding-left: 0" ><%= month %></th>
+            <% } %>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i=0 ; i< array_NHOM_CHI_TIEU.length; i++){ %>
+            <tr style="background-color: rgb(198, 89, 17); color: white; font-weight: 600; text-align: left; padding-left: 15px;">
+                <th style="background: rgb(198, 89, 17);"><%=i+1%>. <%= array_NHOM_CHI_TIEU[i] %></th>
+                <td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td>
+            </tr>
+            <% for(let j = 0; j< arrayFull[i].length; j++ ) { %>
+                <tr style="background: rgb(155, 194, 230);font-weight: 600; text-align: left; padding-left: 15px;">
+                    <th style="background: rgb(155, 194, 230);"><%=i+1%>.<%=j+1%>. <%= arrayFull[i][j] %></th>
+                    <td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td><td ></td>
+                </tr>
+                <%  let count = 0 %>
+                <% for(let u = 0; u < getListKPI.length; u++) {  %>
+                    <%  if(getListKPI[u].NHOM_CHI_TIEU == array_NHOM_CHI_TIEU[i] && getListKPI[u].LOAI == arrayFull[i][j]) { %>
+                        <% count = count +1 %>
+                        <tr>
+                            <th style="font-weight: 400; background: rgb(238, 237, 237); text-align: left; padding-left: 15px;"><%=i+1%>.<%=j+1%>.<%= count %> <%= getListKPI[u].CHI_TIEU %></th>
+                            <td ></td>
+                            <td  style="font-size: 12px;font-style: italic; "><%= getListKPI[u].DON_VI_TINH %></td>
+                            <td >
+                                
+                                    <%= (getListKPI[u].Actual_amt == 0 || getListKPI[u].Actual_amt == null) ? '' :  (getListKPI[u].DON_VI_TINH == 'tỷ đồng') ? Math.round(getListKPI[u].Actual_amt).toLocaleString("en-US") : (getListKPI[u].DON_VI_TINH == '%') ? `${(getListKPI[u].Actual_amt*100).toFixed(2)} %` : (getListKPI[u].DON_VI_TINH == 'triệu USD') ? Number((getListKPI[u].Actual_amt).toFixed(2)).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Khách hàng') ? Math.round(getListKPI[u].Actual_amt).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Thẻ') ? Math.round(getListKPI[u].Actual_amt).toLocaleString("en-US"): ''%>
+                                
+                            </td>
+                            <td >
+                                
+                                    <%= (getListKPI[u].Amt == 0 || getListKPI[u].Amt == null) ? '' : (getListKPI[u].DON_VI_TINH == 'tỷ đồng') ? Math.round(getListKPI[u].Amt).toLocaleString("en-US") : (getListKPI[u].DON_VI_TINH == '%') ? `${(getListKPI[u].Amt*100).toFixed(2)} %` : (getListKPI[u].DON_VI_TINH == 'triệu USD') ? Number((getListKPI[u].Amt).toFixed(2)).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Khách hàng') ? Math.round(getListKPI[u].Amt).toLocaleString("en-US"):(getListKPI[u].DON_VI_TINH == 'Thẻ') ? Math.round(getListKPI[u].Amt).toLocaleString("en-US"):''%>
+                                
+                            </td>
+                            <td >
+                                
+                                    <%=(getListKPI[u].Amt == 0 || getListKPI[u].Amt == null || getListKPI[u].Actual_amt == 0 || getListKPI[u].Actual_amt == null ) ? '' : `${(getListKPI[u].Actual_amt/getListKPI[u].Amt*100).toFixed(2)} %`  %>
+                                
+                            </td>
+                            <td ></td>
+                            <td ></td>
+                            <td ></td>
+
+                            <% for(let l = 0; l < getmonths.length; l++) { %>
+                                <td >
+                                    <%for(let k=0; k < getAllKPI.length; k++) { %>
+                                        <% if(getAllKPI[k].NHOM_CHI_TIEU == array_NHOM_CHI_TIEU[i] && getAllKPI[k].LOAI == arrayFull[i][j] && getAllKPI[k].Rptdate == getmonths[l] && getAllKPI[k].CHI_TIEU == getListKPI[u].CHI_TIEU){ %>
+                                            
+                                                <%= (getAllKPI[k].Actual_amt == 0 || getAllKPI[k].Actual_amt == null) ? '' :   (getListKPI[u].DON_VI_TINH == 'tỷ đồng') ? Math.round(getAllKPI[k].Actual_amt).toLocaleString("en-US") : (getListKPI[u].DON_VI_TINH == '%') ? `${(getAllKPI[k].Actual_amt*100).toFixed(2)} %` : (getListKPI[u].DON_VI_TINH == 'triệu USD') ? Number((getAllKPI[k].Actual_amt).toFixed(2)).toLocaleString("en-US"): (getListKPI[u].DON_VI_TINH == 'Khách hàng') ? Math.round(getAllKPI[k].Actual_amt).toLocaleString("en-US"):(getListKPI[u].DON_VI_TINH == 'Thẻ') ? Math.round(getAllKPI[k].Actual_amt).toLocaleString("en-US"):''%>
+                                            
+                                        <% } else { %>
+                                            
+                                        <% }} %>
+                                </td>
+                            <% } %>
+                            
+                        </tr>
+
+                    <% } %>
+                        
+                <% } %>
+            <% } %>
+        
+        
+        <% } %>
+
+
+    </tbody>
+  </table>
 </div>
+
+
+
 
 <script>
     var arrayFull = <%- arrayFull %>
