@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/css/DSCV_title.css">
 <link rel="stylesheet" href="/css/DSCV_thongke.css">
 <link rel="stylesheet" href="/css/DSCV_ND.css">
+<link rel="stylesheet" href="/css/giao_viec.css">
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 <script>dayjs().format()</script>
 </head>
@@ -11,16 +12,50 @@
     <%- include('includes/navigation.ejs') %>
     <div class="container homepage">
         <div class="row">
-        
-                <h2>Danh sách công việc</h2>
-            
+            <%- include('includes/QUAN_LY_DSCV_selectMonth') %>
         </div>
         <%- include('includes/DSCV_Thongke.ejs') %>
         <%- include('includes/DSCV_title.ejs') %>
         <% for(let job of listjob) { %>
             <%- include('includes/QUAN_LY_DSCV_ND.ejs',{job:job}) %>
         <% } %>
+        <div style="display: flex; justify-content: flex-end; margin-top: 10px; margin-right: 20px;">
+            <button style="border: 1px solid var(--color-background);
+            color: var(--color-bl);
+            background: var(--color-background);
+            border-radius: 10px;
+            padding: 2px 10px;
+            font-weight: 500;"
+            onclick="openFormGiaoviec()"
+            >Giao việc</button>
+        </div>
     </div>
+    <div id="myDIV">
+        <%- include('includes/QUAN_LY_DSCV_GIAO_VIEC.ejs') %>
+    </div>
+
+
+    
+    <script type="text/javascript">
+    function openFormGiaoviec() {
+        var x = document.getElementById('myDIV');
+        if (x.style.display === 'none') {
+            x.style.display = 'flex';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+    function closeFormGiaoviec() {
+        var x = document.getElementById('myDIV');
+        if (x.style.display === 'flex') {
+            x.style.display = 'none';
+        } else {
+            x.style.display = 'flex';
+        }
+    }
+    </script>
+    
+    </script>
 
     <script>
         var makeDate = function(date){

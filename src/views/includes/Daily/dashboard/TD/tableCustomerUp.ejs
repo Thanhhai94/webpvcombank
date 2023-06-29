@@ -5,27 +5,27 @@
     <tr style="font-size: 12px; background-color: white;">
         <td  style="width: 70%; padding-left: 10px;height: 28px; "><%= (data.length>0) ? data[0].FULL_NAME : '' %></td>
         <td style="width: 5%; padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>0) ? Math.round(data[0].DIFF).toLocaleString("en-US") : '' %></td>
+        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>0) ? (Math.floor(data[0].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="font-size: 12px; background-color: white;">
         <td  style="width: 70%; padding-left: 10px;height: 28px; "><%= (data.length>1) ? data[1].FULL_NAME : '' %></td>
         <td style="width: 5%; padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>1) ? Math.round(data[1].DIFF).toLocaleString("en-US") : '' %></td>
+        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>1) ? (Math.floor(data[1].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="font-size: 12px; background-color: white;">
         <td  style="width: 70%; padding-left: 10px;height: 28px; "><%= (data.length>2) ? data[2].FULL_NAME : '' %></td>
         <td style="width: 5%; padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>2) ? Math.round(data[2].DIFF).toLocaleString("en-US") : '' %></td>
+        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>2) ? (Math.floor(data[2].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="font-size: 12px; background-color: white;">
         <td  style="width: 70%; padding-left: 10px;height: 28px; "><%= (data.length>3) ? data[3].FULL_NAME : '' %></td>
         <td style="width: 5%; padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>3) ? Math.round(data[3].DIFF).toLocaleString("en-US") : '' %></td>
+        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>3) ? (Math.floor(data[3].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="font-size: 12px; background-color: white;">
         <td  style="width: 70%; padding-left: 10px;height: 28px; "><%= (data.length>4) ? data[4].FULL_NAME : '' %></td>
         <td style="width: 5%; padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>4) ? Math.round(data[4].DIFF).toLocaleString("en-US") : '' %></td>
+        <td style="width: 25%; padding-left: 10px;height: 28px; "><%= (data.length>4) ? (Math.floor(data[4].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     
 </table>

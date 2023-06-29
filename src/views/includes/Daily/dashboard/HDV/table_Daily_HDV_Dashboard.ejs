@@ -5,41 +5,41 @@
     <tr style="border: 1px dashed #0772ba;">
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataAsc.length>0) ? dataAsc[0].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>0) ? Math.round(dataAsc[0].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>0) ? (Math.floor(dataAsc[0].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>0) ? dataDesc[0].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-down red"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>0) ? Math.round(dataDesc[0].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>0) ? (Math.floor(dataDesc[0].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="border: 1px dashed #0772ba;">
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataAsc.length>1) ? dataAsc[1].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba; "><%= (dataAsc.length>1) ? Math.round(dataAsc[1].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba; "><%= (dataAsc.length>1) ? (Math.floor(dataAsc[1].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>1) ? dataDesc[1].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-down red"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>1) ? Math.round(dataDesc[1].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>1) ? (Math.floor(dataDesc[1].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="border: 1px dashed #0772ba;">
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataAsc.length>2) ? dataAsc[2].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>2) ? Math.round(dataAsc[2].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>2) ? (Math.floor(dataAsc[2].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>2) ? dataDesc[2].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-down red"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>2) ? Math.round(dataDesc[2].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>2) ? (Math.floor(dataDesc[2].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="border: 1px dashed #0772ba;">
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataAsc.length>3) ? dataAsc[3].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>3) ? Math.round(dataAsc[3].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>3) ? (Math.floor(dataAsc[3].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>3) ? dataDesc[3].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-down red"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>3) ? Math.round(dataDesc[3].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>3) ? (Math.floor(dataDesc[3].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
     <tr style="border: 1px dashed #0772ba;">
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataAsc.length>4) ? dataAsc[4].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-up green"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>4) ? Math.round(dataAsc[4].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; border-right: 1px dashed #0772ba;"><%= (dataAsc.length>4) ? (Math.floor(dataAsc[4].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
         <td colspan="8" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>4) ? dataDesc[4].TEN_KH : '' %></td>
         <td colspan="1" style="padding-left: 5px;height: 28px; "><i class="fa-solid fa-caret-down red"></i></td>
-        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>4) ? Math.round(dataDesc[4].DIFF).toLocaleString("en-US") : '' %></td>
+        <td colspan="3" style="padding-left: 10px;height: 28px; "><%= (dataDesc.length>4) ? (Math.floor(dataDesc[4].DIFF/10000000)/100).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") : '' %></td>
     </tr>
 </table>

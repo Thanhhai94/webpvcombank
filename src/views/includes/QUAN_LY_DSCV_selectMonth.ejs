@@ -1,0 +1,36 @@
+<div class="row" style="width: 100%; display: flex; flex-wrap: nowrap; justify-content: space-between; margin: 10px 0px">
+    <div >
+        <h4>DANH SÁCH CÔNG VIỆC <%= currentMonth %></h4>
+    </div>
+    <div>
+        <input id="DS_Cong_Viec" name="DS_Cong_Viec" style="border: 1px solid var(--color-background);
+        color: var(--color-bl);
+        background: var(--color-background);
+        border-radius: 10px;
+        padding: 2px 10px;
+        font-weight: 500; width: 70%; text-align: center;"  type="text" readonly placeholder="Chọn tháng"  />
+    </div>
+</div>
+
+<script>
+    var cifQuanly = <%- cifQuanLy %>
+    new AirDatepicker('#DS_Cong_Viec', {
+    view: 'months',
+    minView: 'months',
+    dateFormat: 'MMM yyyy',
+    position: 'left top',
+    locale: {
+    days: ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+    daysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    daysMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    months: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    monthsShort: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    today: 'Today',
+    clear: 'Clear',
+    firstDay: 1},
+    onSelect({date}) {
+    let day = dayjs(date).format('YYYYMMDD')
+    return window.location.href = `/DScongviec/quanly/${cifQuanly}/${day}`
+   }
+})
+</script>

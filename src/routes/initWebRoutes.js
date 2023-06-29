@@ -28,9 +28,11 @@ const initWebRoutes = (app) => {
   router.get("/DScongviec",jobController.getListJob)
   router.get("/DScongviec/quanly",jobController.getListQuanLy)
   router.get("/DScongviec/quanly/:cifQuanLy",jobController.getListJobQuanLy)
-  
-  router.get("/DScongviec/:slug_id",jobController.getDetailJob)
-  router.post("/DScongviec/:slug_id",jobController.updateDetailJob)
+  router.get("/DScongviec/quanly/:cifQuanLy/:Rptdate",jobController.getListJobQuanLySelectRptDate)
+
+  router.get("/DScongviec/:Rptdate",jobController.getListJobSelectRptDate)
+  router.get("/DScongviec/:Rptdate/:slug_id",jobController.getDetailJob)
+  router.post("/DScongviec/:Rptdate",jobController.updateDetailJob)
   
   router.get("/daily",reportDailyController.reportDailyTable)
   router.get("/daily/:date",reportDailyController.reportDailyTableSelect)

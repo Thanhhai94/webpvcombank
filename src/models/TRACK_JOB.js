@@ -2,16 +2,17 @@
 const { Model } = require("sequelize");
 
 Model.prototype._stringify = function _stringify(date, options) {
-  return this._applyTimezone(date, options).format('YYYY-MM-DD HH:mm:ss.SSS');
+  return this._applyTimezone(date, options).format('YYYY-MM-DD HH:mm:ss');
 };
 
 module.exports = (sequelize, DataTypes) => {
-  class Jobs extends Model {
+  class TRACK_JOB extends Model {
     static associate(models) {
     }
   }
-  Jobs.init(
+  TRACK_JOB.init(
     {
+      id_Job: DataTypes.INTEGER,
       CIF: DataTypes.STRING,
       titleJob: DataTypes.STRING,
       contentJob: DataTypes.TEXT,
@@ -25,10 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Jobs",
-      tableName: "JOBS",
+      modelName: "TRACK_JOB",
+      tableName: "TRACK_JOB",
       timestamps: false,
     }
   );
-  return Jobs;
+  return TRACK_JOB;
 };

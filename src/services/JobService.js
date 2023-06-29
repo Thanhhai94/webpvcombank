@@ -2,10 +2,13 @@ import db from "../models/index";
 const { Op } = require("sequelize")
 const dayjs = require('dayjs')
 
-const getListJob = async (CIF) => {
+const getListJob = async (CIF,Rptdate) => {
     try {
       const jobList = await db.Jobs.findAll({
-        where: {CIF:CIF},
+        where: {
+          CIF:CIF,
+          Rptdate: Rptdate
+        },
         raw: true,
       });
       if(jobList) {
@@ -35,7 +38,7 @@ const getDetailJob = async (CIF,id) => {
   }
 }
 
-const updateJob = async(data, CIF) => {
+const updateJob = async(data, CIF,Rptdate) => {
 var makeTime = function(){
   var date = new Date();
   var hours = date.getHours();
@@ -55,8 +58,11 @@ var makeTime = function(){
       await jobUpdate.save()
       console.log('save succes')
       return await db.Jobs.findAll({
-        where: {CIF:CIF},
-        raw: true,
+        where: {
+          CIF:CIF,
+          Rptdate: Rptdate
+        },
+        
       })
       
     } else {

@@ -11,7 +11,7 @@ const getAllListKPI = async(KHOI_QL,NHOM_KH,arrayMonth) => {
                 Rptdate: {
                     [Op.in]: arrayMonth
                   } 
-            }
+            },
         })
         if(KQ.length) {
             return KQ
@@ -30,7 +30,10 @@ const getListKPI = async(KHOI_QL,NHOM_KH,Rptdate) => {
                 KHOI_QL: KHOI_QL,
                 NHOM_KH: NHOM_KH,
                 Rptdate: Rptdate  
-            }
+            },
+            order: [
+                ['CODE_MAP', 'ASC'],
+            ],
         })
         if(KQ.length) {
             return KQ
@@ -51,8 +54,14 @@ const getDistinctNhomChiTieu = async(KHOI_QL,NHOM_KH,Rptdate) => {
             where: {
                 KHOI_QL: KHOI_QL,
                 NHOM_KH: NHOM_KH,
-                Rptdate: Rptdate  
-            }
+                Rptdate: Rptdate ,
+                NHOM_CHI_TIEU : {
+                    [Op.ne]: null
+                }
+            },
+            order: [
+                ['NHOM_CHI_TIEU', 'DESC'],
+            ],
         })
         if(KQ.length) {
             return KQ
@@ -68,14 +77,17 @@ const getDistinctLoai = async(KHOI_QL,NHOM_KH,Rptdate,NHOM_CHI_TIEU) => {
     try {
         const KQ = await db.KPIs_MONTHLY.findAll({
             attributes: [
-                [Sequelize.fn('DISTINCT', Sequelize.col('LOAI')) ,'LOAI'],
+                [Sequelize.fn('DISTINCT', Sequelize.col('CODE_LOAI_CHI_TIEU')) ,'CODE_LOAI_CHI_TIEU'],
             ],
             where: {
                 KHOI_QL: KHOI_QL,
                 NHOM_KH: NHOM_KH,
                 Rptdate: Rptdate,
                 NHOM_CHI_TIEU: NHOM_CHI_TIEU  
-            }
+            },
+            order: [
+                ['CODE_LOAI_CHI_TIEU', 'ASC'],
+            ],
         })
         if(KQ.length) {
             return KQ

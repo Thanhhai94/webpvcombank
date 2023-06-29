@@ -6,7 +6,7 @@ const getArrayNHOMCHITIEU = (array) => {
 
 const getArrayLOAI = (array) => {
     const KQ = []
-    array.map(value => KQ.push(value.LOAI))
+    array.map(value => KQ.push(value.CODE_LOAI_CHI_TIEU))
     return KQ
 }
 

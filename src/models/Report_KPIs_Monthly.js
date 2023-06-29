@@ -13,21 +13,23 @@ module.exports = (sequelize, DataTypes) => {
   }
   KPIs_MONTHLY.init(
     {
+      Rptdate: DataTypes.STRING,
       KHOI_QL: DataTypes.STRING,
       NHOM_KH: DataTypes.STRING,
-      KY_HAN: DataTypes.STRING,
-      NHOM_CHI_TIEU: DataTypes.STRING,
-      LOAI: DataTypes.STRING,
+      LOAI_CHI_TIEU: DataTypes.STRING,
       CHI_TIEU: DataTypes.STRING,
-      DON_VI_TINH: DataTypes.STRING,
-      Rptdate: DataTypes.STRING,
       Amt: DataTypes.FLOAT,
-      Actual_amt: DataTypes.FLOAT,
+      KPI: DataTypes.FLOAT,
+      CODE_MAP: DataTypes.STRING,
+      CHI_TIEU_REF: DataTypes.STRING,
+      DVT: DataTypes.STRING,
+      NHOM_CHI_TIEU: DataTypes.STRING,
+      CODE_LOAI_CHI_TIEU: DataTypes.INTEGER
     },
     {
       sequelize,
       modelName: "KPIs_MONTHLY",
-      tableName: "KPIs_MONTHLY",
+      tableName: "KET_QUA_THUC_HIEN",
       timestamps: false,
     }
   );

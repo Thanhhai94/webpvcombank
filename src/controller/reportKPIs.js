@@ -6,7 +6,7 @@ import handleKPIsMonthly from "../utils/handleKPIsMonthly"
 const getReportKPIs = async(req,res) => {
     let KHOI_QL = req.params.KHOI_QL
     let NHOM_KH = req.params.NHOM_KH
-    console.log('test',NHOM_KH)
+    
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF)
     // Tao mảng là các ngày cuối tháng từ tháng 12 năm trước
@@ -26,11 +26,13 @@ const getReportKPIs = async(req,res) => {
     if(KHOI_QL==='KHCN'){
         NHOM_KH = 'CN'
     } else {
-        NHOM_KH = 'All'
+        NHOM_KH = 'TONG_KHOI'
     }
 
     let list_NHOM_CHI_TIEU = await KPIsMonthlyServices.getDistinctNhomChiTieu(KHOI_QL,NHOM_KH,selectedMonth)
     let array_NHOM_CHI_TIEU = handleKPIsMonthly.getArrayNHOMCHITIEU(list_NHOM_CHI_TIEU)
+    
+    //ok
     
 
     const arrayFull = []
@@ -39,7 +41,6 @@ const getReportKPIs = async(req,res) => {
         let list = await KPIsMonthlyServices.getDistinctLoai(KHOI_QL,NHOM_KH,selectedMonth,array_NHOM_CHI_TIEU[i])
         arrayFull.push(handleKPIsMonthly.getArrayLOAI(list))
     }
-    
     const getListKPI = await KPIsMonthlyServices.getListKPI(KHOI_QL,NHOM_KH,selectedMonth)
     
     const getAllKPI = await KPIsMonthlyServices.getAllListKPI(KHOI_QL,NHOM_KH,getmonths)
@@ -59,14 +60,15 @@ const getReportKPIs = async(req,res) => {
         getListKPI:getListKPI,
         selectedDates: JSON.stringify(lastMonth),
         getAllKPI:getAllKPI,
-        getmonths:getmonths
+        getmonths:getmonths,
+        getSelectedMonth : JSON.stringify(selectedMonth)
     })
 }
 
 const getReportKPIsSelected = async(req,res) => {
     let KHOI_QL = req.params.KHOI_QL
     let selectedMonth = req.params.selectedMonth
-    let NHOM_KH = req.params.NHOM_KH
+    let NHOM_KH = (req.params.NHOM_KH == 'All') ? 'TONG_KHOI' : req.params.NHOM_KH
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF)
     // Tao mảng là các ngày cuối tháng từ tháng 12 năm trước
@@ -110,7 +112,8 @@ const getReportKPIsSelected = async(req,res) => {
         getListKPI:getListKPI,
         selectedDates: JSON.stringify(lastMonth),
         getAllKPI:getAllKPI,
-        getmonths:getmonths
+        getmonths:getmonths,
+        getSelectedMonth : JSON.stringify(getSelectedMonth)
     })
 }
 

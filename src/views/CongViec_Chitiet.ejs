@@ -6,12 +6,16 @@
 <body>
     <%- include('includes/navigation.ejs') %>
     <div class="container homepage">
-        <form action="/DScongviec/<%= jobId %>" method="POST">
+        <form action="/DScongviec/<%= Rptdate %>" method="POST">
             <input hidden type="text" name="id" value="<%= jobId %>"/>
+            <input hidden type="text" name="titleJob" value="<%= jobDetail.titleJob %>"/>
+            <input hidden type="text" name="dateJob" value="<%= jobDetail.dateJob %>"/>
+            <input hidden type="text" name="contentJob" value="<%= jobDetail.contentJob %>"/>
+            <input hidden type="text" name="Rptdate" value="<%= jobDetail.Rptdate %>"/>
+            <input hidden type="text" name="deadlineJob" value="<%= jobDetail.deadlineJob %>"/>
             <div class="row Form-GiaoCV">
                 <div class="col-lg-8">
                     <h5><%=`Tiêu đề: ${jobDetail.titleJob}` %></h5>         
-        
                 </div>
             </div>
             <div class="row">
@@ -78,7 +82,7 @@
                                     <button type="submit" class="button_update">Cập nhật</button>
                                 </div>
                                 <div class="col-lg-3 button_cancel">
-                                    <a class="a_cancel" href="/DSCongviec">Hủy</a>                           
+                                    <a class="a_cancel" href="/DSCongviec/<%= Rptdate %>">Hủy</a>                           
                                 </div>
                             </div>
                         </div>

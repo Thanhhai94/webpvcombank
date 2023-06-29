@@ -2,20 +2,41 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('TRACK_JOB', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
+      CIF: {
         type: Sequelize.STRING
       },
-      lastName: {
+      titleJob: {
         type: Sequelize.STRING
       },
-      email: {
+      dateJob: {
+        type: Sequelize.STRING
+      },
+      statusJob: {
+        type: Sequelize.STRING
+      },
+      deadlineJob: {
+        type: Sequelize.DATE
+      },
+      timelineJob: {
+        type: Sequelize.DATE
+      },
+      noteJob: {
+        type: Sequelize.STRING
+      },
+      timeline_Job: {
+        type: Sequelize.TIME
+      },
+      contentJob: {
+        type: Sequelize.STRING
+      },
+      Rptdate: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -29,6 +50,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('TRACK_JOB');
   }
 };

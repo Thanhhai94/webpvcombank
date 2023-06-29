@@ -1,0 +1,58 @@
+<div class="giao_viec">  
+        <div class="close">
+            <div>
+                <p>Công việc được giao</p>
+            </div>
+            <button onclick="closeFormGiaoviec()">x</button>
+        </div>
+        <form action="" style="margin-top: 10px; padding-left: 20px;"> 
+                <div class="row">
+                    <div class="col-3">
+                        <p>Tiêu đề: </p>
+                    </div>
+                    <div class="col-8">
+                        <input placeholder="Tiêu đề công việc" class="input_Tieude" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Nội dung CV:</p>
+                    </div>
+                    <div class="col-8">
+                        <textarea  class="texterea-giaoviec" placeholder="Nội dung cần thực hiện" id="floatingTextarea2" name="contentJob" ></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Tháng thực hiện:</p>
+                    </div>
+                    <div class="col-3">
+                        <input id="dateJob" style="width: 100%;" name="dateJob"  type="text" readonly placeholder="Chọn tháng"  />
+                    </div>
+                    <div class="col-2">
+                        <p>Deadline:</p>
+                    </div>
+                    <div class="col-2">
+                        <input type="date">
+                    </div>
+                </div>
+        </form>
+</div>
+
+<script>
+    new AirDatepicker('#dateJob', {
+    view: 'months',
+    minView: 'months',
+    dateFormat: 'MMM yyyy',
+    position: 'left top',
+    locale: {
+    days: ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+    daysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    daysMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    months: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    monthsShort: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    today: 'Today',
+    clear: 'Clear',
+    firstDay: 1},
+})
+</script>
