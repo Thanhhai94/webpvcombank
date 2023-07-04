@@ -56,7 +56,7 @@ var makeTime = function(){
       jobUpdate.timelineJob = dayjs(new Date()).format("YYYY-MM-DD");
       jobUpdate.timeline_Job = makeTime();
       await jobUpdate.save()
-      console.log('save succes')
+      
       return await db.Jobs.findAll({
         where: {
           CIF:CIF,
@@ -73,8 +73,91 @@ var makeTime = function(){
   }
 }
 
+const insertJob = async(data) => {
+  try {
+    const job = db.Jobs.build({
+      CIF: data.CIF,
+      titleJob: data.titleJob,
+      contentJob: data.contentJob,
+      dateJob: data.date,
+      deadlineJob: data.deadlineJob || null,
+      dateJob:data.dateJob,
+      Rptdate: data.Rptdate,
+      statusJob: 0
+    })
+    await job.save()
+    let listjob = await db.Jobs.findAll({
+      where: {
+        CIF: data.CIF,
+        Rptdate: data.Rptdate
+      }
+    })
+    
+    if(listjob) {
+      return listjob
+    } else {
+      return []
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const updateQLJob = async(data) => {
+  try {
+    const jobUpdate = await db.Jobs.findOne({
+      where: {id:data.id}
+    });
+    if(jobUpdate) {
+      jobUpdate.titleJob = data.titleJob;
+      jobUpdate.contentJob = data.contentJob;
+      jobUpdate.deadlineJob = dayjs(data.deadlineJob).format("YYYY-MM-DD")
+      await jobUpdate.save()
+      return await db.Jobs.findAll({
+        where: {
+          CIF:data.CIF,
+          Rptdate: data.Rptdate
+        },
+        
+      })
+      
+    } else {
+      return []
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const deleteJob = async(data) => {
+  try {
+    let jobDelete = await db.Jobs.findOne({
+      where: {id: data.id}
+    });
+    if(jobDelete) {
+      jobDelete.destroy()
+    }
+    let listjob = await db.Jobs.findAll({
+      where: {
+        CIF: data.CIF,
+        Rptdate: data.Rptdate
+      }
+    })
+    if(listjob) {
+      return listjob
+    } else {
+      return []
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   getListJob: getListJob,
   getDetailJob: getDetailJob,
-  updateJob: updateJob
+  updateJob: updateJob,
+  insertJob:insertJob,
+  deleteJob:deleteJob,
+  updateQLJob:updateQLJob
 };

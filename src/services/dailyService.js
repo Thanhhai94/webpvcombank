@@ -590,6 +590,19 @@ const getCustomerHDVAsc = async(Rptdate) => {
     }
 }
 
+const getLSHDDH = async() => {
+    try {
+        const KQ = await db.LSHD_DINH_HUONG.findAll({
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 module.exports = {
     getArrayDataHDVDaily:getArrayDataHDVDaily,
@@ -617,7 +630,8 @@ module.exports = {
     getDataTDByDailySelect:getDataTDByDailySelect,
     getArrayDataTDCPBNDaily:getArrayDataTDCPBNDaily,
     getCustomerHDVDesc:getCustomerHDVDesc,
-    getCustomerHDVAsc:getCustomerHDVAsc
+    getCustomerHDVAsc:getCustomerHDVAsc,
+    getLSHDDH:getLSHDDH
 }
 
 

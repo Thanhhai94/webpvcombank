@@ -6,7 +6,7 @@
     <tr>
         <td style="background-color: rgb(241, 222, 159);font-weight: bold;" colspan="2" rowspan="2">Khối</td>
         <td rowspan="2" colspan="2">Số dư(+)</td>
-        <td style="background-color: rgb(227, 200, 236);font-weight: bold;" colspan="2" rowspan="2">Tỷ trọng</td>
+        <td style="background-color: rgb(227, 200, 236);font-weight: bold;" colspan="2" rowspan="2">Tỷ trọng(+)/&sum; danh mục</td>
         <td style="background-color: rgb(200, 218, 250);font-weight: bold;" colspan="4" >Biên độ (+) danh nghĩa</td>
     </tr>
     <tr>
@@ -64,7 +64,7 @@
 
         </tr>
         <tr style="font-style: italic;">
-            <td colspan="2"> >=12M </td>
+            <td colspan="2"> >12M </td>
             <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Amt >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Amt=='') ? '' : Math.round(SO_DU_BIEN_DO_CONG_KHCN_12M.Amt).toLocaleString("en-US") %></td>
             <td colspan="2" class="<%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Ty_trong >0) ? 'green' : 'red' %>"><%= (SO_DU_BIEN_DO_CONG_KHCN_12M.Ty_trong == '') ? '' : `${(SO_DU_BIEN_DO_CONG_KHCN_12M.Ty_trong*100).toFixed(2)} %` %></td>
             <td class="<%= (BIEN_DO_CONG_KHCN_12M.Amt >0) ? 'green' : 'red' %>"><%= (BIEN_DO_CONG_KHCN_12M.Amt == '') ? '' : `${(BIEN_DO_CONG_KHCN_12M.Amt*100).toFixed(2)} %` %></td>

@@ -1,0 +1,140 @@
+<div class="giao_viec">  
+        <div class="close">
+            <div>
+                <h5>Công việc được giao</h5>
+            </div>
+            <p style="padding-right: 10px;" onclick="closeFormGiaoviec()">X</p>
+        </div>
+        <form action="/DScongviec/quanly/<%= cifQuanLy %>" method="POST" style="margin-top: 10px; padding-left: 20px;"> 
+                <input hidden name="CIF" value="<%= cifQuanLy %>" type="text">
+                <div class="row">
+                    <div class="col-3">
+                        <p>Tiêu đề: </p>
+                    </div>
+                    <div class="col-8">
+                        <input placeholder="Tiêu đề công việc" class="input_Tieude" name="titleJob" id="titleJob" type="text">
+                        <small></small>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Nội dung CV:</p>
+                    </div>
+                    <div class="col-8">
+                        <textarea  class="texterea-giaoviec" placeholder="Nội dung cần thực hiện" id="floatingTextarea2" name="contentJob" ></textarea>
+                        <small></small>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Tháng thực hiện:</p>
+                    </div>
+                    <div class="col-3">
+                        <input id="dateJob" style="width: 100%;" name="dateJob" id="dateJob"  type="text" readonly placeholder="Chọn tháng"  />
+                        <small></small>
+                        <span></span>
+                    </div>
+                    <div class="col-2">
+                        <p>Deadline:</p>
+                    </div>
+                    <div class="col-2">
+                        <input type="date" name="deadlineJob" id="deadlineJob">
+                        <small></small>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-8">
+                        <button type="submit" style="padding: 2px 15px; border: none;
+                        border-radius: 10px;
+                        background-color: var(--color-bl);
+                        color: white;">Thêm</button>
+                        <input type="button" onclick="closeFormGiaoviec()" value="Hủy" style="padding: 2px 15px; border: none;
+                        border-radius: 10px;
+                        background-color: red;
+                        color: white;">
+
+                    </div>
+                </div>
+        </form>
+</div>
+
+<script>
+    new AirDatepicker('#dateJob', {
+    view: 'months',
+    minView: 'months',
+    dateFormat: 'MM/yyyy',
+    position: 'left top',
+    locale: {
+    days: ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+    daysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    daysMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    months: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    monthsShort: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    today: 'Today',
+    clear: 'Clear',
+    firstDay: 1},
+})
+</script>
+
+<script>
+    function openFormGiaoviec() {
+        var x = document.getElementById('myDIV');
+        if (x.style.display === 'none') {
+            x.style.display = 'flex';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+    function closeFormGiaoviec() {
+        var x = document.getElementById('myDIV');
+        x.style.display = 'none'
+    }
+    </script>
+
+<script>
+    let titleJob = document.getElementById('titleJob')
+    let contentJob = document.getElementById('floatingTextarea2')
+    let dateJob = document.getElementById('dateJob')
+    let deadlineJob = document.getElementById('deadlineJob')
+    let form = document.querySelector('form')
+    function showError(input,message) {
+        let parent = input.parentElement
+        let small = parent.querySelector('small')
+        small.classList.add('error');
+        small.innerText = message
+    }
+    function showSuccess(input, message) {
+        let parent = input.parentElement;
+        let small = parent.querySelector('small');
+        small.classList.remove('error');
+        small.innerText = message
+        }
+    function checkNullInputData(input) {
+        let isValue = false;
+        if(input.value == ''){
+            isValue = true
+            showError(input,'Hãy điền thông tin')
+        } else {
+            showSuccess(input,'')
+        }
+        return isValue
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        let isValueTitleJob = checkNullInputData(titleJob)
+        let isValueContentJob = checkNullInputData(contentJob)
+        let isValueDateJob = checkNullInputData(dateJob)
+        
+        if(isValueTitleJob||isValueContentJob || isValueDateJob ) {
+
+        } else {
+            form.submit()
+            return true
+        }
+    })
+</script>

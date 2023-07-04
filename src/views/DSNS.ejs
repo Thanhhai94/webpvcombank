@@ -12,9 +12,9 @@
                 <h2>Danh sách nhân sự</h2>
     
         </div>
-        <%- include('includes/DSNS_title.ejs') %>
+        <%- include('includes/DSNS/DSNS_title.ejs') %>
         <% for(let staffinfo of staffs) { %>
-            <%- include('includes/DSNS_ND.ejs',{staffinfo:staffinfo}) %>
+            <%- include('includes/DSNS/DSNS_ND.ejs',{staffinfo:staffinfo}) %>
         <% } %>
     </div>
 

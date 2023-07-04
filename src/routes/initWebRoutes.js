@@ -8,8 +8,10 @@ import reportDailyController from '../controller/reportDailyController'
 import reportDailyDashboardControllerHDV from '../controller/reportDailyDashboardControllerHDV'
 import reportDailyDashboardControllerTinDung from '../controller/reportDailyDashboardControllerTinDung'
 import reportKPIs from '../controller/reportKPIs'
+import uploadController from '../controller/uploadController'
 import test from '../controller/test'
-
+import multer from "multer";
+const upload = multer({ dest: 'uploads/' });
 
 let router = express.Router();
 
@@ -27,7 +29,9 @@ const initWebRoutes = (app) => {
   router.get("/DSnhansu",staffController.getListStaff)
   router.get("/DScongviec",jobController.getListJob)
   router.get("/DScongviec/quanly",jobController.getListQuanLy)
+  router.post("/DScongviec/quanly",upload.single('csvFile'),uploadController.uploadFile)
   router.get("/DScongviec/quanly/:cifQuanLy",jobController.getListJobQuanLy)
+  router.post("/DScongviec/quanly/:cifQuanLy",jobController.postGiaoviec)
   router.get("/DScongviec/quanly/:cifQuanLy/:Rptdate",jobController.getListJobQuanLySelectRptDate)
 
   router.get("/DScongviec/:Rptdate",jobController.getListJobSelectRptDate)

@@ -45,6 +45,28 @@ const getListKPI = async(KHOI_QL,NHOM_KH,Rptdate) => {
     }
 }
 
+const getListKPI_MTD = async(KHOI_QL,NHOM_KH,Rptdate) => {
+    try {
+        const KQ = await db.KPIs_MONTHLY_MTD.findAll({
+            where: {
+                KHOI_QL: KHOI_QL,
+                NHOM_KH: NHOM_KH,
+                Rptdate: Rptdate  
+            },
+            order: [
+                ['CODE_MAP', 'ASC'],
+            ],
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const getDistinctNhomChiTieu = async(KHOI_QL,NHOM_KH,Rptdate) => {
     try {
         const KQ = await db.KPIs_MONTHLY.findAll({
@@ -104,7 +126,8 @@ module.exports = {
     getAllListKPI:getAllListKPI,
     getDistinctNhomChiTieu: getDistinctNhomChiTieu,
     getDistinctLoai: getDistinctLoai,
-    getListKPI:getListKPI
+    getListKPI:getListKPI,
+    getListKPI_MTD:getListKPI_MTD
 }
 
 

@@ -55,9 +55,25 @@
                                     <%=(getListKPI[u].KPI == 0 || getListKPI[u].KPI == null || getListKPI[u].Amt == 0 || getListKPI[u].Amt == null ) ? '' : `${(getListKPI[u].Amt/getListKPI[u].KPI*100).toFixed(2)} %`  %>
                                 
                             </td>
-                            <td ></td>
-                            <td ></td>
-                            <td ></td>
+                            <% for(let k = 0; k < getListKPIMtd.length; k++) { %>
+                                <%  if(getListKPIMtd[k].NHOM_CHI_TIEU == array_NHOM_CHI_TIEU[i] && getListKPIMtd[k].CODE_LOAI_CHI_TIEU == arrayFull[i][j] && getListKPIMtd[k].CHI_TIEU == getListKPI[u].CHI_TIEU ) { %>
+                                    <td >
+                                
+                                        <%= (getListKPIMtd[k].Amt_mtd == 0 || getListKPIMtd[k].Amt_mtd == null) ? '' :  (getListKPIMtd[k].DVT == 'tỷ đồng') ? Math.round(getListKPIMtd[k].Amt_mtd).toLocaleString("en-US") : (getListKPIMtd[k].DVT == '%') ? `${(getListKPIMtd[k].Amt_mtd*100).toFixed(2)} %` : (getListKPIMtd[k].DVT == 'triệu USD') ? Number((getListKPIMtd[k].Amt_mtd).toFixed(2)).toLocaleString("en-US"): (getListKPIMtd[k].DVT == 'khách hàng') ? Math.round(getListKPIMtd[k].Amt_mtd).toLocaleString("en-US"): (getListKPIMtd[k].DVT == 'thẻ') ? Math.round(getListKPIMtd[k].Amt_mtd).toLocaleString("en-US"): ''%>
+                                    
+                                    </td>
+                                    <td >
+                                        
+                                            <%= (getListKPIMtd[k].KPI_mtd == 0 || getListKPIMtd[k].KPI_mtd == null) ? '' : (getListKPIMtd[k].DVT == 'tỷ đồng') ? Math.round(getListKPIMtd[k].KPI_mtd).toLocaleString("en-US") : (getListKPIMtd[k].DVT == '%') ? `${(getListKPIMtd[k].KPI_mtd*100).toFixed(2)} %` : (getListKPIMtd[k].DVT == 'triệu USD') ? Number((getListKPIMtd[k].KPI_mtd).toFixed(2)).toLocaleString("en-US"): (getListKPIMtd[k].DVT == 'khách hàng') ? Math.round(getListKPIMtd[k].KPI_mtd).toLocaleString("en-US"):(getListKPIMtd[k].DVT == 'thẻ') ? Math.round(getListKPIMtd[k].KPI_mtd).toLocaleString("en-US"):''%>
+                                        
+                                    </td>
+                                    <td >
+                                        
+                                            <%=(getListKPIMtd[k].KPI_mtd == 0 || getListKPIMtd[k].KPI_mtd == null || getListKPIMtd[k].Amt_mtd == 0 || getListKPIMtd[k].Amt_mtd == null ) ? '' : `${(getListKPIMtd[k].Amt_mtd/getListKPIMtd[k].KPI_mtd*100).toFixed(2)} %`  %>
+                                        
+                                    </td>
+                                <% break  } %>
+                            <% } %>
 
                             <% for(let l = 0; l < getmonths.length; l++) { %>
                                 <td >
@@ -88,7 +104,7 @@
 </div>
 
 <div id="table-scroll" hidden class="table-scroll">
-    <style></style><table id="main-table-2" class="main-table">
+    <table id="main-table-2" class="main-table">
       <thead>
           <tr>
               <th style="min-width: 350px; z-index: 100; background-color: rgb(0, 112, 192); color: #FFFFFF;text-align: center;padding-left: 0;" rowspan="2" >Chỉ tiêu</th>
@@ -144,9 +160,25 @@
                                       <%=(getListKPI[u].KPI == 0 || getListKPI[u].KPI == null || getListKPI[u].Amt == 0 || getListKPI[u].Amt == null ) ? '' : (getListKPI[u].Amt/getListKPI[u].KPI)  %>
                                   
                               </td>
-                              <td ></td>
-                              <td ></td>
-                              <td ></td>
+                              <% for(let k = 0; k < getListKPIMtd.length; k++) { %>
+                                <%  if(getListKPIMtd[k].NHOM_CHI_TIEU == array_NHOM_CHI_TIEU[i] && getListKPIMtd[k].CODE_LOAI_CHI_TIEU == arrayFull[i][j] && getListKPIMtd[k].CHI_TIEU == getListKPI[u].CHI_TIEU ) { %>
+                                    <td >
+                                
+                                        <%= (getListKPIMtd[k].Amt_mtd == 0 || getListKPIMtd[k].Amt_mtd == null) ? '' :  getListKPIMtd[k].Amt_mtd%>
+                                    
+                                    </td>
+                                    <td >
+                                        
+                                            <%= (getListKPIMtd[k].KPI_mtd == 0 || getListKPIMtd[k].KPI_mtd == null) ? '' : getListKPIMtd[k].KPI_mtd%>
+                                        
+                                    </td>
+                                    <td >
+                                        
+                                            <%=(getListKPIMtd[k].KPI_mtd == 0 || getListKPIMtd[k].KPI_mtd == null || getListKPIMtd[k].Amt_mtd == 0 || getListKPIMtd[k].Amt_mtd == null ) ? '' : (getListKPIMtd[k].Amt_mtd/getListKPIMtd[k].KPI_mtd) %>
+                                        
+                                    </td>
+                                <% break  } %>
+                            <% } %>
   
                               <% for(let l = 0; l < getmonths.length; l++) { %>
                                   <td >
@@ -178,7 +210,7 @@
 <button style="padding: 0 5px;
     color: white;
     background-color: var(--color-bl);
-    border-radius: 5px;" onclick="ExportToExcel('xlsx')">Export table to excel
+    border-radius: 5px;" onclick="ExportToExcel('xlsx')"><i class="fa-solid fa-file-export" style="color: #ffffff;"></i>  Export table to excel
 </button>
     <script>
         let NHOM_KH = <%- selectNHOMKH %>;

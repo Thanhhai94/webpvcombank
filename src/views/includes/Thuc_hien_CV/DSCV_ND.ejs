@@ -6,7 +6,9 @@
         <p><%= job.titleJob %></p>
     </div>
     <div class="col-lg-2 col-sm-2 " style="display: flex; justify-content: space-around;">
-        <p class="<%= (job.statusJob == 0) ? 'chuathuchien' : (job.statusJob) == 1 ? 'dangthuchien' : 'hoanthanh' %>"><%= (job.statusJob==0)?'Chưa thực hiện' : (job.statusJob==1)? 'Đang thực hiện':'Hoàn thành' %></p>
+        <p class="<%= (job.statusJob == 0) ? 'chuathuchien' : (job.statusJob) == 1 ? 'dangthuchien' : 'hoanthanh' %>">
+            <i class="<%= (job.statusJob == 0) ? 'fa-solid fa-xmark' : (job.statusJob) == 1 ? 'fa-solid fa-spinner' : 'fa-solid fa-check' %>" style="color: #ffffff"></i>
+             <%= (job.statusJob==0)?'Chưa thực hiện' : (job.statusJob==1)? 'Đang thực hiện':'Hoàn thành' %></p>
     </div>
     <div class="col-lg-2 col-sm-2 ">
         <p class="deadlineJob"><%= job.deadlineJob %></p>

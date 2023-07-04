@@ -6,6 +6,7 @@ import handleKPIsMonthly from "../utils/handleKPIsMonthly"
 const getReportKPIs = async(req,res) => {
     let KHOI_QL = req.params.KHOI_QL
     let NHOM_KH = req.params.NHOM_KH
+    let ruleReportDaily = req.session.ruleReportDaily
     
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF)
@@ -42,10 +43,11 @@ const getReportKPIs = async(req,res) => {
         arrayFull.push(handleKPIsMonthly.getArrayLOAI(list))
     }
     const getListKPI = await KPIsMonthlyServices.getListKPI(KHOI_QL,NHOM_KH,selectedMonth)
-    
+    const getListKPIMtd = await KPIsMonthlyServices.getListKPI_MTD(KHOI_QL,NHOM_KH,selectedMonth)
     const getAllKPI = await KPIsMonthlyServices.getAllListKPI(KHOI_QL,NHOM_KH,getmonths)
 
     return res.render('report_KPIs',{
+        ruleReportDaily:ruleReportDaily,
         pageTitle: 'Báo cáo KPIs',
         staff: staff,
         months: months,
@@ -58,6 +60,7 @@ const getReportKPIs = async(req,res) => {
         arrayFull: arrayFull,
         array_NHOM_CHI_TIEU: array_NHOM_CHI_TIEU,
         getListKPI:getListKPI,
+        getListKPIMtd: getListKPIMtd,
         selectedDates: JSON.stringify(lastMonth),
         getAllKPI:getAllKPI,
         getmonths:getmonths,
@@ -66,6 +69,7 @@ const getReportKPIs = async(req,res) => {
 }
 
 const getReportKPIsSelected = async(req,res) => {
+    let ruleReportDaily = req.session.ruleReportDaily
     let KHOI_QL = req.params.KHOI_QL
     let selectedMonth = req.params.selectedMonth
     let NHOM_KH = (req.params.NHOM_KH == 'All') ? 'TONG_KHOI' : req.params.NHOM_KH
@@ -94,10 +98,12 @@ const getReportKPIsSelected = async(req,res) => {
     }
     
     const getListKPI = await KPIsMonthlyServices.getListKPI(KHOI_QL,NHOM_KH,getSelectedMonth)
-    
+    const getListKPIMtd = await KPIsMonthlyServices.getListKPI_MTD(KHOI_QL,NHOM_KH,getSelectedMonth)
+    console.log(getListKPIMtd)
     const getAllKPI = await KPIsMonthlyServices.getAllListKPI(KHOI_QL,NHOM_KH,getmonths)
 
     return res.render('report_KPIs',{
+        ruleReportDaily:ruleReportDaily,
         pageTitle: 'Báo cáo KPIs',
         staff: staff,
         months: months,
@@ -110,6 +116,7 @@ const getReportKPIsSelected = async(req,res) => {
         arrayFull: arrayFull,
         array_NHOM_CHI_TIEU: array_NHOM_CHI_TIEU,
         getListKPI:getListKPI,
+        getListKPIMtd: getListKPIMtd,
         selectedDates: JSON.stringify(lastMonth),
         getAllKPI:getAllKPI,
         getmonths:getmonths,

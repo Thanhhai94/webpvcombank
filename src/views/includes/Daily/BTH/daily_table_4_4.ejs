@@ -1,12 +1,12 @@
 <table class="title_daily_table_2_1" style="margin-top: 24px;">
     <tr style="background-color: #0772ba; color: #fff;font-weight: bold;">
-        <td colspan="10">Số dư HĐV-Phát sinh theo sản phẩm-KHCN</td>
+        <td colspan="9">Số dư HĐV-Phát sinh theo sản phẩm-KHCN</td>
     </tr>
 
     <tr>
         <th colspan="2" rowspan="3" style=" font-weight: bold; background-color: rgb(241, 222, 159);" rowspan="2">Sản phẩm</th>
         <th style=" font-weight: bold" colspan="4">Phát sinh</th>
-        <th style=" font-weight: bold" colspan="4">Phát sinh (+)</th>
+        <th style=" font-weight: bold" colspan="3">Phát sinh (+)</th>
     </tr>
     <tr>
         <th rowspan="2" style="font-weight: 500;" >Kỳ hạn</th>
@@ -14,13 +14,12 @@
         <th style="font-weight: 500;" colspan="2">LSBQ ngày</th>
         <th rowspan="2" style="font-weight: 500;" >Kỳ hạn</th>
         <th rowspan="2" style="font-weight: 500;" >số dư PS</th>
-        <th style="font-weight: 500;" colspan="2">LSBQ ngày</th>
+        <th style="font-weight: 500;" rowspan="2">BĐ(+) BQ ngày</th>
     </tr>
     <tr>
         <th>BQ</th>
         <th>MAX</th>
-        <th>BQ</th>
-        <th>MAX</th>
+       
     </tr>
 
     <tr style="background-color: rgb(25, 104, 25);color: #fff;font-weight: bold;">
@@ -32,7 +31,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_TOANHANG.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TOANHANG.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TOANHANG.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TOANHANG.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TOANHANG.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TOANHANG.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr style="background-color: rgb(106, 234, 138); font-weight: bold;">
         <td colspan="2">KHCN</td>
@@ -43,7 +41,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_KHCN.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHCN.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHCN.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHCN.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHCN.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHCN.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: bold;">
         <td colspan="2">Cá nhân</td>
@@ -54,7 +51,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_CANHAN.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_CANHAN.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_CANHAN.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_CANHAN.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_CANHAN.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_CANHAN.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td colspan="2" rowspan="4" style="font-weight:bold;">Tiền gửi bậc thang + Đại chúng</td>
@@ -65,7 +61,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGBT_TGDC.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> < 6M  </td>
@@ -75,7 +70,6 @@
         <td style="font-weight: bold;"> < 6M  </td>
         <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_6M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGBT_TGDC_6M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_6M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC_6M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_6M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC_6M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> 6-12M  </td>
@@ -85,7 +79,6 @@
         <td style="font-weight: bold;"> 6-12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_612M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGBT_TGDC_612M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_612M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC_612M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_612M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC_612M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> >12M  </td>
@@ -95,9 +88,7 @@
         
         <td style="font-weight: bold;"> >12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
-    
+        <td><%= (HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGBT_TGDC_12M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>    
     </tr>
     <tr>
         <td colspan="2" rowspan="4" style="font-weight:bold;">TG trả lãi trước định kỳ</td>
@@ -108,7 +99,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGTLTDK.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGTLTDK.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> 6M  </td>
@@ -118,7 +108,6 @@
         <td style="font-weight: bold;"> 6M  </td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_006M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGTLTDK_006M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_006M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_006M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_006M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_006M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> 13M  </td>
@@ -128,19 +117,15 @@
         <td style="font-weight: bold;"> 13M  </td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_013M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGTLTDK_013M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_013M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_013M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_013M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_013M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> 24M  </td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_024M.Amt=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGTLTDK_024M.Amt).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat*100).toFixed(2)} %` %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat_max == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat_max*100).toFixed(2)} %` %></td>
-        
         <td style="font-weight: bold;"> 24M  </td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_024M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_TGTLTDK_024M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_TGTLTDK_024M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
-    
     </tr>
     <tr>
         <td colspan="2" rowspan="4" style="font-weight:bold;">Khác</td>
@@ -151,7 +136,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_SP_KHAC.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_SP_KHAC.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> < 6M  </td>
@@ -161,7 +145,6 @@
         <td style="font-weight: bold;"> < 6M  </td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_6M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_SP_KHAC_6M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_6M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_6M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_6M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_6M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> 6-12M  </td>
@@ -171,19 +154,15 @@
         <td style="font-weight: bold;"> 6-12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_612M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_SP_KHAC_612M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_612M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_612M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_612M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_612M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td style="font-weight: bold;"> >12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_12M.Amt=='') ? '' : Math.round(HDV_PS_MOI_DAILY_SP_KHAC_12M.Amt).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat*100).toFixed(2)} %` %></td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_max == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_max*100).toFixed(2)} %` %></td>
-        
         <td style="font-weight: bold;"> >12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_12M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_SP_KHAC_12M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
-        <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
-    
+        <td><%= (HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_SP_KHAC_12M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>    
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: bold;">
         <td colspan="2">MSME</td>
@@ -194,7 +173,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_mMSE.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_mMSE.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_mMSE.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_mMSE.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td colspan="2">Hộ kinh doanh</td>
@@ -205,7 +183,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_mMSE_HKD.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_mMSE_HKD.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_mMSE_HKD.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE_HKD.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_mMSE_HKD.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE_HKD.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td colspan="2">Tổ chức kinh tế</td>
@@ -215,9 +192,7 @@
         <td><%= (HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_max == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_max*100).toFixed(2)} %` %></td>
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_mMSE_TCKT.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_mMSE_TCKT.Amt_bien_do_cong).toLocaleString("en-US") %></td>
-        <td><%= (HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
-    
+        <td><%= (HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_mMSE_TCKT.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>    
     </tr>
     <tr style="background-color: rgb(106, 234, 138); font-weight: bold;">
         <td colspan="2">KHDN</td>
@@ -228,8 +203,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDN.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDN.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
-    
     </tr>
     <tr>
         <td colspan="2"></td><td style="font-weight: bold;"> < 6M  </td>
@@ -239,7 +212,6 @@
         <td style="font-weight: bold;"> < 6M  </td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN_6M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDN_6M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN_6M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN_6M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDN_6M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN_6M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td colspan="2"></td><td style="font-weight: bold;"> 6-12M  </td>
@@ -249,7 +221,6 @@
         <td style="font-weight: bold;"> 6-12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN_612M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDN_612M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN_612M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN_612M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDN_612M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN_612M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td colspan="2"></td><td style="font-weight: bold;"> > 12M  </td>
@@ -259,7 +230,6 @@
         <td style="font-weight: bold;"> > 12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN_12M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDN_12M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDN_12M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN_12M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDN_12M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDN_12M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     
     <tr style="background-color: rgb(106, 234, 138); font-weight: bold;">
@@ -271,8 +241,6 @@
         <td></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDNL.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDNL.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
-    
     </tr>
     <tr>
         <td colspan="2"></td><td style="font-weight: bold;"> < 6M  </td>
@@ -282,7 +250,6 @@
         <td style="font-weight: bold;"> < 6M  </td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL_6M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDNL_6M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL_6M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL_6M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDNL_6M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL_6M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td colspan="2"></td><td style="font-weight: bold;"> 6-12M  </td>
@@ -292,7 +259,6 @@
         <td style="font-weight: bold;"> 6-12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL_612M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDNL_612M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL_612M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL_612M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDNL_612M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL_612M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
     <tr>
         <td colspan="2"></td><td style="font-weight: bold;"> > 12M  </td>
@@ -302,6 +268,5 @@
         <td style="font-weight: bold;"> > 12M  </td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL_12M.Amt_bien_do_cong=='') ? '' : Math.round(HDV_PS_MOI_DAILY_KHDNL_12M.Amt_bien_do_cong).toLocaleString("en-US") %></td>
         <td><%= (HDV_PS_MOI_DAILY_KHDNL_12M.Lai_suat_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL_12M.Lai_suat_bien_do_cong*100).toFixed(2)} %` %></td>
-        <td><%= (HDV_PS_MOI_DAILY_KHDNL_12M.Lai_suat_max_bien_do_cong == '') ? '' : `${(HDV_PS_MOI_DAILY_KHDNL_12M.Lai_suat_max_bien_do_cong*100).toFixed(2)} %` %></td>
     </tr>
 </table>

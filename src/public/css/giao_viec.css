@@ -15,7 +15,16 @@
     position: absolute;
     top: 0;
     height: 100vh;
-    display: flex;
+    display: none;
+    justify-content: space-around;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+#myDIV2 {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    display: none;
     justify-content: space-around;
     background-color: rgba(128, 128, 128, 0.2);
 }
@@ -31,7 +40,7 @@
     
 }
 
-.giao_viec .close p {
+.giao_viec .close p,h5 {
     line-height: 32px;
     font-size: 16px;
     font-weight: 400;
@@ -41,14 +50,8 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
-.giao_viec .close button {
-    border: none;
-    border-radius: 5px 10px 0 0;
-    color: white;
-    background-color: var(--blue);
-    width: 25px;
-    text-align: center;
-    line-height: 32px;
+.giao_viec .close p:hover {
+    cursor: pointer;
 }
 
 .giao_viec .texterea-giaoviec {
@@ -71,3 +74,28 @@ form .row {
     margin-top: 10px;
     
 }
+
+.error {
+    color: red;
+  }
+  
+  .success{
+    color: green;
+  }
+
+  .inputWithIcon input[type="button"] {
+    padding-left: 40px;
+  }
+  
+  .inputWithIcon {
+    position: relative;
+  }
+  
+  .inputWithIcon i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 6px 8px;
+    color: #aaa;
+    transition: 0.3s;
+  }

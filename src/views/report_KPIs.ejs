@@ -10,13 +10,12 @@
 </head>
 <body>
     <%- include('includes/navigation.ejs') %>
-    <div>
+    <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %> >
         <%- include('includes/KPIs/title.ejs') %>
         <%- (KHOI_QL == 'KHCN') ? '' : (KHOI_QL == 'KHDN') ? include('includes/KPIs/selectNHOM_KH_KHDN.ejs') : include('includes/KPIs/selectNHOM_KH_KHDNL.ejs') %>
     </div>
-    <div class="container-fluid homepage" style="top:150px; padding: 0 30px 50px 30px;">
-        <%- include('includes/KPIs/tableReportKPIs.ejs') %>
-        
+    <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %> class="container-fluid homepage" style="top:150px; padding: 0 30px 50px 30px;">
+        <%- include('includes/KPIs/tableReportKPIs.ejs') %>        
     </div>
 <%- include('includes/end.ejs') %>
 

@@ -23,7 +23,6 @@ const createTrackJob = async(CIF,data) => {
         contentJob: data.contentJob,
         Rptdate: data.Rptdate,
     });
-    console.log('CIF',trackJob.CIF)
     
     await trackJob.save() // lưu vào csdl
 

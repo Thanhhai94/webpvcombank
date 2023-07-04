@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/css/DSCV_ND.css">
 <link rel="stylesheet" href="/css/quanly_job.css">
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 <script>dayjs().format()</script>
 </head>
 <body>
@@ -18,9 +19,63 @@
         </div>
         <div class="row">
             <% for(let staffQL of listQuanly) { %>
-                <%- include('includes/list_staff_Quanly.ejs',{staffQL:staffQL}) %>
+                <%- include('includes/Quanly_Job/list_staff_Quanly.ejs',{staffQL:staffQL}) %>
             <% } %>
         </div>
+        <table id="formUploadJob" hidden>
+            <thead>
+                <tr>
+                    <th>CIF</th><th>titleJob</th><th>contentJob</th><th>dateJob</th><th>statusJob</th><th>deadlineJob</th><th>timelineJob</th><th>noteJob</th><th>timeline_Job</th><th>Rptdate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tbody>
+        </table>
+            
+        <form action="/DScongviec/quanly %>" method="POST" enctype="multipart/form-data">
+            <div class="row ">
+                <div class="col-2 inputWithIcon">
+                    <input type="button" value="Tải File mẫu" style="padding: 0 5px 0px 30px; 
+                        color: white;
+                        background-color: var(--color-bl);
+                        border-radius: 5px;" onclick="ExportFormToExcel('xlsx')"><i class="fa-solid fa-file-export" style="color: #ffffff;"></i>
+                </div>
+                <div class="col-2" >
+                    <input type="file" name="csvFile" accept=".csv"  />
+                    <br />
+                    <div class="inputWithIcon2" style="margin-top: 5px;">
+                    <input type="submit" name="Upload" value="Upload" style="border-radius: 5px;
+                    background: #084cdf;
+                    color: white;
+                    padding: 0px 10px 0px 28px;"/><i class="fa-solid fa-upload" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+
+                <div class="col-2" >
+                    <input type="file" name="csvFile" accept=".csv"  />
+                    <br />
+                    <div class="inputWithIcon2" style="margin-top: 5px;">
+                    <input type="submit" name="Upload" value="Upload-Excel" style="border-radius: 5px;
+                    background: #084cdf;
+                    color: white;
+                    padding: 0px 10px 0px 28px;"/><i class="fa-solid fa-upload" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+            </div>
+        </form>
         
     </div>
 <%- include('includes/end.ejs') %>
+
+
+<script>
+    function ExportFormToExcel(type, fn, dl) {
+        
+        var elt = document.getElementById('formUploadJob');
+        var wb = XLSX.utils.table_to_book(elt, { sheet: `sheet1` });
+        return dl ?
+            XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+            XLSX.writeFile(wb, fn || ("File_mau." + (type || 'xlsx')));
+    }
+</script>

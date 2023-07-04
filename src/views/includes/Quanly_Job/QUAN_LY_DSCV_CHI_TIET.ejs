@@ -1,0 +1,155 @@
+<div class="giao_viec">  
+        <div class="close">
+            <div>
+                <h5>Thông tin</h5>
+            </div>
+            <p style="padding-right: 10px;" onclick="closeFormChiTietCongViec()">X</p>
+        </div>
+        <form action="/DScongviec/quanly/<%= cifQuanLy %>" method="POST" style="margin-top: 10px; padding-left: 20px;"> 
+            <input hidden name="id" value="" type="text" id="id">    
+            <input hidden name="CIF" value="<%= cifQuanLy %>" type="text">
+            <input hidden name="Rptdate" value="" type="text" id="Rptdate"> 
+                <div class="row">
+                    <div class="col-3">
+                        <p>Tiêu đề: </p>
+                    </div>
+                    <div class="col-8">
+                        <input placeholder="Tiêu đề công việc" class="input_Tieude" name="titleJob" id="titleJob2" type="text" value="">
+                        <small></small>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Nội dung CV:</p>
+                    </div>
+                    <div class="col-8">
+                        <textarea  class="texterea-giaoviec" placeholder="Nội dung cần thực hiện" id="contentJob" name="contentJob"  ></textarea>
+                        <small></small>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Deadline:</p>
+                    </div>
+                    <div class="col-3">
+                        <input type="date" name="deadlineJob" id="deadlineJob2">
+                        <small></small>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-8" style="display: flex;">
+                        <div class="inputWithIcon">
+                        <input type="submit" name="update" style="padding: 2px 10px 2px 30px; border: none;
+                        border-radius: 10px;
+                        background-color: var(--color-bl);
+                        color: white;" value="Cập nhật"><i class="fa-solid fa-upload" style="color: #fafafa;"></i>
+                        </div>
+                        <div class="inputWithIcon">
+                        <input type="submit" name="delete" value="Xóa" style="padding: 2px 10px 2px 30px; border: none;
+                        border-radius: 10px; 
+                        background-color: red;
+                        color: white;"><i class="fa-solid fa-trash" style="color: #fafafa;"></i>
+                        </div>
+                    </div>
+                </div>
+                
+        </form>
+</div>
+
+<script>
+    new AirDatepicker('#dateJob', {
+    view: 'months',
+    minView: 'months',
+    dateFormat: 'MM/yyyy',
+    position: 'left top',
+    locale: {
+    days: ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+    daysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    daysMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+    months: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    monthsShort: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    today: 'Today',
+    clear: 'Clear',
+    firstDay: 1},
+})
+</script>
+
+
+<script>
+    let arrayListJob = <%- arrayListJob %>
+</script>
+<script>
+
+    function closeFormChiTietCongViec() {
+        var x = document.getElementById('myDIV2');
+        x.style.display = 'none'
+    }
+    function openDetailJob(id){
+        let titleJob2 = document.getElementById('titleJob2')
+        let contentJob = document.getElementById('contentJob')
+        let deadlineJob2 = document.getElementById('deadlineJob2')
+        let idJob = document.getElementById('id')
+        let Rptdate = document.getElementById('Rptdate')
+        var x = document.getElementById('myDIV2')
+        if (x.style.display === 'none') {
+            x.style.display = 'flex';
+        } else {
+            x.style.display = 'none';
+        }
+        arrayListJob.map(job => {
+            if(job.id == id) {
+                titleJob2.value = job.titleJob
+                contentJob.value = job.contentJob 
+                deadlineJob2.value = job.deadlineJob
+                idJob.value = job.id
+                Rptdate.value = job.Rptdate
+            }
+        })
+    }
+</script>
+
+<!-- <script>
+    let titleJob = document.getElementById('titleJob')
+    let contentJob = document.getElementById('floatingTextarea2')
+    let dateJob = document.getElementById('dateJob')
+    let form = document.querySelector('form')
+    function showError(input,message) {
+        let parent = input.parentElement
+        let small = parent.querySelector('small')
+        small.classList.add('error');
+        small.innerText = message
+    }
+    function showSuccess(input, message) {
+        let parent = input.parentElement;
+        let small = parent.querySelector('small');
+        small.classList.remove('error');
+        small.innerText = message
+        }
+    function checkNullInputData(input) {
+        let isValue = false;
+        if(input.value == ''){
+            isValue = true
+            showError(input,'Hãy điền thông tin')
+        } else {
+            showSuccess(input,'')
+        }
+        return isValue
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        let isValueTitleJob = checkNullInputData(titleJob)
+        let isValueContentJob = checkNullInputData(contentJob)
+        let isValueDateJob = checkNullInputData(dateJob)
+        if(isValueTitleJob||isValueContentJob || isValueDateJob) {
+
+        } else {
+            form.submit()
+            return true
+        }
+    })
+</script> -->

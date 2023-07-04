@@ -126,7 +126,7 @@
             <td><%= (LAI_SUAT_CKH_KHCN_TONGKHOI.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHCN_TONGKHOI.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_TONGKHOI.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_TONGKHOI.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_TONGKHOI.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_TONGKHOI.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            <td rowspan="4" style="background-color: white;"><%- LSDH_KHCN %> </td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2"> <6M </td>
@@ -137,7 +137,7 @@
             <td><%= (LAI_SUAT_CKH_KHCN_6M.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHCN_6M.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_6M.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_6M.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_6M.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_6M.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_6M.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_6M.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2"> 6-12M </td>
@@ -148,7 +148,7 @@
             <td><%= (LAI_SUAT_CKH_KHCN_612M.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHCN_612M.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_612M.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_612M.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_612M.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_612M.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_612M.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_612M.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+           
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2"> >12M </td>
@@ -159,7 +159,7 @@
             <td><%= (LAI_SUAT_CKH_KHCN_12M.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHCN_12M.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_12M.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_12M.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_12M.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHCN_12M.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHCN_12M.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHCN_12M.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            
         </tr>
         <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
             <td colspan="2">KHDN</td>
@@ -170,7 +170,7 @@
             <td><%= (LAI_SUAT_CKH_KHDN_TONGKHOI.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHDN_TONGKHOI.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDN_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDN_TONGKHOI.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHDN_TONGKHOI.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDN_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDN_TONGKHOI.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHDN_TONGKHOI.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            <td rowspan="3" style="background-color: white;"><%- LSDH_KHDN %></td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">Core</td>
@@ -181,7 +181,7 @@
             <td><%= (LAI_SUAT_CKH_KHDN_Core.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHDN_Core.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDN_Core.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDN_Core.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHDN_Core.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDN_Core.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDN_Core.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHDN_Core.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            
         </tr>
         <tr style="font-style: italic;"> 
             <td colspan="2">Upper</td>
@@ -192,7 +192,7 @@
             <td><%= (LAI_SUAT_CKH_KHDN_Upper.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHDN_Upper.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDN_Upper.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDN_Upper.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHDN_Upper.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDN_Upper.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDN_Upper.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHDN_Upper.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            
         </tr>
         <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
             <td colspan="2">KHDNL</td>
@@ -203,7 +203,7 @@
             <td><%= (LAI_SUAT_CKH_KHDNL_TONGKHOI.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_TONGKHOI.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDNL_TONGKHOI.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDNL_TONGKHOI.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_TONGKHOI.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDNL_TONGKHOI.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDNL_TONGKHOI.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_TONGKHOI.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            <td rowspan="3" style="background-color: white;"><%- LSDH_KHDNL %></td>
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">PVN</td>
@@ -214,7 +214,7 @@
             <td><%= (LAI_SUAT_CKH_KHDNL_PVN.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_PVN.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDNL_PVN.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDNL_PVN.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_PVN.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDNL_PVN.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDNL_PVN.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_PVN.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+           
         </tr>
         <tr style="font-style: italic;">
             <td colspan="2">Non-PVN</td>
@@ -225,7 +225,7 @@
             <td><%= (LAI_SUAT_CKH_KHDNL_Non_PVN.Amt == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_Non_PVN.Amt*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDNL_Non_PVN.Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDNL_Non_PVN.Dtd == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_Non_PVN.Dtd*100).toFixed(2)} %` %></td>
             <td class="<%= (LAI_SUAT_CKH_KHDNL_Non_PVN.Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_CKH_KHDNL_Non_PVN.Mtd == '') ? '' : `${(LAI_SUAT_CKH_KHDNL_Non_PVN.Mtd*100).toFixed(2)} %` %></td>
-            <td></td>
+            
         </tr>
         
 </table>

@@ -4,6 +4,7 @@ import dailyServices from "../services/dailyService";
 import getfromtodate from "../utils/getfromtodate";
 import tableFunc from "../utils/tabelFunc";
 import getCustomer from "../utils/getCustomer";
+import handleLSHDDH from "../utils/handleLSHDDH";
 
 const reportDailyTable = async (req,res) => {
     let yesterday = getfromtodate.getYesterday()
@@ -15,6 +16,9 @@ const reportDailyTable = async (req,res) => {
     let Rptdate = date.replaceAll('-','')
     let dateFormat = dayjs(date).format("DD/MM/YYYY")
 
+    //LSHD DINH HUONG
+    let data_LSHD_DH = await dailyServices.getLSHDDH()
+    
     //Data Quy mô KKH
     let data_Quy_Mo_KKH = await dailyServices.getArrayDataHDVDaily(Rptdate,'QUY_MO_KKH')
     // QUY_MO_CKH
@@ -82,6 +86,11 @@ const reportDailyTable = async (req,res) => {
         date: date,
         selectedDate: JSON.stringify(date),
         dateFormat: dateFormat,
+
+        //LSHD_DH
+        LSDH_KHCN : handleLSHDDH.handlerResult(data_LSHD_DH,'KHCN',Rptdate),
+        LSDH_KHDN : handleLSHDDH.handlerResult(data_LSHD_DH,'KHDN',Rptdate),
+        LSDH_KHDNL : handleLSHDDH.handlerResult(data_LSHD_DH,'KHDNL',Rptdate),
 
         //Quy mô
         QUY_MO_KKH_TOANHANG_TOANHANG :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'TOAN_HANG','TOAN_HANG'),    
@@ -330,7 +339,9 @@ const reportDailyTableSelect = async (req,res) => {
     let Rptdate = date.replaceAll('-','')
     let ruleReportDaily = req.session.ruleReportDaily
     let dateFormat = dayjs(date).format("DD/MM/YYYY")
-
+ 
+    //LSHD_DH
+    let data_LSHD_DH = await dailyServices.getLSHDDH()
 
     //Data Quy mô KKH
     let data_Quy_Mo_KKH = await dailyServices.getArrayDataHDVDaily(Rptdate,'QUY_MO_KKH')
@@ -399,6 +410,11 @@ const reportDailyTableSelect = async (req,res) => {
         date: date,
         selectedDate: JSON.stringify(date),
         dateFormat: dateFormat,
+        
+         //LSHD_DH
+         LSDH_KHCN : handleLSHDDH.handlerResult(data_LSHD_DH,'KHCN',Rptdate),
+         LSDH_KHDN : handleLSHDDH.handlerResult(data_LSHD_DH,'KHDN',Rptdate),
+         LSDH_KHDNL : handleLSHDDH.handlerResult(data_LSHD_DH,'KHDNL',Rptdate),
 
          //Quy mô
          QUY_MO_KKH_TOANHANG_TOANHANG :  tableFunc.getRowDataHDVDaily(data_Quy_Mo_KKH,'TOAN_HANG','TOAN_HANG'),    
