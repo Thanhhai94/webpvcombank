@@ -3,6 +3,7 @@ import staffServices from "../services/StaffService";
 import quanlyJobServices from "../services/QuanlyJob_Services";
 import trackJobService from "../services/trackJobService";
 import dayjs from "dayjs";
+import handleListJob from "../utils/handleListJob";
 
 const getListJob = async (req, res) => {
   let date = new Date(), y = date.getFullYear(), m = date.getMonth();
@@ -71,13 +72,20 @@ const updateDetailJob = async (req,res) => {
 }
 
 const getListQuanLy = async(req,res) => {
+  let date = new Date(), y = date.getFullYear(), m = date.getMonth();
+  let Rptdate = dayjs(new Date(y,m,1,7,0,0)).format("YYYYMMDD")
   let CIF = req.session.CIF
   let staff = await staffServices.getStaffInfo(CIF)
   let listQuanly = await quanlyJobServices.getListQuanLy(CIF)
+
+  let listCIFQL = handleListJob.handleGetListCIF(listQuanly)
+  let getListArrayCIF = await quanlyJobServices.getListArrayCIF(listCIFQL,Rptdate)
+  let listJob = handleListJob.getListJobbyCIF(listCIFQL,getListArrayCIF)
   return res.render("quanlyJob", {
     listQuanly : listQuanly,
     staff:staff,
-    pageTitle: "Danh sách quản lý"
+    pageTitle: "Danh sách quản lý",
+    listJob:listJob
   })
 }
 

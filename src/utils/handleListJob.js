@@ -29,8 +29,37 @@ const handleTyleStatusJob = (array) => {
     return KQ
 }
 
+const handleGetListCIF = (array) => {
+    let results = []
+    array.map(result => {
+        results.push(result.CIF_QUANLY)
+    })
+    return results
+}
+
+const getListJobbyCIF = (arrayCIF, arrayJob) => {
+    let results = []
+    arrayCIF.map(CIF => {
+        let result = {}
+        result.CIF = CIF
+        let array = []
+        arrayJob.map(job => {
+            if(job.CIF == CIF){
+                array.push(job)
+            }
+        })
+        result.chuathuchien = countJob(array,'0'),
+        result.thuchien = countJob(array,'1'),
+        result.hoanthanh = countJob(array,'2')
+        results.push(result)
+    }) 
+    return results
+}
+
 
 module.exports = {
     handleCountStatusJob:handleCountStatusJob,
-    handleTyleStatusJob:handleTyleStatusJob
+    handleTyleStatusJob:handleTyleStatusJob,
+    handleGetListCIF:handleGetListCIF,
+    getListJobbyCIF:getListJobbyCIF
 }

@@ -87,3 +87,28 @@
     color: #aaa;
     transition: 0.3s;
   }
+
+  .titleTTNSQL {
+    background-color: var(--color-bl);
+    height: 42px;
+  }
+
+  .titleTTNSQL div p {
+    margin: 0;
+    text-align: center;
+    line-height: 42px;
+    color: #FFF;
+    font-weight: 500;
+  }
+
+  .inforTTNSQL {
+    background-color: #FFF;
+    padding: 5px 0px;
+    min-height: 40px;
+  }
+
+  .inforTTNSQL div p {
+    margin: auto;
+    text-align: center;
+    
+  }

@@ -13,6 +13,19 @@ import test from '../controller/test'
 import multer from "multer";
 const upload = multer({ dest: 'uploads/' });
 
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//   cb(null, __basedir + '/uploads/')
+//   },
+//   filename: (req, file, cb) => {
+//   cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname)
+//   }
+//   });
+
+// const upload = multer({storage: storage});
+//cho excel
+
+
 let router = express.Router();
 
 const initWebRoutes = (app) => {
@@ -29,7 +42,12 @@ const initWebRoutes = (app) => {
   router.get("/DSnhansu",staffController.getListStaff)
   router.get("/DScongviec",jobController.getListJob)
   router.get("/DScongviec/quanly",jobController.getListQuanLy)
-  router.post("/DScongviec/quanly",upload.single('csvFile'),uploadController.uploadFile)
+  
+  // router.post("/DScongviec/quanly",upload.single('csvFile'),uploadController.uploadFile)
+  
+  //Excel
+  router.post("/DScongviec/quanly",upload.single('uploadfile'),uploadController.uploadFile)
+
   router.get("/DScongviec/quanly/:cifQuanLy",jobController.getListJobQuanLy)
   router.post("/DScongviec/quanly/:cifQuanLy",jobController.postGiaoviec)
   router.get("/DScongviec/quanly/:cifQuanLy/:Rptdate",jobController.getListJobQuanLySelectRptDate)

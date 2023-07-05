@@ -2,7 +2,7 @@ import db from "../models/index"
 import Sequelize from "sequelize"
 const { Op } = require("sequelize")
 
-const uploadFile = async (results,CIF) => {
+const uploadFile = async (results) => {
     try {
         await db.Jobs.bulkCreate(results)
         

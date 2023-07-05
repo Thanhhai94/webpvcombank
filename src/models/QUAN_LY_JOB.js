@@ -8,13 +8,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Staff,{foreignKey: 'CIF_QUANLY',targetKey: 'CIF'})
     }
   }
   QL_JOB.init(
     {
       CIF: DataTypes.STRING,
-      CIF_QUANLY: DataTypes.STRING,
+      CIF_QUANLY: {
+        type: DataTypes.STRING,
+        foreignKey: true
+      },
       Name: DataTypes.STRING,
     },
     {

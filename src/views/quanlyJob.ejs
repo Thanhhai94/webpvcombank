@@ -12,16 +12,14 @@
 <body>
     <%- include('includes/navigation.ejs') %>
     <div class="container homepage">
-        <div class="row">
-        
-                <h2>Danh sách nhân sự quản lý</h2>
-            
+        <div class="row">   
+                <h2>Danh sách nhân sự quản lý</h2>   
         </div>
-        <div class="row">
-            <% for(let staffQL of listQuanly) { %>
-                <%- include('includes/Quanly_Job/list_staff_Quanly.ejs',{staffQL:staffQL}) %>
-            <% } %>
-        </div>
+        <%- include('includes/Quanly_Job/Title_TT_NHANSU_QL.ejs') %>
+        <% for(let staffQL of listQuanly) { %>
+            <%- include('includes/Quanly_Job/list_staff_Quanly.ejs',{staffQL:staffQL.Staff}) %>
+        <% } %>
+    
         <table id="formUploadJob" hidden>
             <thead>
                 <tr>
@@ -41,7 +39,7 @@
                         background-color: var(--color-bl);
                         border-radius: 5px;" onclick="ExportFormToExcel('xlsx')"><i class="fa-solid fa-file-export" style="color: #ffffff;"></i>
                 </div>
-                <div class="col-2" >
+                <!-- <div class="col-2" >
                     <input type="file" name="csvFile" accept=".csv"  />
                     <br />
                     <div class="inputWithIcon2" style="margin-top: 5px;">
@@ -50,13 +48,13 @@
                     color: white;
                     padding: 0px 10px 0px 28px;"/><i class="fa-solid fa-upload" style="color: #ffffff;"></i>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col-2" >
-                    <input type="file" name="csvFile" accept=".csv"  />
+                    <input type="file" name="uploadfile" accept='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel' >
                     <br />
                     <div class="inputWithIcon2" style="margin-top: 5px;">
-                    <input type="submit" name="Upload" value="Upload-Excel" style="border-radius: 5px;
+                    <input type="submit" value="Upload-Excel" style="border-radius: 5px;
                     background: #084cdf;
                     color: white;
                     padding: 0px 10px 0px 28px;"/><i class="fa-solid fa-upload" style="color: #ffffff;"></i>

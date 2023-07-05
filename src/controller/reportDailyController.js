@@ -77,6 +77,10 @@ const reportDailyTable = async (req,res) => {
     let CAM_CO_STK_TP = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'CAM_CO_STK_TP')
     let LS_CAM_CO_STK_TP = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'LS_CAM_CO_STK_TP')
     
+    //GN đặc thù
+    let QUY_MO_GN = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'DU_NO_CON_LAI_GN_DAC_THU')
+    let LSBQ_GN = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'LAI_SUAT_GIAI_NGAN_DAC_THU')
+
     return res.render('report_daily_table',{
         ruleReportDaily: ruleReportDaily,
         active_menu_left: 'BTH',
@@ -328,6 +332,10 @@ const reportDailyTable = async (req,res) => {
 
         CAM_CO_STK_TP : CAM_CO_STK_TP,
         LS_CAM_CO_STK_TP : LS_CAM_CO_STK_TP,
+
+        //GN Đặc thù
+        QUY_MO_GN: QUY_MO_GN,
+        LSBQ_GN: LSBQ_GN
     })
 }
 
@@ -401,6 +409,10 @@ const reportDailyTableSelect = async (req,res) => {
     let CAM_CO_STK_TP = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'CAM_CO_STK_TP')
     let LS_CAM_CO_STK_TP = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'LS_CAM_CO_STK_TP')
     
+    //GN đặc thù
+    let QUY_MO_GN = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'DU_NO_CON_LAI_GN_DAC_THU')
+    let LSBQ_GN = await dailyServices.getArrayDataTDCPBNDaily(Rptdate,'LAI_SUAT_GIAI_NGAN_DAC_THU')
+
     return res.render('report_daily_table',{
         ruleReportDaily: ruleReportDaily,
         active_menu_left: 'BTH',
@@ -652,6 +664,9 @@ const reportDailyTableSelect = async (req,res) => {
 
         CAM_CO_STK_TP : CAM_CO_STK_TP,
         LS_CAM_CO_STK_TP : LS_CAM_CO_STK_TP,
+         //GN Đặc thù
+        QUY_MO_GN: QUY_MO_GN,
+        LSBQ_GN: LSBQ_GN
     })
 }
 

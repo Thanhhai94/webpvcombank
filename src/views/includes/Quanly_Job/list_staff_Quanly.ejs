@@ -1,21 +1,41 @@
-<div class="col-lg-2 frame_staffQL" >
-    <form action="/DScongviec/quanly/<%= staffQL.CIF_QUANLY %>" method="GET">
-    <div>
-        <div class="row">
-            <div class="col-12">
-                <p class="p_1"><%= staffQL.Name %></p>
+<form action="/DScongviec/quanly/<%= staffQL.CIF %>" method="GET">
+    <div class="row inforTTNSQL" >
+        <div class="col-1">
+            <p><%= staffQL.CIF %></p>
+        </div>
+        <div class="col-3">
+            <p><%= staffQL.Name %></p>
+        </div>
+        <div class="col-3">
+            <p><i class="fa-solid fa-inbox"></i> <%= staffQL.Email %></p>
+        </div>
+        <div class="col-2">
+            <p><i class="fa-solid fa-mobile-screen"></i> <%= staffQL.Mobile %></p>
+        </div>
+        <div class="col-2">
+            <div>
+                <div>
+                    <% for(var i = 0; i < listJob.length; ++i) {%>
+                        <% if(listJob[i].CIF == staffQL.CIF) { %>
+                            <p>Chưa thực hiện: <%= listJob[i].chuathuchien %> </p>
+                        <% }} %>
+                </div>
+                <div>
+                    <% for(var i = 0; i < listJob.length; ++i) {%>
+                        <% if(listJob[i].CIF == staffQL.CIF) { %>
+                            <p>Đang thực hiện: <%= listJob[i].thuchien %> </p>
+                        <% }} %>
+                </div>
+                <div>
+                    <% for(var i = 0; i < listJob.length; ++i) {%>
+                        <% if(listJob[i].CIF == staffQL.CIF) { %>
+                            <p>Hoàn thành: <%= listJob[i].hoanthanh %> </p>
+                        <% }} %>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <p><%= staffQL.CIF_QUANLY %></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
+        <div class="col-1">
                 <button type="submit">Kiểm tra</button>
-            </div>
         </div>
     </div>
 </form>
-</div>

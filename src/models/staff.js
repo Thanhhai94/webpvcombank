@@ -8,12 +8,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.hasMany(models.QL_JOB,{foreignKey: 'CIF_QUANLY', sourceKey: 'CIF'})
     }
   }
   Staff.init(
     {
-      CIF: DataTypes.STRING,
+      CIF: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+        primaryKey: true
+      },
       Name: DataTypes.STRING,
       Mobile: DataTypes.STRING,
       Team: DataTypes.STRING,

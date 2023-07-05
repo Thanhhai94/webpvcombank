@@ -1,111 +1,138 @@
-// <!DOCTYPE html>
-// <html>
-// <head>
-//   <title>Upload CSV File</title>
-// </head>
-// <body>
-//   <h1>Upload CSV File</h1>
-//   <form action="/upload" method="POST" enctype="multipart/form-data">
-//     <input type="file" name="csvFile" accept=".csv" />
-//     <br />
-//     <input type="submit" value="Upload" />
-//   </form>
-// </body>
-// </html>
-// const express = require('express');
-// const multer = require('multer');
-// const csv = require('csv-parser');
-// const Sequelize = require('sequelize');
-// const tedious = require('tedious');
-
-// const app = express();
-
-// const upload = multer({ dest: 'uploads/' });
-
-// Kết nối cơ sở dữ liệu
-// const sequelize = new Sequelize({
-//   dialect: 'mssql',
-//   dialectModule: tedious,
-//   host: 'your_host',
-//   database: 'your_database',
-//   username: 'your_username',
-//   password: 'your_password',
-// });
-
-// Định nghĩa mô hình Sequelize cho bảng
-// const DataModel = sequelize.define('Data', {
-//   // Định nghĩa các cột tương ứng với các trường trong file CSV
-//   // Ví dụ: column1, column2, column3
-//   column1: Sequelize.STRING,
-//   column2: Sequelize.STRING,
-//   column3: Sequelize.STRING,
-// });
-
-// Route nhận file CSV và xử lý
-app.post('/upload', upload.single('csvFile'), (req, res) => {
-  // Kiểm tra nếu không có file gửi lên
-  if (!req.file) {
-    return res.status(400).send('No file uploaded.');
-  }
-
-  // Kiểm tra định dạng file
-  if (req.file.mimetype !== 'text/csv') {
-    return res.status(400).send('Invalid file format. Only CSV files are allowed.');
-  }
-
-  // Kiểm tra kích thước file
-  if (req.file.size > 10 * 1024 * 1024) {
-    return res.status(400).send('File size exceeds the limit of 10MB.');
-  }
-
-  // Đọc nội dung của file CSV và lưu vào cơ sở dữ liệu
-  const results = [];
-  fs.createReadStream(req.file.path)
-    .pipe(csv())
-    .on('data', (data) => results.push(data))
-    .on('end', () => {
-      // Xóa file tạm sau khi đọc xong
-      fs.unlinkSync(req.file.path);
-
-      // Lưu dữ liệu vào cơ sở dữ liệu
-      sequelize
-        .sync()
-        .then(() => {
-          return DataModel.bulkCreate(results);
-        })
-        .then(() => {
-          res.status(200).send('File uploaded and data inserted successfully.');
-        })
-        .catch((error) => {
-          res.status(500).send('Error inserting data: ' + error.message);
-        });
-    });
-});
-
-const { DatabaseError } = require('sequelize');
-// Khởi động server
-// app.listen(3000, () => {
-//   console.log('Server is running on port 3000');
-// });
-// npm install express multer csv-parser sequelize tedious
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Node js upload/Import excel file to MySQL database - Tutsmake.com</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      <h1>Node js upload Excel file to MySQL database - Tutsmake.com</h1>
+      <form action="/uploadfile" enctype="multipart/form-data" method="post">
+        <input type="file" name="uploadfile" accept='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel' >
+        <input type="submit" value="Upload Excel">
+      </form>  
+    </body>
+</html>
 
 
-const xlsx = require('xlsx')
 
-connect Database 
-//config multer
-
-
+const fs = require('fs');
+const readXlsxFile = require('read-excel-file/node');
 const multer = require('multer')
-const storage = multer.diskStorage({
-  destination: (req,file,cb) => {
-    cb(null,__basedir + '/uploads')
-  },
-  filename: (req,file,cb) => {
-    cb(null, fule.fieldname + "-" + Date.now() + "-"+file.originalname)
-  }
+const path = require('path')
+{/* //use express static folder
+app.use(express.static("./public"))
+// body-parser middleware use
+app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({extended: true}))
+// Database connection
+const db = mysql.createConnection({
+host: "localhost",
+user: "root",
+password: "",
+database: "test"
+}) */}
+
+db.connect(function (err) {
+if (err) {
+return console.error('error: ' + err.message);
+}
+console.log('Connected to the MySQL server.');
 })
 
-const upload = multer({storage:storage})
+// Multer Upload Storage
+const storage = multer.diskStorage({
+destination: (req, file, cb) => {
+cb(null, __basedir + '/uploads/')
+},
+filename: (req, file, cb) => {
+cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname)
+}
+});
 
-module.exports = upload
+
+const upload = multer({storage: storage});
+//! Routes start
+//route for Home page
+app.get('/', (req, res) => {
+res.sendFile(__dirname + '/index.html');
+});
+// -> Express Upload RestAPIs
+app.post('/uploadfile', upload.single("uploadfile"), (req, res) =>{
+importExcelData2MySQL(__basedir + '/uploads/' + req.file.filename);
+console.log(res);
+});
+// -> Import Excel Data to MySQL database
+function importExcelData2MySQL(filePath){
+// File path.
+readXlsxFile(filePath).then((rows) => {
+// `rows` is an array of rows
+// each row being an array of cells.     
+console.log(rows);
+/**
+[ [ 'Id', 'Name', 'Address', 'Age' ],
+[ 1, 'john Smith', 'London', 25 ],
+[ 2, 'Ahman Johnson', 'New York', 26 ]
+*/
+// Remove Header ROW
+rows.shift();
+// Open the MySQL connection
+db.connect((error) => {
+if (error) {
+console.error(error);
+} else {
+let query = 'INSERT INTO customer (id, address, name, age) VALUES ?';
+connection.query(query, [rows], (error, response) => {
+console.log(error || response);
+/**
+OkPacket {
+fieldCount: 0,
+affectedRows: 5,
+insertId: 0,
+serverStatus: 2,
+warningCount: 0,
+message: '&Records: 5  Duplicates: 0  Warnings: 0',
+protocol41: true,
+changedRows: 0 } 
+*/
+});
+}
+});
+})
+}
+// Create a Server
+let server = app.listen(8080, function () {
+let host = server.address().address
+let port = server.address().port
+console.log("App listening at http://%s:%s", host, port) 
+})
+
+
+//   const results = [];
+//   fs.createReadStream(req.file.path)
+//     .pipe(csv())
+//     .on('data', (data) => results.push(data))
+//     .on('end', () => {
+//       // Xóa file tạm sau khi đọc xong
+//       fs.unlinkSync(req.file.path);
+//       results.map(result => {
+//         (result.statusJob == '') ? result.statusJob = 0 : result.statusJob
+//         result.timelineJob = undefined
+//         result.noteJob = undefined
+//         result.timeline_Job = undefined
+//         let deadlineJob = new Date(result.deadlineJob)
+//         console.log('deadlineJob',deadlineJob)
+//         let y = deadlineJob.getFullYear(), m = deadlineJob.getMonth(), d = deadlineJob.getDate()
+//         result.deadlineJob = dayjs(new Date(y,m,d,7,0,0)).format("YYYY-MM-DD")
+//         result.dateJob = dayjs(result.dateJob).format("MM/YYYY")
+//       })
+//       uploadFileService.uploadFile(results,CIF)
+//     })
+//     let CIF = req.session.CIF
+//     let staff =  staffServices.getStaffInfo(CIF)
+//     let listQuanly = await quanlyJobServices.getListQuanLy(CIF)
+//     return res.render("quanlyJob", {
+//       listQuanly : listQuanly,
+//       staff:staff,
+//       pageTitle: "Danh sách quản lý"
+//     })
